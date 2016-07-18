@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity {
     protected void onInitView() {
 
 
+
      tv_set.setText("fafa");
         tv_set.setOnClickListener(view -> {
             LogUtil.d("都是加工方式广泛收到束带结发");
