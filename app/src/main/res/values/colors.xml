@@ -9,5 +9,16 @@
 
     <color name="theme_red">#820429</color>
 
+    <!-- 浅灰色分割线  最浅灰色字体-->
+    <color name="hui_line">#C9C9C9</color>
+    <!-- 中度灰字体 -->
+    <color name="hui_text">#8F8F8F</color>
+    <!-- 背景填充色 -->
+    <color name="hui_bg">#F2F2F2</color>
+    <!-- 非常接近黑色 底部导航的背景色 -->
+    <color name="black">#222332</color>
+    <color name="red">#910025</color>
+
+
 
 </resources>

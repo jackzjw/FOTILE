@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">方太直播平台</string>
     <string name="dianbo">点播</string>
+    <!--标题栏-->
+    <string name="title_back">返回</string>
+    <string name="my_account">我的账户</string>
+    <!--我的账户-->
+    <string name="my_order">我的订单</string>
+    <string name="check_all_orders">查看所有订单</string>
+    <string name="wait_pay">待付款</string>
+    <string name="wait_shipments">待发货</string>
+    <string name="wait_receipt">待收货</string>
+    <string name="deal_is_done">交易完成</string>
+    <string name="my_coupons">我的优惠券</string>
+    <string name="my_collections">我的收藏</string>
+    <string name="message_center">消息中心</string>
+    <string name="all">全部</string>
+    <string name="order_number">订单号：</string>
+    <string name="order_money">订单金额：</string>
+    <string name="information">详情</string>
 </resources>
