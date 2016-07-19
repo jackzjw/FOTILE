@@ -19,7 +19,7 @@ public class FotileRetrofit {
             synchronized (FotileRetrofit.class) {
                 if (retrofit == null) {
                     retrofit = new Retrofit.Builder()
-                            .baseUrl(Constants.GANHUO_API)
+                            .baseUrl(Constants.BASE_URL)
                             .addConverterFactory(GsonConverterFactory.create())
                             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                             .client(FTApplication.defaultOkHttpClient())

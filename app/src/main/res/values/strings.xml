@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Fotile</string>
+    <string name="app_name">方太直播平台</string>
+    <string name="dianbo">点播</string>
 </resources>
