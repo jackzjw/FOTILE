@@ -31,10 +31,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="@string/all"
-                    android:textSize="16sp" />
+                    android:textColor="@color/hui_text"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:layout_width="32dp"
+                    android:layout_width="28dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
@@ -51,10 +52,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="@string/wait_pay"
-                    android:textSize="16sp" />
+                    android:textColor="@color/hui_text"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:layout_width="48dp"
+                    android:layout_width="42dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
@@ -71,10 +73,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="@string/wait_shipments"
-                    android:textSize="16sp" />
+                    android:textColor="@color/hui_text"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:layout_width="48dp"
+                    android:layout_width="42dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
@@ -91,10 +94,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="@string/wait_receipt"
-                    android:textSize="16sp" />
+                    android:textColor="@color/hui_text"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:layout_width="48dp"
+                    android:layout_width="42dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
@@ -111,10 +115,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="@string/deal_is_done"
-                    android:textSize="16sp" />
+                    android:textColor="@color/hui_text"
+                    android:textSize="14sp" />
 
                 <TextView
-                    android:layout_width="64dp"
+                    android:layout_width="56dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"

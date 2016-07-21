@@ -84,9 +84,9 @@
             android:textSize="16sp" />
 
         <TextView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:background="@mipmap/arrows_right"
+            android:layout_width="10.5dp"
+            android:layout_height="16dp"
+            android:background="@drawable/user_icon_arrow_right_gray"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"/>

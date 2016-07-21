@@ -6,7 +6,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_main;
+        return R.layout.item_coupons_disabled;
     }
 
 

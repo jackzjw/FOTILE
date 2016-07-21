@@ -18,4 +18,14 @@
     <string name="order_number">订单号：</string>
     <string name="order_money">订单金额：</string>
     <string name="information">详情</string>
+    <string name="live_or_demand">直播/点播</string>
+    <string name="goods">商品</string>
+    <string name="goto_info">查看详情</string>
+    <string name="living">正在直播</string>
+    <string name="vod">点播</string>
+    <string name="wait_user">可使用</string>
+    <string name="disabled">已失效</string>
+    <string name="fotile_ec">方太电商</string>
+    <string name="use_rule">使用规则</string>
+    <string name="test_describe">1.看我我手指放松\n2.我目光如龙\n3.当敌人是空</string>
 </resources>

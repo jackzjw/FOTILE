@@ -16,7 +16,7 @@
             android:layout_height="80dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:src="@mipmap/touxiang"/>
+            android:src="@drawable/user_avatar"/>
 
         <TextView
             android:id="@+id/tv_nickname_account"
@@ -30,12 +30,12 @@
             android:textSize="16sp" />
 
         <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="10.5dp"
+            android:layout_height="16dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:background="@mipmap/arrows_right" />
+            android:background="@drawable/user_icon_arrow_right_white" />
 
     </RelativeLayout>
 
@@ -57,11 +57,11 @@
 
         <TextView
             android:id="@+id/tv_arrows_right_order"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="9dp"
+            android:layout_height="14dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@mipmap/arrows_right" />
+            android:background="@drawable/user_icon_arrow_right_gray" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,14 +90,15 @@
 
             <ImageView
                 android:id="@+id/iv_wait_pay_account"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/user_icon_payment_pending"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_below="@id/iv_wait_pay_account"
                 android:layout_centerHorizontal="true"
                 android:text="@string/wait_pay"
@@ -113,14 +114,15 @@
 
             <ImageView
                 android:id="@+id/iv_wait_shipments_account"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/user_icon_delivery_pending" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_below="@id/iv_wait_shipments_account"
                 android:layout_centerHorizontal="true"
                 android:text="@string/wait_shipments"
@@ -136,14 +138,15 @@
 
             <ImageView
                 android:id="@+id/iv_wait_receipt_account"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/user_icon_receipt_pending" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_below="@id/iv_wait_receipt_account"
                 android:layout_centerHorizontal="true"
                 android:text="@string/wait_receipt"
@@ -159,14 +162,15 @@
 
             <ImageView
                 android:id="@+id/iv_deal_is_done_account"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/user_icon_complete" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_below="@id/iv_deal_is_done_account"
                 android:layout_centerHorizontal="true"
                 android:text="@string/deal_is_done"
@@ -185,10 +189,10 @@
 
         <ImageView
             android:id="@+id/iv_my_coupons_account"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/user_icon_discount_gray"/>
 
         <TextView
             android:layout_toRightOf="@+id/iv_my_coupons_account"
@@ -201,11 +205,11 @@
             android:textSize="16sp" />
 
         <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="10.5dp"
+            android:layout_height="16dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@mipmap/arrows_right" />
+            android:background="@drawable/user_icon_arrow_right_gray" />
 
     </RelativeLayout>
 
@@ -220,10 +224,10 @@
 
         <ImageView
             android:id="@+id/iv_my_collections_account"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/user_icon_collection_gray"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -236,11 +240,11 @@
             android:textSize="16sp" />
 
         <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="10.5dp"
+            android:layout_height="16dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@mipmap/arrows_right" />
+            android:background="@drawable/user_icon_arrow_right_gray" />
 
     </RelativeLayout>
 
@@ -256,10 +260,10 @@
 
         <ImageView
             android:id="@+id/iv_message_center_account"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/user_icon_news_gray"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -272,11 +276,11 @@
             android:textSize="16sp" />
 
         <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="10.5dp"
+            android:layout_height="16dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@mipmap/arrows_right" />
+            android:background="@drawable/user_icon_arrow_right_gray" />
 
     </RelativeLayout>
 

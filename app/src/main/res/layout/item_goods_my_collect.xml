@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_goods_my_order"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/iv_goods_my_order"
+        android:maxLines="1"
+        android:text="哈哈哈哈哈哈哈哈哈"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_now_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_toRightOf="@+id/iv_goods_my_order"
+        android:text="¥ 1234"
+        android:textColor="@color/red"
+        android:textSize="20sp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv_now_money">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¥ 1235"
+            android:textColor="@color/hui_text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:background="@color/hui_text" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:text="@string/goto_info"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/shape_goto_info"/>
+
+</RelativeLayout>
