@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">方太直播平台</string>
     <string name="dianbo">点播</string>
+    <string name="shouye">首页</string>
+    <string name="zhibo">直播</string>
+    <string name="gouwuche">购物车</string>
+    <string name="wode">我的</string>
 </resources>

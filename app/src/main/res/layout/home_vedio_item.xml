@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
     android:orientation="vertical">
     <include
         layout="@layout/home_item_title"/>
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="160dp"
     android:orientation="horizontal">
     <RelativeLayout
        android:layout_width="0dp"
@@ -17,14 +17,14 @@
         <ImageView
             android:id="@+id/vedio_img_1"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="120dp"
             android:src="@mipmap/ic_launcher"
             />
            <TextView
                android:layout_width="50dp"
-               android:layout_height="30dp"
+               android:layout_height="25dp"
                android:background="@drawable/dianbo_type_shape"
-               android:layout_marginTop="80dp"
+               android:layout_marginTop="85dp"
                android:layout_marginLeft="10dp"
                android:gravity="center"
                android:textColor="@color/white"
@@ -34,11 +34,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/vedio_img_1"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:text="方太直播"
-            android:layout_centerVertical="true"
 
-            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+
             />
 
     </RelativeLayout>
@@ -54,14 +54,14 @@
         <ImageView
             android:id="@+id/vedio_img_2"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="120dp"
             android:src="@mipmap/ic_launcher"
             />
         <TextView
             android:layout_width="50dp"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             android:background="@drawable/dianbo_type_shape"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="85dp"
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:textColor="@color/white"
@@ -71,10 +71,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/vedio_img_2"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:text="方太直播"
-            android:layout_centerVertical="true"
-            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+
             />
 
     </RelativeLayout>
@@ -95,14 +95,14 @@
             <ImageView
                 android:id="@+id/vedio_img_3"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="120dp"
                 android:src="@mipmap/ic_launcher"
                 />
             <TextView
                 android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_height="25dp"
                 android:background="@drawable/dianbo_type_shape"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="85dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
                 android:textColor="@color/white"
@@ -112,11 +112,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/vedio_img_3"
-                android:layout_marginLeft="20dp"
-                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
 
+                 android:layout_marginTop="10dp"
                 android:text="方太直播"
-                android:textStyle="bold"
+
                 />
 
         </RelativeLayout>
@@ -132,14 +132,14 @@
             <ImageView
                 android:id="@+id/vedio_img_4"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="120dp"
                 android:src="@mipmap/ic_launcher"
                 />
             <TextView
                 android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_height="25dp"
                 android:background="@drawable/dianbo_type_shape"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="85dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
                 android:textColor="@color/white"
@@ -149,10 +149,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/vedio_img_4"
-                android:layout_marginLeft="20dp"
-
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:text="方太直播"
-                android:textStyle="bold"
+
                 />
 
         </RelativeLayout>

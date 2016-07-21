@@ -57,4 +57,9 @@ public class LogUtil {
         if (isDebug)
             Log.v(tag, msg);
     }
+    public static void i(Object msg){
+        if(isDebug){
+            LogUtil.i("返回信息",msg.toString());
+        }
+    }
 }

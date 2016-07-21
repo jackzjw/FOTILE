@@ -28,7 +28,7 @@ public class Glides {
     public void load(Context context, String url, ImageView imageView) {
         Glide.with(context)
                 .load(url)
-                .placeholder(R.color.abc_tab_text_normal)
+                .placeholder(R.drawable.default_image)
                 .error(R.color.abc_tab_text_normal)
                 .crossFade()
                 .into(imageView);
