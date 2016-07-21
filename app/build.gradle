@@ -30,6 +30,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.jude:rollviewpager:1.2.9'
     compile 'com.jude:easyrecyclerview:4.0.2'
+    compile 'com.android.support:design:23.2.1'
    // compile 'com.github.ybq:Android-SpinKit:1.0.1'
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'

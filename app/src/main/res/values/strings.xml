@@ -28,4 +28,8 @@
     <string name="fotile_ec">方太电商</string>
     <string name="use_rule">使用规则</string>
     <string name="test_describe">1.看我我手指放松\n2.我目光如龙\n3.当敌人是空</string>
+    <string name="shouye">首页</string>
+    <string name="zhibo">直播</string>
+    <string name="gouwuche">购物车</string>
+    <string name="wode">我的</string>
 </resources>
