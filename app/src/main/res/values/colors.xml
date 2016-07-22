@@ -12,4 +12,9 @@
   <color name="theme_gray">#636363</color>
 
     <color name="home_divide_gray">#F4F4F4</color>
+    <!--标题栏颜色
+    -->
+    <color name="title_bg_color">#FBFBFB</color>
+<!--黑色-->
+    <color name="black">#000000</color>
 </resources>

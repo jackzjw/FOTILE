@@ -1,10 +1,12 @@
 package com.example.sg280.fotile.adapter;
 
+import android.content.Intent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sg280.fotile.R;
+import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.model.bean.HomeLiveList;
 import com.example.sg280.fotile.utils.Glides;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
@@ -15,6 +17,7 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 public class HomeLiveViewHolder extends BaseViewHolder<HomeLiveList> {
 
 
+    private  ImageView img_arrow;
     private  TextView mlive_title;
     private  ImageView img_1;
     private  TextView tv_status1;
@@ -36,13 +39,14 @@ public class HomeLiveViewHolder extends BaseViewHolder<HomeLiveList> {
            tv_status2=$(R.id.live_status2);
            tv_name2=$(R.id.live_name_2);
             tv_date2=$(R.id.live_date_2);
+           img_arrow=$(R.id.goto_navi);
     }
 
     @Override
     public void setData(HomeLiveList data) {
         super.setData(data);
         mlive_title.setText(data.getClassName());
-        Glides.getInstance().load(getContext(),data.getLiveList().get(0).getLivePixSer(),img_1);
+        Glides.getInstance().load(getContext(), data.getLiveList().get(0).getLivePixSer(), img_1);
         tv_status1.setText(data.getLiveList().get(0).getStatusName());
         tv_name1.setText(data.getLiveList().get(0).getLiveName());
         tv_date1.setText(data.getLiveList().get(0).getStartTime());
@@ -50,6 +54,9 @@ public class HomeLiveViewHolder extends BaseViewHolder<HomeLiveList> {
         tv_status2.setText(data.getLiveList().get(1).getStatusName());
         tv_name2.setText(data.getLiveList().get(1).getLiveName());
         tv_date2.setText(data.getLiveList().get(1).getStartTime());
+        img_arrow.setOnClickListener(view->
+              getContext().sendBroadcast(new Intent(Constants.SWITCH_FRAGMENT_LIVE)));
+
 
     }
 }

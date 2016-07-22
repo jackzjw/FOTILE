@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class TitleBar extends RelativeLayout implements View.OnClickListener {
     private boolean mIsBackFinishEnable;
     private OnClickTitleBarBackCallback mCallBack;
     private TextView mTvRightText;
+    private ImageView mImgBackIcon;
 
     public TitleBar(Context context) {
         super(context);
@@ -46,12 +48,19 @@ public class TitleBar extends RelativeLayout implements View.OnClickListener {
         View rootView = inflate(getContext(), R.layout.layout_nav_toolbar, this);
         mlvTitleRight = (LinearLayout) rootView.findViewById(R.id.lv_title_right);
         mTvTitle = (TextView) rootView.findViewById(R.id.tv_title);
+        mImgBackIcon=(ImageView)rootView.findViewById(R.id.iv_back_icon);
         int padding = DensityUtil.dp2px(getContext(), 15);
         setPadding(padding, 0, padding, 0);
         setBackgroundResource(R.color.white);
-        rootView.findViewById(R.id.lv_title_left).setOnClickListener(this);
+        mImgBackIcon.setOnClickListener(this);
     }
+public void setBackGroundColor(int color){
+    setBackgroundColor(color);
+}
 
+    public  void backIcon(){
+        mImgBackIcon.setVisibility(View.VISIBLE);
+    }
     /**
      * 设置点击返回按钮的回调事件
      *
