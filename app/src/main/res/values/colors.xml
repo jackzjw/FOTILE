@@ -23,7 +23,7 @@
     <color name="title_bg">#FBFBFB</color>
 
 
-  <color name="theme_gray">#636363</color>
+    <color name="theme_gray">#636363</color>
 
     <color name="home_divide_gray">#F4F4F4</color>
 </resources>
