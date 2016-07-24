@@ -15,6 +15,7 @@
             android:id="@+id/iv_back_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="invisible"
             android:layout_gravity="center_vertical"
             android:src="@drawable/user_icon_arrow_left_red" />
 
@@ -48,9 +49,11 @@
         android:layout_marginRight="10dp"
         android:ellipsize="middle"
         android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:includeFontPadding="false"
         android:singleLine="true"
-        android:textSize="22sp" />
+        android:textSize="15sp" />
 
 
 </merge>
