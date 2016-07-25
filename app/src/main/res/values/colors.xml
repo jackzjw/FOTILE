@@ -9,7 +9,21 @@
 
     <color name="theme_red">#820429</color>
 
-  <color name="theme_gray">#636363</color>
+    <!-- 浅灰色分割线  最浅灰色字体-->
+    <color name="hui_line">#D9D9D9</color>
+    <!-- 中度灰字体 -->
+    <color name="hui_text">#6E6E6E</color>
+    <!-- 背景填充色 -->
+    <color name="hui_bg">#F4F4F4</color>
+    <!-- 非常接近黑色 底部导航的背景色 -->
+    <color name="black">#000000</color>
+    <!--项目中用到的红色-->
+    <color name="red">#820429</color>
+    <!--标题栏的背景颜色-->
+    <color name="title_bg">#FBFBFB</color>
+
+
+    <color name="theme_gray">#636363</color>
 
     <color name="home_divide_gray">#F4F4F4</color>
     <!--标题栏颜色

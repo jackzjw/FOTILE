@@ -1,6 +1,62 @@
 <resources>
     <string name="app_name">方太直播平台</string>
     <string name="dianbo">点播</string>
+    <!--标题栏-->
+    <string name="title_back">返回</string>
+    <string name="my_account">我的账户</string>
+    <!--我的账户-->
+    <string name="my_order">我的订单</string>
+    <string name="check_all_orders">查看所有订单</string>
+    <string name="wait_pay">待付款</string>
+    <string name="wait_shipments">待发货</string>
+    <string name="wait_receipt">待收货</string>
+    <string name="deal_is_done">交易完成</string>
+    <string name="my_coupons">我的优惠券</string>
+    <string name="my_collections">我的收藏</string>
+    <string name="message_center">消息中心</string>
+    <string name="all">全部</string>
+    <string name="order_number">订单号：</string>
+    <string name="order_money">订单金额：</string>
+    <string name="information">详情</string>
+    <string name="live_or_demand">直播/点播</string>
+    <string name="goods">商品</string>
+    <string name="goto_info">查看详情</string>
+    <string name="living">正在直播</string>
+    <string name="vod">点播</string>
+    <string name="wait_user">可使用</string>
+    <string name="disabled">已失效</string>
+    <string name="fotile_ec">方太电商</string>
+    <string name="use_rule">使用规则</string>
+    <string name="test_describe">1.看我我手指放松\n2.我目光如龙\n3.当敌人是空</string>
+    <string name="user_name">用户名</string>
+    <string name="user_phone">手机号</string>
+    <string name="user_password">密码</string>
+    <string name="user_password_sure">确认密码</string>
+    <string name="please_set_user_name">请输入用户名</string>
+    <string name="please_set_user_phone">请输入手机号</string>
+    <string name="please_set_user_pwd">请输入密码</string>
+    <string name="please_set_user_pwd_sure">请再次输入密码</string>
+    <string name="ok">完&#x0020;&#x0020;&#x0020;&#x0020;成</string>
+    <string name="had_ok">已完成</string>
+    <string name="consignee">收货人：</string>
+    <string name="delivery_address">收货地址：</string>
+    <string name="postcode">邮编：</string>
+    <string name="leave_a_message">留言：</string>
+    <string name="commit_order">提交订单</string>
+    <string name="pay_time">付款时间</string>
+    <string name="shipments_time">发货时间</string>
+    <string name="receipt_time">收货时间</string>
+    <string name="goods_amount">商品金额</string>
+    <string name="freight">运费</string>
+    <string name="coupons_amount">优惠金额</string>
+    <string name="order_amount">订单金额</string>
+    <string name="pay_way">支付方式</string>
+    <string name="order_leave_message">订单留言</string>
+    <string name="logistics_company">物流公司：</string>
+    <string name="waybill_number">运单编号：</string>
+
+
+    <!--首页-->
     <string name="shouye">首页</string>
     <string name="zhibo">直播</string>
     <string name="gouwuche">购物车</string>

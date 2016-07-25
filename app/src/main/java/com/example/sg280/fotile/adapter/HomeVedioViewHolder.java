@@ -1,6 +1,5 @@
 package com.example.sg280.fotile.adapter;
 
-import android.content.Intent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
