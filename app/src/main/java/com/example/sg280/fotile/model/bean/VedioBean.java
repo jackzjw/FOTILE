@@ -1,11 +1,12 @@
 package com.example.sg280.fotile.model.bean;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Created by sg280 on 2016-07-18.
  */
-public class VedioBean implements Serializable{
+public class VedioBean implements Parcelable {
     private  String ID;
     //直播ID,
     private  String LiveName;// "直播名称",
@@ -223,4 +224,74 @@ public class VedioBean implements Serializable{
                 ", MasterUserID='" + MasterUserID + '\'' +
                 '}';
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.ID);
+        dest.writeString(this.LiveName);
+        dest.writeString(this.ClassID);
+        dest.writeString(this.ChannelID);
+        dest.writeString(this.StatusCode);
+        dest.writeString(this.StatusName);
+        dest.writeString(this.BrandID);
+        dest.writeString(this.BrandName);
+        dest.writeString(this.LiveType);
+        dest.writeString(this.LivePix);
+        dest.writeString(this.LivePixSer);
+        dest.writeString(this.StartTime);
+        dest.writeString(this.PreStartTime);
+        dest.writeString(this.EndTime);
+        dest.writeString(this.ClassName);
+        dest.writeString(this.URL);
+        dest.writeString(this.LiveInfo);
+        dest.writeString(this.HitCount);
+        dest.writeString(this.CommentCount);
+        dest.writeString(this.IsHot);
+        dest.writeString(this.MasterUserID);
+    }
+
+    public VedioBean() {
+    }
+
+    protected VedioBean(Parcel in) {
+        this.ID = in.readString();
+        this.LiveName = in.readString();
+        this.ClassID = in.readString();
+        this.ChannelID = in.readString();
+        this.StatusCode = in.readString();
+        this.StatusName = in.readString();
+        this.BrandID = in.readString();
+        this.BrandName = in.readString();
+        this.LiveType = in.readString();
+        this.LivePix = in.readString();
+        this.LivePixSer = in.readString();
+        this.StartTime = in.readString();
+        this.PreStartTime = in.readString();
+        this.EndTime = in.readString();
+        this.ClassName = in.readString();
+        this.URL = in.readString();
+        this.LiveInfo = in.readString();
+        this.HitCount = in.readString();
+        this.CommentCount = in.readString();
+        this.IsHot = in.readString();
+        this.MasterUserID = in.readString();
+    }
+
+    public static final Parcelable.Creator<VedioBean> CREATOR = new Parcelable.Creator<VedioBean>() {
+        @Override
+        public VedioBean createFromParcel(Parcel source) {
+            return new VedioBean(source);
+        }
+
+        @Override
+        public VedioBean[] newArray(int size) {
+            return new VedioBean[size];
+        }
+    };
 }

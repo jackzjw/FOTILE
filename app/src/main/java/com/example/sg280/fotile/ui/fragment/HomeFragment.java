@@ -38,7 +38,7 @@ public class HomeFragment extends BaseFragment implements HomeContacts.View,Swip
 
     @Override
     protected void onInitView() {
-         present=new HomePresent(this);
+         present=new HomePresent(this,getActivity());
     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
       adapter=new HomeAdapter(getActivity());
         DividerDecoration divider = new DividerDecoration(getResources().getColor(R.color.home_divide_gray), DensityUtil.dp2px(getActivity(),20),0,0);

@@ -1,8 +1,13 @@
 package com.example.sg280.fotile.presents;
 
+import android.app.Activity;
+
+import com.example.sg280.fotile.http.FotileRetrofit;
+import com.example.sg280.fotile.http.ProgressSubscriber;
 import com.example.sg280.fotile.model.bean.HomeLiveList;
 import com.example.sg280.fotile.model.source.HomeDataSouceImp;
 import com.example.sg280.fotile.model.source.HomeDataSource;
+import com.example.sg280.fotile.model.source.HttpOnNextListener;
 
 import java.util.List;
 
@@ -13,15 +18,17 @@ public class HomePresent implements HomeContacts.Present {
 
     private HomeContacts.View mview;
     private HomeDataSource source;
-    public HomePresent(HomeContacts.View view){
+    private Activity act;
+    public HomePresent(HomeContacts.View view,Activity activity){
         this.mview=view;
-        source=new HomeDataSouceImp();
+        this.act=activity;
     }
 
     @Override
     public void start() {
-
-        source.getHomeData(new HomeDataSource.CallBack() {
+        HomeDataSouceImp imp=new HomeDataSouceImp(new ProgressSubscriber(homeOnNextListener,act));
+        FotileRetrofit.getInstance().doHttpDeal(imp);
+       /* source.getHomeData(new HomeDataSource.CallBack() {
             @Override
             public void onHomeLoad(List<HomeLiveList> data) {
                  mview.load(data);
@@ -37,12 +44,18 @@ public class HomePresent implements HomeContacts.Present {
             public void onError(String msg) {
                mview.onError(msg);
             }
-        });
+        });*/
     }
-
+    //   回调一一对应
+    HttpOnNextListener homeOnNextListener = new HttpOnNextListener<List<HomeLiveList>>() {
+        @Override
+        public void onNext(List<HomeLiveList> subjects) {
+           mview.load(subjects);
+        }
+    };
     @Override
     public void ondestory() {
            mview=null;
-           source=null;
+
     }
 }

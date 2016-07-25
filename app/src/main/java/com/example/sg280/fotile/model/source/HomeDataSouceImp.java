@@ -1,43 +1,30 @@
 package com.example.sg280.fotile.model.source;
 
-import com.example.sg280.fotile.http.FotileRetrofit;
-import com.example.sg280.fotile.model.bean.HomeLiveList;
-import com.example.sg280.fotile.model.bean.HttpResult;
+import com.example.sg280.fotile.model.bean.BaseEntity;
 
-import java.util.List;
-
-import rx.Observer;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import rx.Observable;
+import rx.Subscriber;
 
 /**
  * Created by sg280 on 2016-07-19.
  */
-public class HomeDataSouceImp implements HomeDataSource {
-    @Override
-    public void getHomeData(final CallBack callBack) {
-        FotileRetrofit.getRetrofit().create(HomeService.class).getHotLiveList().
-                subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<HttpResult<List<HomeLiveList>>>() {
-            @Override
-            public void onCompleted() {
+public class HomeDataSouceImp extends BaseEntity {
 
-            }
+    private Subscriber msubscrible;
 
-            @Override
-            public void onError(Throwable e) {
-                    callBack.onDataNotAvaiable();
-             //   callBack.onError(e.getMessage());
-            }
-
-            @Override
-            public void onNext(HttpResult<List<HomeLiveList>> result) {
-
-                          if(result.getSuccess()==1){
-                              callBack.onHomeLoad(result.getRows());
-                          }else {
-                              callBack.onError(result.getErrorMessage());
-                          }
-            }
-        });
+    public HomeDataSouceImp(Subscriber getHomelist){
+            this.msubscrible=getHomelist;
     }
+
+    @Override
+    public Observable getObservable(HttpService methods) {
+        return methods.getHotLiveList();
+    }
+
+    @Override
+    public Subscriber getSubscirber() {
+        return msubscrible;
+    }
+
+
 }

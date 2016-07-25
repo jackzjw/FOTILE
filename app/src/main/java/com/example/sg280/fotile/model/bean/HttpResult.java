@@ -4,26 +4,26 @@ package com.example.sg280.fotile.model.bean;
  * Created by sg280 on 2016-07-19.
  */
 public class HttpResult<T> {
-    private String  Start; //当前页
-    private String  Limit; // 没有条数
+    private int  Start; //当前页
+    private int  Limit; // 没有条数
     private String  ErrorCode; //错误码
     private String  ErrorMessage;//   错误信息
     private int  Success;//   是否成功
    private  T Rows;//data数据
 
-    public String getStart() {
+    public int getStart() {
         return Start;
     }
 
-    public void setStart(String start) {
+    public void setStart(int start) {
         Start = start;
     }
 
-    public String getLimit() {
+    public int getLimit() {
         return Limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(int limit) {
         Limit = limit;
     }
 
