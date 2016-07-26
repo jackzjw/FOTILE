@@ -15,20 +15,16 @@
     <color name="hui_text">#6E6E6E</color>
     <!-- 背景填充色 -->
     <color name="hui_bg">#F4F4F4</color>
-    <!-- 非常接近黑色 底部导航的背景色 -->
+
     <color name="black">#000000</color>
     <!--项目中用到的红色-->
     <color name="red">#820429</color>
     <!--标题栏的背景颜色-->
     <color name="title_bg">#FBFBFB</color>
 
-
     <color name="theme_gray">#636363</color>
 
     <color name="home_divide_gray">#F4F4F4</color>
-    <!--标题栏颜色
-    -->
+    <!--标题栏颜色-->
     <color name="title_bg_color">#FBFBFB</color>
-<!--黑色-->
-    <color name="black">#000000</color>
 </resources>

@@ -8,7 +8,7 @@ import com.example.sg280.fotile.R;
 public class MyFragment extends BaseFragment {
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_order_info;
+        return R.layout.activity_register;
     }
 
     @Override

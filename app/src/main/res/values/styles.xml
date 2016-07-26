@@ -66,4 +66,13 @@
         <item name="android:layout_width">wrap_content</item>
     </style>
 
+    <!--注册界面的14sp的文字样式-->
+    <style name="register_14_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
 </resources>

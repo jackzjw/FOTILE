@@ -23,7 +23,7 @@ import butterknife.Bind;
 /**
  * Created by sg280 on 2016-07-19.
  */
-public class HomeFragment extends BaseFragment implements HomeContacts.View,SwipeRefreshLayout.OnRefreshListener{
+public class HomeFragment extends BaseFragment implements HomeContacts.View, SwipeRefreshLayout.OnRefreshListener {
     @Bind(R.id.recyclerView)
     EasyRecyclerView recyclerView;
     @Bind(R.id.network_error_layout)
@@ -31,6 +31,7 @@ public class HomeFragment extends BaseFragment implements HomeContacts.View,Swip
     private BasePresenter present;
     private HomeAdapter adapter;
     private View networkErrorView;
+
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_home;
@@ -38,28 +39,28 @@ public class HomeFragment extends BaseFragment implements HomeContacts.View,Swip
 
     @Override
     protected void onInitView() {
-         present=new HomePresent(this,getActivity());
-    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-      adapter=new HomeAdapter(getActivity());
-        DividerDecoration divider = new DividerDecoration(getResources().getColor(R.color.home_divide_gray), DensityUtil.dp2px(getActivity(),20),0,0);
-      recyclerView.addItemDecoration(divider);
-      recyclerView.setAdapter(adapter);
+        present = new HomePresent(this, getActivity());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new HomeAdapter(getActivity());
+        DividerDecoration divider = new DividerDecoration(getResources().getColor(R.color.home_divide_gray), DensityUtil.dp2px(getActivity(), 20), 0, 0);
+        recyclerView.addItemDecoration(divider);
+        recyclerView.setAdapter(adapter);
         recyclerView.setRefreshListener(this);
-         present.start();
+        present.start();
     }
 
     @Override
     public void load(List<HomeLiveList> list) {
 
-          adapter.clear();
-            adapter.addAll(list);
+        adapter.clear();
+        adapter.addAll(list);
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void onError(String error) {
-              hideLoadingView();
-              ToastUtil.showLong(getActivity(), error);
+        hideLoadingView();
+        ToastUtil.showLong(getActivity(), error);
     }
 
     @Override
@@ -81,6 +82,7 @@ public class HomeFragment extends BaseFragment implements HomeContacts.View,Swip
             networkErrorView.setVisibility(View.GONE);
         }
     }
+
     @Override
     public void onRefresh() {
         present.start();

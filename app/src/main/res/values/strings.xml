@@ -55,7 +55,18 @@
     <string name="logistics_company">物流公司：</string>
     <string name="waybill_number">运单编号：</string>
 
+    <!--登录注册-->
 
+    <string name="login">登录</string>
+    <string name="phone_num">手机号</string>
+    <string name="password">密码</string>
+    <string name="register">注&#160;&#160;&#160;&#160;册</string>
+    <string name="verification_code">验证码</string>
+    <string name="send_verification_code">发送验证码</string>
+    <string name="next">下一步</string>
+    <string name="setNewPwd">设置新密码</string>
+    <string name="sureNewPwd">确认新密码</string>
+    <string name="submit">提&#160;&#160;&#160;&#160;交</string>
     <!--首页-->
     <string name="shouye">首页</string>
     <string name="zhibo">直播</string>
