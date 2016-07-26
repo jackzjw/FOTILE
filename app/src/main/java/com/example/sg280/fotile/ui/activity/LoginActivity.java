@@ -103,6 +103,7 @@ public class LoginActivity extends Activity implements LoginContacts.View {
     @Override
     public void loginSucc() {
         ToastUtil.showLong(this, "登录成功");
+        jumpIntoHomeActivity();
     }
 
     @Override

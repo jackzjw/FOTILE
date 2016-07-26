@@ -42,4 +42,5 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
     compile files('libs/imsdk.jar')
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile files('libs/qalsdk.jar')
 }
