@@ -2,7 +2,7 @@ package com.example.sg280.fotile.app;
 
 import android.app.Application;
 
-import com.example.sg280.fotile.app.exception.LocalFileHandler;
+import com.example.sg280.fotile.presents.InitAppPresent;
 import com.example.sg280.fotile.utils.LogUtil;
 import com.example.sg280.fotile.utils.ToastUtil;
 
@@ -25,9 +25,8 @@ public class FTApplication extends Application{
 
         //配置时候显示toast
         ToastUtil.isShow = true;
-
-        //配置程序异常退出处理
-        Thread.setDefaultUncaughtExceptionHandler(new LocalFileHandler(this));
+            //APP初始化
+        InitAppPresent.initApp(getApplicationContext());
     }
     public static OkHttpClient defaultOkHttpClient() {
         OkHttpClient client = new OkHttpClient.Builder()

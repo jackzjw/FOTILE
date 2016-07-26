@@ -76,5 +76,14 @@
     <string name="title_ad">创意广告</string>
     <string name="title_vedio">产品视频</string>
 
+    <!--登录注册-->
+    <string name="phone">手机号</string>
+    <string name="passward">密码</string>
+    <string name="login">登&#x0020;&#x0020;录</string>
+    <string name="register">注册</string>
+    <string name="forget_pwd">忘记密码？</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+
 </resources>
 
