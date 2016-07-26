@@ -52,6 +52,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
         Context context = mActivity.get();
         if (pd == null && context != null) {
             pd = new ProgressDialog(context);
+            pd.setMessage("加载中...");
             pd.setCancelable(cancel);
             if (cancel) {
                 pd.setOnCancelListener(new DialogInterface.OnCancelListener() {
