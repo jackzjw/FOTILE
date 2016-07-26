@@ -10,7 +10,8 @@ public class RegisterActivity extends BaseActivity {
     protected int getLayoutResource() {
         return 0;
 
-        //提交成功
+        //提交成功】
+        //ertgergregr
     }
 
     @Override
