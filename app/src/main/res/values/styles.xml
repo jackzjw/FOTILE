@@ -66,6 +66,13 @@
         <item name="android:layout_width">wrap_content</item>
     </style>
 
+    <!--14sp的黑色文字样式-->
+    <style name="my_word_20_red_style">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

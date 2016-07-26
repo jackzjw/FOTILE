@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hui_bg">
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_baseTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <include
+            android:id="@+id/base_title"
+            layout="@layout/base_title" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="@string/bulk_operation"
+            android:textColor="@color/red"
+            android:textSize="14sp" />
+
+        <include
+            layout="@layout/item_underline_long_hui_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"></include>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_baseTitle"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/iv_is_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/cart_icon_choice_unselected_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/iv_is_selected"
+                android:src="@drawable/user_logo_fotile" />
+        </RelativeLayout>
+
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <include layout="@layout/item_underline_long"></include>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:id="@+id/tv_goods_price"
+                style="@style/my_word_14_black_style"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="120dp"
+                android:text="@string/goods_price" />
+
+            <TextView
+                android:id="@+id/tv_goods_price_info"
+                style="@style/my_word_20_red_style"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_goods_price"
+                android:text="¥ 19999" />
+
+            <TextView
+                android:id="@+id/tv_settlement"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@color/red"
+                android:gravity="center"
+                android:text="@string/settlement"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cart_is_null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/iv_no_goods"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/cart_icon_cart_empty" />
+
+        <TextView
+            style="@style/my_word_14_black_style"
+            android:layout_below="@+id/iv_no_goods"
+            android:layout_marginTop="15dp"
+            android:text="@string/shopping_cart_is_null" />
+    </RelativeLayout>
+
+</RelativeLayout>

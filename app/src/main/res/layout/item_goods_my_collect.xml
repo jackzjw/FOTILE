@@ -12,26 +12,20 @@
         android:src="@mipmap/ic_launcher" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/my_word_16_black_style"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/iv_goods_my_order"
         android:maxLines="1"
         android:text="哈哈哈哈哈哈哈哈哈"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_now_money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/my_word_20_red_style"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         android:layout_toRightOf="@+id/iv_goods_my_order"
-        android:text="¥ 1234"
-        android:textColor="@color/red"
-        android:textSize="20sp"/>
+        android:text="¥ 1234" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -42,11 +36,8 @@
         android:layout_toRightOf="@+id/tv_now_money">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¥ 1235"
-            android:textColor="@color/hui_text"
-            android:textSize="14sp" />
+            style="@style/my_word_14_gray_style"
+            android:text="¥ 1235" />
 
         <TextView
             android:layout_width="45dp"
@@ -59,12 +50,12 @@
     <Button
         android:layout_width="110dp"
         android:layout_height="30dp"
-        android:text="@string/goto_info"
-        android:textSize="16sp"
-        android:textColor="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="15dp"
-        android:background="@drawable/shape_goto_info"/>
+        android:background="@drawable/shape_goto_info"
+        android:text="@string/goto_info"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
 </RelativeLayout>

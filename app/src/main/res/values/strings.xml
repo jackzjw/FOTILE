@@ -55,6 +55,12 @@
     <string name="logistics_company">物流公司：</string>
     <string name="waybill_number">运单编号：</string>
 
+    <!--购物车-->
+    <string name="shopping_cart_is_null">您的购物车是空的</string>
+    <string name="bulk_operation">批量操作</string>
+    <string name="goods_price">商品金额：</string>
+    <string name="settlement">结算</string>
+
     <!--登录注册-->
 
     <string name="login_">登录</string>
