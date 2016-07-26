@@ -57,10 +57,10 @@
 
     <!--登录注册-->
 
-    <string name="login">登录</string>
+    <string name="login_">登录</string>
     <string name="phone_num">手机号</string>
     <string name="password">密码</string>
-    <string name="register">注&#160;&#160;&#160;&#160;册</string>
+    <string name="register_">注&#160;&#160;&#160;&#160;册</string>
     <string name="verification_code">验证码</string>
     <string name="send_verification_code">发送验证码</string>
     <string name="next">下一步</string>

@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:gravity="center"
-            android:text="@string/login"
+            android:text="@string/login_"
             android:textColor="@color/red"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -91,7 +91,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/shape_button_register"
             android:gravity="center"
-            android:text="@string/register"
+            android:text="@string/register_"
             android:textColor="@color/white"
             android:textSize="14sp" />
     </LinearLayout>
