@@ -9,7 +9,7 @@ import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.adapter.HomeAdapter;
 import com.example.sg280.fotile.model.bean.HomeLiveList;
 import com.example.sg280.fotile.presents.BasePresenter;
-import com.example.sg280.fotile.presents.HomeContacts;
+import com.example.sg280.fotile.presents.Interface.IHomeContacts;
 import com.example.sg280.fotile.presents.HomePresent;
 import com.example.sg280.fotile.utils.DensityUtil;
 import com.example.sg280.fotile.utils.ToastUtil;
@@ -23,7 +23,7 @@ import butterknife.Bind;
 /**
  * Created by sg280 on 2016-07-19.
  */
-public class HomeFragment extends BaseFragment implements HomeContacts.View, SwipeRefreshLayout.OnRefreshListener {
+public class HomeFragment extends BaseFragment implements IHomeContacts.View, SwipeRefreshLayout.OnRefreshListener {
     @Bind(R.id.recyclerView)
     EasyRecyclerView recyclerView;
     @Bind(R.id.network_error_layout)

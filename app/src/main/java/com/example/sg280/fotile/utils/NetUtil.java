@@ -6,6 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
+import android.widget.Toast;
+
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
 
 /**
  * 网络相关辅助类
@@ -62,6 +67,20 @@ public class NetUtil {
         intent.setComponent(cm);
         intent.setAction("android.intent.action.VIEW");
         activity.startActivityForResult(intent, 0);
+    }
+    //网络出错时用户交互
+    public static void onError(Context context,Throwable e) {
+      //  Context context = mActivity.get();
+        if (context == null) return;
+        if (e instanceof SocketTimeoutException) {
+            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+        } else if (e instanceof ConnectException) {
+            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context,   e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.i("tag", "error----------->" + e.toString());
+        }
+
     }
 
 }

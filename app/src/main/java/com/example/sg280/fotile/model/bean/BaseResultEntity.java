@@ -2,6 +2,7 @@ package com.example.sg280.fotile.model.bean;
 
 import com.example.sg280.fotile.app.exception.BaseException;
 import com.example.sg280.fotile.model.source.HttpService;
+import com.example.sg280.fotile.utils.LogUtil;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -30,7 +31,8 @@ public abstract class BaseResultEntity<T> implements Func1<HttpDataResult<T>, T>
 
     @Override
     public T call(HttpDataResult<T> httpResult) {
-        if ((httpResult.getSuccess()+"").equals(0)) {
+        if ("0".equals(httpResult.getSuccess())) {
+            LogUtil.e(httpResult.getErrorMessage());
             throw new BaseException(httpResult.getErrorMessage());
         }
         return httpResult.getResult();

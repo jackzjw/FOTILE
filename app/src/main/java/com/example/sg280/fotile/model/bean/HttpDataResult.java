@@ -6,7 +6,7 @@ package com.example.sg280.fotile.model.bean;
 public class HttpDataResult<T> {
     private String ErrorCode;// 错误码,
     private String ErrorMessage;// 错误信息,
-    private int Success; //"1"是否成功
+    private String Success; //"1"是否成功
     private T Result;
 
     public String getErrorCode() {
@@ -25,11 +25,11 @@ public class HttpDataResult<T> {
         ErrorMessage = errorMessage;
     }
 
-    public int getSuccess() {
+    public String getSuccess() {
         return Success;
     }
 
-    public void setSuccess(int success) {
+    public void setSuccess(String success) {
         Success = success;
     }
 

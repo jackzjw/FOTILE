@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
            navi.setOnClickListener(this);
        }
         setBroadCast();
-      setChoiceItem(0);
+      setChoiceItem(4);
 
 
 

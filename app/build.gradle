@@ -43,4 +43,12 @@ dependencies {
     compile files('libs/imsdk.jar')
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile files('libs/qalsdk.jar')
+    //检测内存泄漏
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    /*compile 'com.google.android.exoplayer:exoplayer:r1.4.1'
+        compile ':playersdk@aar'
+    */
+    compile files('libs/txrtmpsdk.jar')
 }

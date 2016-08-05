@@ -5,6 +5,7 @@ import android.app.Application;
 import com.example.sg280.fotile.presents.InitAppPresent;
 import com.example.sg280.fotile.utils.LogUtil;
 import com.example.sg280.fotile.utils.ToastUtil;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +28,7 @@ public class FTApplication extends Application{
         ToastUtil.isShow = true;
             //APP初始化
         InitAppPresent.initApp(getApplicationContext());
+        LeakCanary.install(this);
     }
     public static OkHttpClient defaultOkHttpClient() {
         OkHttpClient client = new OkHttpClient.Builder()

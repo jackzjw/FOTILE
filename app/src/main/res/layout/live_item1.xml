@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+        <ImageView
+            android:id="@+id/live_img_big"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@drawable/dianbo_type_shape"
+           android:layout_alignBottom="@+id/live_img_big"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="@string/zhibo"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/live_icon_play"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/live_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="11sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/live_date_1"
+        android:text=""/>
+</LinearLayout>

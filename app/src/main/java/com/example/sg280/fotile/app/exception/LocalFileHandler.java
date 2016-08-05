@@ -5,6 +5,7 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import com.example.sg280.fotile.utils.FileUtil;
+import com.example.sg280.fotile.utils.LogUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,8 +48,8 @@ public class LocalFileHandler extends BaseExceptionHandler {
         }.start();
 
         //保存错误日志
-        saveLog(ex);
-
+      //  saveLog(ex);
+        LogUtil.e("返回信息",ex.toString());
         return true;
     }
 
