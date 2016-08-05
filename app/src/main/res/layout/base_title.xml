@@ -4,12 +4,13 @@
     android:layout_height="50dp"
     android:background="@color/title_bg">
 
-    <TextView
+    <ImageView
+        android:id="@+id/iv_back_title"
         android:layout_width="22dp"
         android:layout_height="16dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/user_icon_arrow_left_red"/>
+        android:src="@drawable/user_icon_arrow_left_red"/>
 
     <TextView
         android:id="@+id/tv_title"

@@ -18,7 +18,7 @@ package com.example.sg280.fotile.presents;
 
 public interface BasePresenter {
 
-    void start();
+//    void start();
     void ondestory();
 
 }

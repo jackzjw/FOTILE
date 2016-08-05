@@ -22,6 +22,7 @@
             android:layout_marginLeft="20dp"
             android:text="@string/user_name"/>
         <EditText
+            android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
@@ -45,6 +46,7 @@
             android:layout_marginLeft="20dp"
             android:text="@string/user_phone"/>
         <EditText
+            android:id="@+id/et_phoneNum"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
@@ -68,6 +70,7 @@
             android:layout_marginLeft="20dp"
             android:text="@string/user_password"/>
         <EditText
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
@@ -91,6 +94,7 @@
             android:layout_marginLeft="20dp"
             android:text="@string/user_password_sure"/>
         <EditText
+            android:id="@+id/et_password_again"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
@@ -106,6 +110,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
         <Button
+            android:id="@+id/btn_over"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"

@@ -9,7 +9,7 @@ import rx.android.schedulers.AndroidSchedulers;
 /**
  * Created by sg280 on 2016-07-26.
  */
-public class RegisterSourceImp implements RegisterSouce{
+public class RegisterSourceImp implements RegisterSouce {
 
 
     @Override
@@ -23,16 +23,16 @@ public class RegisterSourceImp implements RegisterSouce{
 
             @Override
             public void onError(Throwable e) {
-              listener.noResponse();
+                listener.noResponse();
             }
 
             @Override
             public void onNext(NoResponseResult noResponseResult) {
-                          if(noResponseResult.getSuccess().equals("1")){
-                            //  listener.success();
-                          }else {
-                              listener.failed(noResponseResult.getErrorMessage());
-                          }
+                if (noResponseResult.getSuccess().equals("1")) {
+                    //  listener.success();
+                } else {
+                    listener.failed(noResponseResult.getErrorMessage());
+                }
             }
         });
     }
@@ -40,7 +40,7 @@ public class RegisterSourceImp implements RegisterSouce{
     @Override
     public void userValid(String tel, String dycode, final DataListener listener) {
         FotileRetrofit.getInstance().getRetrofit().create(HttpService.class).
-                conformDycode(tel,dycode).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<NoResponseResult>() {
+                conformDycode(tel, dycode).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<NoResponseResult>() {
             @Override
             public void onCompleted() {
 
@@ -48,14 +48,14 @@ public class RegisterSourceImp implements RegisterSouce{
 
             @Override
             public void onError(Throwable e) {
-                   listener.noResponse();
+                listener.noResponse();
             }
 
             @Override
             public void onNext(NoResponseResult noResponseResult) {
-                if(noResponseResult.getSuccess().equals("1")){
-                     listener.success();
-                }else {
+                if (noResponseResult.getSuccess().equals("1")) {
+                    listener.success();
+                } else {
                     listener.failed(noResponseResult.getErrorMessage());
                 }
             }

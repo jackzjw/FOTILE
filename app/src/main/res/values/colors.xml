@@ -22,7 +22,8 @@
     <!--标题栏的背景颜色-->
     <color name="title_bg">#FBFBFB</color>
 
-
+    <!--领取优惠码的上半部分的红色-->
+<color name="bg_get_coupons">#910025</color>
     <color name="theme_gray">#636363</color>
 
     <color name="home_divide_gray">#F4F4F4</color>

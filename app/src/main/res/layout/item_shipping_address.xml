@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/hui_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:padding="20dp">
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_location"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/cart_icon_choice_selected_red" />-->
+
+        <CheckBox
+            android:id="@+id/cb_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            style="@style/myCheckbox"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/tv_consignee"
+            style="@style/my_word_16_black_style"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/cb_address"
+            android:text="@string/consignee" />
+
+        <TextView
+            android:id="@+id/tv_consignee_info"
+            style="@style/my_word_16_black_style"
+            android:layout_alignBaseline="@+id/tv_consignee"
+            android:layout_toRightOf="@+id/tv_consignee"
+            android:text="鱼鱼风" />
+
+        <TextView
+            android:id="@+id/tv_phone_number"
+            style="@style/my_word_16_black_style"
+            android:layout_alignBaseline="@+id/tv_consignee"
+            android:layout_alignParentRight="true"
+            android:text="12345678910" />
+
+
+        <TextView
+            android:id="@+id/tv_delivery_address"
+            style="@style/my_word_14_gray_style"
+            android:layout_below="@+id/tv_consignee"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/cb_address"
+            android:text="@string/delivery_address" />
+
+        <TextView
+            android:id="@+id/tv_delivery_address_info"
+            style="@style/my_word_14_gray_style"
+            android:layout_alignBaseline="@+id/tv_delivery_address"
+            android:layout_toRightOf="@+id/tv_delivery_address"
+            android:text="这是一个神奇的地方" />
+
+        <TextView
+            android:id="@+id/tv_postcode"
+            style="@style/my_word_14_gray_style"
+            android:layout_below="@+id/tv_delivery_address"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/cb_address"
+            android:text="@string/postcode" />
+
+        <TextView
+            android:id="@+id/tv_postcode_info"
+            style="@style/my_word_14_gray_style"
+            android:layout_alignBaseline="@+id/tv_postcode"
+            android:layout_toRightOf="@+id/tv_postcode"
+            android:text="646000" />
+
+    </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/hui_bg"
+    android:layout_marginTop="1dp"
+    android:orientation="horizontal">
+
+   <RelativeLayout
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:background="@color/white"
+       android:gravity="center_horizontal">
+
+       <ImageView
+           android:id="@+id/iv_compile"
+           android:layout_width="16dp"
+           android:layout_height="16dp"
+           android:src="@drawable/cart_icon_edit_gray"
+           android:layout_centerVertical="true"/>
+       <TextView
+           style="@style/my_word_14_gray_style"
+           android:layout_toRightOf="@+id/iv_compile"
+           android:text="@string/compile"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="5dp"/>
+
+   </RelativeLayout>
+
+   <RelativeLayout
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_marginLeft="1dp"
+       android:layout_weight="1"
+       android:background="@color/white"
+       android:gravity="center_horizontal">
+
+       <ImageView
+           android:id="@+id/iv_delete"
+           android:layout_width="16dp"
+           android:layout_height="16dp"
+           android:src="@drawable/cart_icon_delete_gray"
+           android:layout_centerVertical="true"/>
+       <TextView
+           style="@style/my_word_14_gray_style"
+           android:layout_toRightOf="@+id/iv_delete"
+           android:text="@string/delete"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="5dp"/>
+
+   </RelativeLayout>
+
+</LinearLayout>
+
+</LinearLayout>

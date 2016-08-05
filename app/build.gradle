@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.sg280.fotile"
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -43,4 +43,6 @@ dependencies {
     compile files('libs/imsdk.jar')
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile files('libs/qalsdk.jar')
+    compile files('libs/exoplayerlib.jar')
+    compile files('libs/playersdk.jar')
 }

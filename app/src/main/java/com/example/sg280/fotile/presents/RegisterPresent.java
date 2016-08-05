@@ -18,10 +18,6 @@ public class RegisterPresent  implements RegisterContracts.Present{
         source=new RegisterSourceImp();
     }
 
-    @Override
-    public void start() {
-
-    }
 
     @Override
     public void ondestory() {

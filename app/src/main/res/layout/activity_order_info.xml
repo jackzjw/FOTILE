@@ -374,7 +374,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="0.5dp"
+                android:layout_marginTop="0.7dp"
                 android:background="@color/white">
 
                 <TextView
@@ -395,7 +395,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="0.5dp"
+                android:layout_marginTop="0.7dp"
                 android:background="@color/white">
 
                 <TextView
@@ -416,7 +416,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="0.5dp"
+                android:layout_marginTop="0.7dp"
                 android:background="@color/white">
 
                 <TextView
