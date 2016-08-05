@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">方太直播平台</string>
+    <string name="app_name">方太直播购</string>
     <string name="dianbo">点播</string>
     <!--标题栏-->
     <string name="title_back">返回</string>
@@ -89,7 +89,12 @@
     <string name="register">注册</string>
     <string name="forget_pwd">忘记密码？</string>
     <string name="title_activity_login">LoginActivity</string>
-
-
+    <!--直播、点播-->
+    <string name="total_products">查看全部商品</string>
+    <string name="receive_coupon">领取优惠券</string>
+    <string name="product_detail">查看详情</string>
+    <string name="live_message">消息</string>
+    <string name="live_introduce">介绍</string>
+    <string name="live_see_buy">边看边买</string>
 </resources>
 

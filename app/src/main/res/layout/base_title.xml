@@ -10,7 +10,7 @@
         android:layout_height="16dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="20dp"
-        android:src="@drawable/user_icon_arrow_left_red"/>
+        android:background="@drawable/user_icon_arrow_left_red"/>
 
     <TextView
         android:id="@+id/tv_title"

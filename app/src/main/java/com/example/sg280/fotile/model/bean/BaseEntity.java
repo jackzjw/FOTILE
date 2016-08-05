@@ -30,7 +30,7 @@ public abstract class BaseEntity<T> implements Func1<HttpResult<T>, T> {
 
     @Override
     public T call(HttpResult<T> httpResult) {
-        if (httpResult.getSuccess() == 0) {
+        if (httpResult.getSuccess().equals("0")) {
             throw new BaseException(httpResult.getErrorMessage());
         }
         return httpResult.getRows();

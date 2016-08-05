@@ -8,11 +8,11 @@ import rx.Subscriber;
 /**
  * Created by sg280 on 2016-07-25.
  */
-public class LoginDataSource extends BaseResultEntity {
+public class LoginSubject extends BaseResultEntity {
     private Subscriber msubscriber;
     private String mid;
     private String mpwd;
-    public LoginDataSource(Subscriber subscriber,String id,String pwd){
+    public LoginSubject(Subscriber subscriber, String id, String pwd){
         this.msubscriber=subscriber;
         this.mid=id;
         this.mpwd=pwd;

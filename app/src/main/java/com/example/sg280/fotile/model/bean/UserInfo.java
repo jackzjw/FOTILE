@@ -15,6 +15,15 @@ public class UserInfo {
     private String UserAvatar;// 用户头像,
     private String UserAvatarSer;
     private String TlsSig;// 头像地址
+    private String SigCreateTime;
+
+    public String getSigCreateTime() {
+        return SigCreateTime;
+    }
+
+    public void setSigCreateTime(String sigCreateTime) {
+        SigCreateTime = sigCreateTime;
+    }
 
     public String getUserID() {
         return UserID;
@@ -86,5 +95,21 @@ public class UserInfo {
 
     public void setTlsSig(String tlsSig) {
         TlsSig = tlsSig;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "UserID='" + UserID + '\'' +
+                ", Identifier='" + Identifier + '\'' +
+                ", UserTel='" + UserTel + '\'' +
+                ", UserName='" + UserName + '\'' +
+                ", UserNameType='" + UserNameType + '\'' +
+                ", PwdType='" + PwdType + '\'' +
+                ", UserAvatar='" + UserAvatar + '\'' +
+                ", UserAvatarSer='" + UserAvatarSer + '\'' +
+                ", TlsSig='" + TlsSig + '\'' +
+                ", SigCreateTime='" + SigCreateTime + '\'' +
+                '}';
     }
 }

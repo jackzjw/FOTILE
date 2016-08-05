@@ -4,14 +4,25 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.example.sg280.fotile.app.Constants;
-import com.example.sg280.fotile.app.exception.LocalFileHandler;
+import com.example.sg280.fotile.http.FotileRetrofit;
+import com.example.sg280.fotile.model.bean.HttpResult;
 import com.example.sg280.fotile.model.bean.MySelfInfo;
+import com.example.sg280.fotile.model.bean.VedioCategoryBean;
+import com.example.sg280.fotile.model.source.HttpService;
 import com.example.sg280.fotile.utils.LogUtil;
+import com.example.sg280.fotile.utils.NetUtil;
+import com.example.sg280.fotile.utils.ToastUtil;
 import com.tencent.TIMCallBack;
 import com.tencent.TIMManager;
 import com.tencent.TIMUser;
 import com.tencent.TIMUserStatusListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 import tencent.tls.platform.TLSAccountHelper;
 import tencent.tls.platform.TLSErrInfo;
 import tencent.tls.platform.TLSLoginHelper;
@@ -53,7 +64,7 @@ public class InitAppPresent {
 
             @Override
             public void onUserSigExpired() {
-             //   SxbLog.w(TAG, "onUserSigExpired->entered!");
+                //   SxbLog.w(TAG, "onUserSigExpired->entered!");
                 refreshSig();
             }
         });
@@ -64,8 +75,9 @@ public class InitAppPresent {
         initTls(context);
         //初始化CrashReport系统
         //配置程序异常退出处理
-        Thread.setDefaultUncaughtExceptionHandler(new LocalFileHandler(context));
-
+     //   Thread.setDefaultUncaughtExceptionHandler(new LocalFileHandler(context));
+       //获取点播、直播分类接口
+        getVedioClassCategory(context);
     }
     /**
      * 初始化TLS登录模块
@@ -127,12 +139,46 @@ public class InitAppPresent {
 
             @Override
             public void OnRefreshUserSigFail(TLSErrInfo tlsErrInfo) {
-               LogUtil.i(TAG, "OnRefreshUserSigFail->" + tlsErrInfo.ErrCode + "|" + tlsErrInfo.Msg);
+                LogUtil.i(TAG, "OnRefreshUserSigFail->" + tlsErrInfo.ErrCode + "|" + tlsErrInfo.Msg);
             }
 
             @Override
             public void OnRefreshUserSigTimeout(TLSErrInfo tlsErrInfo) {
                 LogUtil.i(TAG, "OnRefreshUserSigTimeout->" + tlsErrInfo.ErrCode + "|" + tlsErrInfo.Msg);
+            }
+        });
+    }
+    //获取直播、点播分类id
+   public static void getVedioClassCategory( Context context){
+        FotileRetrofit.getInstance().getRetrofit().create(HttpService.class).getVedioCategory().subscribeOn(Schedulers.io()
+        ).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<HttpResult<List<VedioCategoryBean>>>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                NetUtil.onError(context,e);
+            }
+
+            @Override
+            public void onNext(HttpResult<List<VedioCategoryBean>> listHttpResult) {
+                    if(listHttpResult.getSuccess().equals("0")){
+                        ToastUtil.showLong(context,listHttpResult.getErrorMessage());
+                    }else {
+                             List<String> live=new ArrayList<String>();
+                        List<String> vedio=new ArrayList<String>();
+                        for(VedioCategoryBean bean:listHttpResult.getRows()){
+                            if(bean.getClassType().equals("1")){
+                               live.add(bean.getID());
+                            }else if(bean.getClassType().equals("2")){
+                               vedio.add(bean.getID());
+                            }
+                        }
+                        MySelfInfo.getInstance().setLiveCategory(live);
+                        MySelfInfo.getInstance().setVedioCategory(vedio);
+                    }
             }
         });
     }

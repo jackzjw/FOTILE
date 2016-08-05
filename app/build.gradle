@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.sg280.fotile"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -45,4 +45,12 @@ dependencies {
     compile files('libs/qalsdk.jar')
     compile files('libs/exoplayerlib.jar')
     compile files('libs/playersdk.jar')
+    //检测内存泄漏
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    /*compile 'com.google.android.exoplayer:exoplayer:r1.4.1'
+        compile ':playersdk@aar'
+    */
+    compile files('libs/txrtmpsdk.jar')
 }

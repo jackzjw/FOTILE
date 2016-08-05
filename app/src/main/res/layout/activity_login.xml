@@ -27,6 +27,7 @@
            android:layout_centerHorizontal="true"
            android:layout_width="250dp"
            android:paddingLeft="10dp"
+           android:password="true"
            android:layout_height="40dp"
            android:hint="@string/passward"
            android:singleLine="true"

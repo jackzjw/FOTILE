@@ -8,7 +8,7 @@ public class HttpResult<T> {
     private int  Limit; // 没有条数
     private String  ErrorCode; //错误码
     private String  ErrorMessage;//   错误信息
-    private int  Success;//   是否成功
+    private String  Success;//   是否成功
    private  T Rows;//data数据
 
     public int getStart() {
@@ -43,11 +43,11 @@ public class HttpResult<T> {
         ErrorMessage = errorMessage;
     }
 
-    public int getSuccess() {
+    public String getSuccess() {
         return Success;
     }
 
-    public void setSuccess(int success) {
+    public void setSuccess(String success) {
         Success = success;
     }
 

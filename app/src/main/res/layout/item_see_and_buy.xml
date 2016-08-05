@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="100dp"
+   android:layout_width="match_parent">
+    <ImageView
+        android:id="@+id/img_product"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_product_name"
+        android:layout_toRightOf="@+id/img_product"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/theme_red"
+        android:layout_marginTop="20dp"
+
+        android:layout_toRightOf="@+id/img_product"
+
+        android:id="@+id/tv_product_price"/>
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/tv_product_price_before"
+         android:layout_toRightOf="@id/tv_product_price"
+         android:textSize="9sp"/>
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:text="@string/product_detail"
+        android:background="@drawable/shape_btn_product_detail"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/tv_product_price"
+        android:layout_marginTop="5dp"
+        />
+
+
+
+
+</RelativeLayout>

@@ -36,6 +36,9 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
         this.cancel = false;
         initProgressDialog();
     }
+    public ProgressSubscriber(HttpOnNextListener mSubscriberOnNextListener){
+        this.mSubscriberOnNextListener = mSubscriberOnNextListener;
+    }
 
     public ProgressSubscriber(HttpOnNextListener mSubscriberOnNextListener, Context context, boolean cancel) {
         this.mSubscriberOnNextListener = mSubscriberOnNextListener;
@@ -120,7 +123,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
         } else if (e instanceof ConnectException) {
             Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "错误" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,   e.getMessage(), Toast.LENGTH_SHORT).show();
             Log.i("tag", "error----------->" + e.toString());
         }
         dismissProgressDialog();

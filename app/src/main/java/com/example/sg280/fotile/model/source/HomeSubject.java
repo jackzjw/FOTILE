@@ -8,11 +8,11 @@ import rx.Subscriber;
 /**
  * Created by sg280 on 2016-07-19.
  */
-public class HomeDataSouceImp extends BaseEntity {
+public class HomeSubject extends BaseEntity {
 
     private Subscriber msubscrible;
 
-    public HomeDataSouceImp(Subscriber getHomelist){
+    public HomeSubject(Subscriber getHomelist){
             this.msubscrible=getHomelist;
     }
 

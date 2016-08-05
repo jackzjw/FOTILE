@@ -6,6 +6,8 @@
     <uses-permission  android:name="android.permission.ACCESS_NETWORK_STATE"  />
     <uses-permission  android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission  android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -14,12 +16,20 @@
         android:supportsRtl="true"
         android:name=".app.FTApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.MainActivity">]
+        <activity android:name=".ui.activity.MainActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
         <activity android:name=".ui.activity.LoginActivity"></activity>
         <activity android:name=".ui.activity.SureOrderActivity"></activity>
@@ -32,7 +42,12 @@
 
        <activity android:name=".ui.activity.RegisterActivity"
            android:screenOrientation="portrait"></activity>
-
+        <activity android:name=".ui.activity.ForgetPwdActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.activity.FindPwdActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.activity.LiveActivity"
+           ></activity>
     </application>
 
 </manifest>

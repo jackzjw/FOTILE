@@ -3,13 +3,14 @@ package com.example.sg280.fotile.ui.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.model.bean.MySelfInfo;
-import com.example.sg280.fotile.presents.LoginContacts;
+import com.example.sg280.fotile.presents.Interface.ILoginContacts;
 import com.example.sg280.fotile.presents.LoginPresent;
 import com.example.sg280.fotile.utils.ToastUtil;
 import com.example.sg280.fotile.widget.TitleBar;
@@ -18,16 +19,13 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends Activity implements LoginContacts.View {
+public class LoginActivity extends Activity implements ILoginContacts.View {
     @Bind(R.id.title_bar)
     TitleBar toolBar;
     @Bind(R.id.et_phone_number)
     EditText et_phone;
     @Bind(R.id.et_pwd_number)
     EditText et_pwd;
-
-    @Bind(R.id.tv_forget_pwd)
-    TextView tv_forget_pwd;
     private LoginPresent present;
 
     @Override
@@ -42,10 +40,11 @@ public class LoginActivity extends Activity implements LoginContacts.View {
             ButterKnife.bind(this);
             initView();
         } else {
+            jumpIntoHomeActivity();
             //直接登录
-            present.imLogin(MySelfInfo.getInstance().getId(), MySelfInfo.getInstance().getUserSig());
-        }
-
+   //         present.imLogin(MySelfInfo.getInstance().getId(), MySelfInfo.getInstance().getUserSig());
+       }
+//
 
     }
 
@@ -58,6 +57,9 @@ public class LoginActivity extends Activity implements LoginContacts.View {
         toolBar.backIcon();
         register.setOnClickListener((view) -> {
             //跳转到注册界面
+            startActivity(new Intent(LoginActivity.this,RegisterActivity.class
+            ));
+
         });
 
     }
@@ -72,9 +74,17 @@ public class LoginActivity extends Activity implements LoginContacts.View {
             ToastUtil.showLong(this, "密码不能为空");
             return;
         }
+        if (!isMobileNO(et_phone.getText().toString())){
+            ToastUtil.showLong(this,"手机号码格式不正确");
+            return;
+        }
         present.ftLogin(et_phone.getText().toString(), et_pwd.getText().toString());
     }
-
+    //忘记密码
+     @OnClick(R.id.tv_forget_pwd)
+     void forget(){
+         startActivity(new Intent(this,ForgetPwdActivity.class));
+     }
 
     /**
      * 判断是否需要登录
@@ -109,5 +119,14 @@ public class LoginActivity extends Activity implements LoginContacts.View {
     @Override
     public void loginFailed() {
 
+    }
+    /**
+     * 验证手机格式
+     */
+    private boolean isMobileNO(String mobiles) {
+
+        String telRegex = "[1][2345789]\\d{9}";//"[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
+        if (TextUtils.isEmpty(mobiles)) return false;
+        else return mobiles.matches(telRegex);
     }
 }
