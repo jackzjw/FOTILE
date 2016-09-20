@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@color/hui_bg">
+
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_goods_is_select"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:src="@drawable/cart_icon_choice_unselected_gray" />-->
+    <CheckBox
+        android:id="@+id/cb_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        style="@style/myCheckbox"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:id="@+id/iv_goods_cart"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/cb_cart"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/cart_icon_delete_gray" />
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/iv_goods_cart"
+        android:maxLines="2"
+        android:text="哈哈哈哈哈哈哈哈哈"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_standard"
+        style="@style/my_word_12_gray_style"
+        android:layout_below="@+id/tv_goods_name"
+        android:layout_toRightOf="@+id/iv_goods_cart"
+        android:layout_marginTop="3dp"
+        android:text="@string/standard_" />
+
+    <TextView
+        android:id="@+id/tv_goods_price"
+        style="@style/my_word_14_red_style"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@+id/iv_goods_cart"
+        android:text="¥ 1234"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_goods_numbers">
+
+        <TextView
+            android:id="@+id/tv_amount"
+            style="@style/my_word_14_black_style"
+            android:layout_centerInParent="true"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/shape_red_circle_add"
+            android:gravity="center"
+            android:text="@string/add"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_subtract"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_gray_circle_subtract"
+            android:gravity="center"
+            android:text="@string/subtract"
+            android:textColor="@color/hui_line"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

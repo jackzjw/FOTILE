@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="@drawable/shape_my_coupons"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title_type"
+            android:layout_width="match_parent"
+            android:layout_height="12.5dp"
+            android:background="@drawable/user_img_discount_gray" />
+
+        <TextView
+            android:id="@+id/tv_ec_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/fotile_ec"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_coupons_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ec_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="优惠码：sg1234"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_coupons_user_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_coupons_number"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="2016-6-1 -- 2016-6-18"
+            android:textColor="@color/hui_text"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_use_rule"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tv_coupons_user_time"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_use_rule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/use_rule"
+                android:textColor="@color/hui_text"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_arrow_down"
+                android:layout_width="10dp"
+                android:layout_height="7dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/tv_use_rule"
+                android:src="@drawable/user_icon_arrow_down_gray" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_vertical_line"
+            android:layout_width="0.5dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="120dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/hui_bg" />
+
+        <ImageView
+            android:id="@+id/iv_is_used"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="35dp"
+            android:layout_toLeftOf="@+id/tv_vertical_line"
+            android:src="@drawable/user_img_seal_used" />
+
+        <TextView
+            android:id="@+id/tv_privilege_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="40dp"
+            android:text="100"
+            android:textColor="@color/hui_text"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/tv_money_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_privilege_number"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/tv_privilege_number"
+            android:text="¥"
+            android:textColor="@color/hui_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_privilege_describe"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_privilege_number"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="满2000减100"
+            android:textColor="@color/hui_text"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/line_my_coupons"
+        layout="@layout/item_underline_long"></include>
+
+    <TextView
+        android:id="@+id/tv_use_rule_describe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/test_describe"
+        android:textColor="@color/hui_text"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hui_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/base_title"
+        layout="@layout/item_base_title" />
+
+    <include layout="@layout/item_underline_long_hui_line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:id="@+id/tv_order_number"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:text="@string/order_number" />
+
+                <TextView
+                    android:id="@+id/tv_order_number_info"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_order_number"
+                    android:text="111231432425" />
+
+                <TextView
+                    android:id="@+id/tv_order_state"
+                    style="@style/my_word_14_red_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/had_ok" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user_order_detail_location" />
+
+                <TextView
+                    android:id="@+id/tv_consignee"
+                    style="@style/my_word_16_black_style"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/iv_location"
+                    android:text="@string/consignee" />
+
+                <TextView
+                    android:id="@+id/tv_consignee_info"
+                    style="@style/my_word_16_black_style"
+                    android:layout_alignBaseline="@+id/tv_consignee"
+                    android:layout_toRightOf="@+id/tv_consignee"
+                    android:text="鱼鱼风" />
+
+                <TextView
+                    android:id="@+id/tv_phone_number"
+                    style="@style/my_word_16_black_style"
+                    android:layout_alignBaseline="@+id/tv_consignee"
+                    android:layout_alignParentRight="true"
+                    android:text="12345678910" />
+
+
+                <TextView
+                    android:id="@+id/tv_delivery_address"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_below="@+id/tv_consignee"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/iv_location"
+                    android:text="@string/delivery_address" />
+
+                <TextView
+                    android:id="@+id/tv_delivery_address_info"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_alignBaseline="@+id/tv_delivery_address"
+                    android:layout_toRightOf="@+id/tv_delivery_address"
+                    android:text="这是一个神奇的地方" />
+
+                <TextView
+                    android:id="@+id/tv_postcode"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_below="@+id/tv_delivery_address"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/iv_location"
+                    android:text="@string/postcode" />
+
+                <TextView
+                    android:id="@+id/tv_postcode_info"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_alignBaseline="@+id/tv_postcode"
+                    android:layout_toRightOf="@+id/tv_postcode"
+                    android:text="646000" />
+
+                <TextView
+                    android:id="@+id/tv_leave_a_message"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_below="@+id/tv_postcode"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/iv_location"
+                    android:text="@string/leave_a_message" />
+
+                <TextView
+                    android:id="@+id/tv_leave_a_message_info"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_alignBaseline="@+id/tv_leave_a_message"
+                    android:layout_toRightOf="@+id/tv_leave_a_message"
+                    android:text="双休日照常收货" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_point_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/shape_red_point_order_info" />
+
+                    <TextView
+                        android:id="@+id/tv_line_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/iv_point_1"
+                        android:background="@color/red" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_point_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/shape_red_point_order_info" />
+
+                    <TextView
+                        android:id="@+id/tv_line_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/iv_point_2"
+                        android:background="@color/red" />
+
+                    <TextView
+                        android:id="@+id/tv_line_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/iv_point_2"
+                        android:background="@color/red" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_point_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/shape_red_point_order_info" />
+
+                    <TextView
+                        android:id="@+id/tv_line_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/iv_point_3"
+                        android:background="@color/red" />
+
+                    <TextView
+                        android:id="@+id/tv_line_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/iv_point_3"
+                        android:background="@color/red" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_point_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/shape_red_point_order_info" />
+
+                    <TextView
+                        android:id="@+id/tv_line_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/iv_point_4"
+                        android:background="@color/red" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_commit_order"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/commit_order" />
+
+                    <TextView
+                        android:id="@+id/tv_commit_order_info"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_below="@+id/tv_commit_order"
+                        android:layout_marginLeft="20dp"
+                        android:text="2016-6-18\n18:18:18" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_pay_time"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/pay_time" />
+
+                    <TextView
+                        android:id="@+id/tv_pay_time_info"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_below="@+id/tv_pay_time"
+                        android:layout_marginLeft="20dp"
+                        android:text="2016-6-18\n18:18:18" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_shipments_time"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/shipments_time" />
+
+                    <TextView
+                        android:id="@+id/tv_shipments_time_info"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_below="@+id/tv_shipments_time"
+                        android:layout_marginLeft="20dp"
+                        android:text="2016-6-18\n18:18:18" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_receipt_time"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/receipt_time" />
+
+                    <TextView
+                        android:id="@+id/tv_receipt_time_info"
+                        style="@style/my_word_12_gray_style"
+                        android:layout_below="@+id/tv_receipt_time"
+                        android:layout_marginLeft="20dp"
+                        android:text="2016-6-18\n18:18:18" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/user_logo_fotile" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/goods_amount" />
+
+                <TextView
+                    style="@style/my_word_14_black_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="¥ 1998" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0.7dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/freight" />
+
+                <TextView
+                    style="@style/my_word_14_black_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="¥ 0 (免运费)" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0.7dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/coupons_amount" />
+
+                <TextView
+                    style="@style/my_word_14_black_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="¥ 200" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0.7dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/order_amount" />
+
+                <TextView
+                    style="@style/my_word_14_red_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="¥ 4888" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/pay_way" />
+
+                <TextView
+                    style="@style/my_word_14_black_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="微信支付" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_leave_another_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user_order_detail_location" />
+
+                <TextView
+                    android:id="@+id/tv_leave_another_message"
+                    style="@style/my_word_16_black_style"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/iv_leave_another_message"
+                    android:text="@string/order_leave_message" />
+
+                <TextView
+                    android:id="@+id/tv_leave_another_message_info"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_below="@+id/tv_leave_another_message"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/iv_leave_another_message"
+                    android:text="双休日正常收货" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tv_logistics_company"
+                    style="@style/my_word_14_gray_style"
+                    android:text="@string/logistics_company" />
+
+                <TextView
+                    android:id="@+id/tv_logistics_company_info"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_alignBaseline="@+id/tv_logistics_company"
+                    android:layout_toRightOf="@+id/tv_logistics_company"
+                    android:text="顺丰快递" />
+
+                <TextView
+                    android:id="@+id/tv_waybill_number"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_below="@+id/tv_logistics_company"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/waybill_number" />
+
+                <TextView
+                    android:id="@+id/tv_waybill_number_info"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_alignBaseline="@+id/tv_waybill_number"
+                    android:layout_toRightOf="@+id/tv_waybill_number"
+                    android:text="201607221717" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

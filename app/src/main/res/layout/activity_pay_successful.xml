@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_base_title"
+        android:id="@+id/base_title"></include>
+
+    <include layout="@layout/item_underline_long_hui_line"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_pay_successful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart_icon_payment_success"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"/>
+        <TextView
+            android:id="@+id/tv_pay_successful"
+            android:layout_below="@+id/iv_pay_successful"
+            style="@style/my_word_16_black_style"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/pay_successful"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_order_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_pay_successful"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/tv_order_number"
+                style="@style/my_word_14_gray_style"
+                android:text="@string/order_number"/>
+            <TextView
+                android:id="@+id/tv_order_number_info"
+                android:layout_toRightOf="@+id/tv_order_number"
+                style="@style/my_word_14_gray_style"
+                android:text="20160729120733"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_order_number"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/tv_pay_price"
+                style="@style/my_word_14_gray_style"
+                android:text="@string/pay_price"/>
+            <TextView
+                android:id="@+id/tv_pay_price_info"
+                android:layout_toRightOf="@+id/tv_pay_price"
+                style="@style/my_word_14_gray_style"
+                android:text="¥ 2999"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        style="@style/my_word_14_black_style"
+        android:paddingLeft="20dp"
+        android:text="@string/we_all_buy"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"/>
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.jude.easyrecyclerview.EasyRecyclerView>
+
+</LinearLayout>

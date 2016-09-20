@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <ImageView
+            android:id="@+id/img_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"/>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/decorate_name"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="我的对你说的烦恼是东方女神"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="14sp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/vod_icon_hitcount"/>
+        <TextView
+            android:layout_marginLeft="3dp"
+            android:id="@+id/play_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2432"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/vod_icon_comment"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="50dp"/>
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginLeft="3dp"
+            android:text="3233"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

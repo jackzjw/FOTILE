@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="abc_white">#ffffff</color>
+    <color name="abc_tab_text_normal">#212121</color>
+    <color name="white">#ffffff</color>
+
+    <color name="theme_red">#820429</color>
+
+    <!-- 浅灰色分割线  最浅灰色字体-->
+    <color name="hui_line">#D9D9D9</color>
+    <!-- 中度灰字体 -->
+    <color name="hui_text">#6E6E6E</color>
+    <!-- 背景填充色 -->
+    <color name="hui_bg">#F4F4F4</color>
+    <!-- 黑色 -->
+    <color name="black">#000000</color>
+    <!--项目中用到的红色-->
+    <color name="red">#820429</color>
+    <!--标题栏的背景颜色-->
+    <color name="title_bg">#FBFBFB</color>
+
+
+    <color name="theme_gray">#636363</color>
+
+    <color name="home_divide_gray">#F4F4F4</color>
+    <!--标题栏颜色
+    -->
+    <color name="title_bg_color">#FBFBFB</color>
+    <!--弹幕框颜色-->
+    <color name="barrage_color">#979797</color>
+    <color name="add_cart_bg">#AD9D84</color>
+    <color name="dot_black60">#6C6C6C</color>
+    <color name="dot_black20">#E0E0E0</color>
+    <!--删除购物车产品的蓝色字体颜色-->
+    <color name="blue_cart">#247CEB</color>
+
+    <!--领取优惠码的上半部分的红色-->
+    <color name="bg_get_coupons">#910025</color>
+
+</resources>

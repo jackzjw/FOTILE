@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_goods_my_order"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        style="@style/my_word_16_black_style"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/iv_goods_my_order"
+        android:maxLines="1"
+        android:text="哈哈哈哈哈哈哈哈哈"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_now_money"
+        style="@style/my_word_20_red_style"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_toRightOf="@+id/iv_goods_my_order"
+        android:text="¥ 1234" />
+
+
+    <TextView
+        android:id="@+id/tv_market_money"
+        style="@style/my_word_14_gray_style"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv_now_money"
+        android:text="¥ 1235" />
+
+
+    <Button
+        android:id="@+id/btn_goto_info"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/shape_goto_info"
+        android:text="@string/goto_info"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        style="?android:attr/borderlessButtonStyle"/>
+
+</RelativeLayout>

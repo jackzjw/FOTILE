@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/img_sku"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:scaleType="centerInside"/>
+     <TextView
+         android:layout_marginTop="10dp"
+         android:id="@+id/tv_sku_price"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="15sp"
+         android:textColor="@color/theme_red"
+         android:layout_toRightOf="@+id/img_sku"
+         android:layout_marginLeft="15dp"/>
+    <View
+        android:id="@+id/v_divide"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/img_sku"
+        android:layout_marginTop="25dp"
+        android:background="@color/hui_bg"/>
+    <TextView
+        android:id="@+id/guige"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/v_divide"
+        android:layout_marginTop="10dp"
+        android:text="@string/guige"/>
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/guige"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/v_divide">
+
+        
+        
+    </RadioGroup>
+    <TextView
+        android:id="@+id/shuliang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guige"
+        android:layout_marginTop="18dp"
+        android:text="@string/shuliang"
+        android:layout_marginLeft="15dp"
+        />
+    <ImageView
+        android:id="@+id/img_jian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/shuliang"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/guige"
+        android:src="@drawable/cart_icon_choice_unselected_gray"/>
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/img_jian"
+        android:text="1"
+        android:layout_below="@+id/guige"
+        />
+    <ImageView
+        android:id="@+id/img_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_num"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/guige"
+        android:src="@drawable/cart_icon_add_red"/>
+    <Button
+
+        android:id="@+id/bt_sure"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:background="@color/theme_red"
+        android:textColor="@color/white"/>
+    </RelativeLayout>
+</RelativeLayout>

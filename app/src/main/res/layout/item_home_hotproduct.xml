@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+    android:layout_height="200dp">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:scaleType="centerInside"
+        android:id="@+id/img_allbuy"/>
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_allbuy"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:text="方太油烟机"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="7dp"
+        android:id="@+id/tv_product_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/theme_red"
+        android:id="@+id/tv_pro_price"
+        android:text="3345"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tv_product_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:id="@+id/tv_discount_price"
+        android:layout_toRightOf="@+id/tv_pro_price"
+        android:layout_below="@+id/tv_product_name"
+        android:layout_alignBaseline="@+id/tv_pro_price"
+        android:layout_marginLeft="5dp"
+        android:text="1234"/>
+
+</RelativeLayout>
