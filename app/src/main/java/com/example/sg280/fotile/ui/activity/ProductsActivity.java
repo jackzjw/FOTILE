@@ -107,7 +107,7 @@ public class ProductsActivity extends BaseFragmentActivity implements IProductCo
         badgeview.setBadgeCount(cart_count);
 
     }
-
+//设置商品的adapter
     private void setSkuAdapter() {
         skulist=new ArrayList<ProductsBean.SkuListBean>();
         easyRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
