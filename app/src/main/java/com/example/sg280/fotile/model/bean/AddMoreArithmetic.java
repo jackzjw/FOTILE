@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class AddMoreArithmetic extends ArithmeticClass {
 
+
     private List<Double> list;
     private int result = 0;
 
