@@ -9,6 +9,7 @@ import com.example.sg280.fotile.model.bean.OrderBean;
 
 import java.util.List;
 
+
 /**
  * 我的订单的Adapter
  * Created by Tian on 2016/8/8.
@@ -17,6 +18,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderViewHolder> {
 
     private Context context;
     private Activity activity;
+
     private List<OrderBean> list;
 
     public MyOrderAdapter(Context context) {
@@ -27,6 +29,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderViewHolder> {
         this.context = context;
         this.list = list;
         this.activity = activity;
+
     }
 
     public void setList(List<OrderBean> list) {
@@ -35,7 +38,9 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderViewHolder> {
 
     @Override
     public MyOrderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         return new MyOrderViewHolder(parent,context,activity);
+
     }
 
     @Override

@@ -1,6 +1,8 @@
 package com.example.sg280.fotile.adapter;
 
 import android.content.Intent;
+import android.support.v7.widget.GridLayoutManager;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -8,8 +10,11 @@ import android.widget.TextView;
 import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.model.bean.HomeLiveList;
-import com.example.sg280.fotile.utils.Glides;
+import com.example.sg280.fotile.ui.activity.LiveActivity;
+import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
+import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+
 
 /**
  * Created by sg280 on 2016-07-19.
@@ -17,46 +22,58 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 public class HomeLiveViewHolder extends BaseViewHolder<HomeLiveList> {
 
 
-    private  ImageView img_arrow;
+
+
     private  TextView mlive_title;
-    private  ImageView img_1;
-    private  TextView tv_status1;
-    private  TextView tv_name1;
-    private  TextView tv_date1;
-    private  ImageView img_2;
-    private  TextView tv_status2;
-    private  TextView tv_name2;
-    private  TextView tv_date2;
+    private EasyRecyclerView mrecyleview;
+    private ImageView img_arrow;
 
     public HomeLiveViewHolder(ViewGroup parent) {
         super(parent, R.layout.home_live_item);
            mlive_title=$(R.id.title_name);
-           img_1=$(R.id.live_img1);
-           tv_status1=$(R.id.live_status1);
-           tv_name1=$(R.id.live_name_1);
-           tv_date1=$(R.id.live_date_1);
-            img_2=$(R.id.live_img2);
-           tv_status2=$(R.id.live_status2);
-           tv_name2=$(R.id.live_name_2);
-            tv_date2=$(R.id.live_date_2);
-           img_arrow=$(R.id.goto_navi);
+          mrecyleview=$(R.id.recyclerView);
+          img_arrow=$(R.id.goto_navi);
     }
 
     @Override
     public void setData(HomeLiveList data) {
         super.setData(data);
-        mlive_title.setText(data.getClassName());
-        Glides.getInstance().load(getContext(), data.getLiveList().get(0).getLivePixSer(), img_1);
-        tv_status1.setText(data.getLiveList().get(0).getStatusName());
-        tv_name1.setText(data.getLiveList().get(0).getLiveName());
-        tv_date1.setText(data.getLiveList().get(0).getStartTime());
-        Glides.getInstance().load(getContext(), data.getLiveList().get(1).getLivePixSer(), img_2);
-        tv_status2.setText(data.getLiveList().get(1).getStatusName());
-        tv_name2.setText(data.getLiveList().get(1).getLiveName());
-        tv_date2.setText(data.getLiveList().get(1).getStartTime());
+
+        if(data.getClassType().equals("1")){
+            mlive_title.setText(data.getClassName());
+        }else{
+            mlive_title.setText("点播/"+data.getClassName());
+
+        }
+       if(data.getLiveList()!=null&data.getLiveList().size()>0){
+           HomeItemAdapter adapter = new HomeItemAdapter(getContext());
+           mrecyleview.setLayoutManager(new GridLayoutManager(getContext(),2));
+           mrecyleview.setAdapter(adapter);
+           mrecyleview.setVisibility(View.VISIBLE);
+           adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
+               @Override
+               public void onItemClick(int position) {
+                //   if("3".equals(data.getClassType())){
+                       Intent intent= LiveActivity.newIntent(getContext(), 1, data.getLiveList().get(position).getID());
+                       getContext().startActivity(intent);
+                  /* }else {
+                       Intent intent=LiveActivity.newIntent(getContext(), 2, data.getLiveList().get(position).getID());
+                       getContext().startActivity(intent);
+                   }*/
+               }
+           });
+           adapter.addAll(data.getLiveList());
+       }else{
+           mrecyleview.setVisibility(View.GONE);
+       }
+
         img_arrow.setOnClickListener(view->
-              getContext().sendBroadcast(new Intent(Constants.SWITCH_FRAGMENT_LIVE)));
-
-
-    }
+        {
+            if(data.getClassType().equals("1")) {
+                getContext().sendBroadcast(new Intent(Constants.SWITCH_FRAGMENT_LIVE));
+            }else {
+                getContext().sendBroadcast(new Intent(Constants.SWITCH_FRAGMENT_VEDIO));
+            }
+    });
+}
 }

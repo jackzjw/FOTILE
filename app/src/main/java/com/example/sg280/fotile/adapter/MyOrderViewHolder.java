@@ -18,6 +18,7 @@ import com.example.sg280.fotile.utils.ConvertUtil;
 import com.example.sg280.fotile.utils.Glides;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
+
 /**
  * 我的订单的ViewHolder
  * Created by Tian on 2016/8/8.

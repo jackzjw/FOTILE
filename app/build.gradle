@@ -1,3 +1,4 @@
+
 apply plugin: 'com.android.application'
 
 android {
@@ -43,8 +44,6 @@ dependencies {
     compile files('libs/imsdk.jar')
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile files('libs/qalsdk.jar')
-    compile files('libs/exoplayerlib.jar')
-    compile files('libs/playersdk.jar')
     //检测内存泄漏
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
@@ -54,4 +53,6 @@ dependencies {
             */
     compile files('libs/txrtmpsdk.jar')
     compile 'homhomlin.lib:ptrrv-library:1.3.1'
+    compile files('libs/mobilepb.jar')
 }
+

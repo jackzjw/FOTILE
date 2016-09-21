@@ -41,6 +41,7 @@ public class HttpDataResult<T> {
         Result = result;
     }
 
+
     @Override
     public String toString() {
         return "HttpDataResult{" +

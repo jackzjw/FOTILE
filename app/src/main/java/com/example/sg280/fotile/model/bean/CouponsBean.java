@@ -249,6 +249,7 @@ public class CouponsBean implements Parcelable {
     }
 
     public static final Parcelable.Creator<CouponsBean> CREATOR = new Parcelable.Creator<CouponsBean>() {
+
         @Override
         public CouponsBean createFromParcel(Parcel source) {
             return new CouponsBean(source);

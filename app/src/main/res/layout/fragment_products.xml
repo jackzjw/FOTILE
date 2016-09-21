@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        >
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:id="@+id/collapsing_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:contentScrim="@color/hui_bg"
+        app:expandedTitleMarginStart="48dp"
+        app:expandedTitleTextAppearance="@style/transText"
+        app:layout_scrollFlags="scroll|enterAlways">
+        <com.jude.rollviewpager.RollPagerView
+            android:id="@+id/roll_viewpager"
+            android:layout_width="match_parent"
+            app:layout_collapseMode="pin"
+            app:layout_collapseParallaxMultiplier="0.7"
+            android:layout_height="200dp">
+
+        </com.jude.rollviewpager.RollPagerView>
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:numColumns="5"
+            android:layout_marginTop="200dp"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.7"
+            android:background="@color/hui_bg"
+            android:layout_height="wrap_content">
+
+        </GridView>
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pro_ercv"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+</android.support.design.widget.CoordinatorLayout>

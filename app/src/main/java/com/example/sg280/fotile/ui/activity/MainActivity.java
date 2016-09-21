@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,17 +15,18 @@ import android.widget.TextView;
 import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.ui.fragment.HomeFragment;
-import com.example.sg280.fotile.ui.fragment.LiveFragment;
 import com.example.sg280.fotile.ui.fragment.MyAccountFragment;
 import com.example.sg280.fotile.ui.fragment.MyShoppingCartFragment;
+import com.example.sg280.fotile.ui.fragment.ProductsFragment;
 import com.example.sg280.fotile.ui.fragment.VedioFragment;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener{
+public class MainActivity extends BaseFragmentActivity implements View.OnClickListener{
 
    @Bind({R.id.home_navi_img,R.id.live_navi_img,R.id.vedio_navi_img,R.id.cart_navi_img,R.id.user_navi_img})
     List<ImageView> img_navis;
@@ -34,14 +35,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Bind({R.id.rel_home,R.id.rel_live,R.id.rel_vedio,R.id.rel_cart,R.id.rel_user})
     List<RelativeLayout> rel_navis;
     private Fragment homefrg;
-    private Fragment livefrg;
-    private Fragment vodfrg;
+    private Fragment vediofrg;
+    private Fragment profrg;
     private Fragment cartfrg;
     private Fragment userfrg;
+    public static int index=0;
     private int[] drawables={R.drawable.navi_home_gray,R.drawable.navi_live_gray,R.drawable.navi_vod_gray,R.drawable.navi_cart_gray,R.drawable.navi_user_gray};
     private SwitchFragementBroadcast broadcast;
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,12 +51,15 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
            navi.setOnClickListener(this);
        }
         setBroadCast();
-      setChoiceItem(4);
-
-
-
     }
-//广播，点击首页的右箭头，跳转到点播/直播的Fragment;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setChoiceItem(index);
+    }
+
+    //广播，点击首页的右箭头，跳转到点播/直播的Fragment;
     private void setBroadCast() {
         broadcast=new SwitchFragementBroadcast();
         IntentFilter intentfilter = new IntentFilter();
@@ -120,21 +123,21 @@ class SwitchFragementBroadcast extends BroadcastReceiver{
             case 1:
                 img_navis.get(1).setImageResource(R.drawable.navi_live_red);
                 tv_navis.get(1).setTextColor(getResources().getColor(R.color.theme_red));
-                if(livefrg==null){
-                    livefrg=new LiveFragment();
-                    transaction.add(R.id.main_container,livefrg);
+                if(vediofrg==null){
+                    vediofrg=new VedioFragment();
+                    transaction.add(R.id.main_container,vediofrg);
                 }else{
-                    transaction.show(livefrg);
+                    transaction.show(vediofrg);
                 }
                 break;
             case 2:
                 img_navis.get(2).setImageResource(R.drawable.navi_vod_red);
                 tv_navis.get(2).setTextColor(getResources().getColor(R.color.theme_red));
-                if(vodfrg==null){
-                    vodfrg=new VedioFragment();
-                    transaction.add(R.id.main_container,vodfrg);
+                if(profrg==null){
+                    profrg=new ProductsFragment();
+                    transaction.add(R.id.main_container,profrg);
                 }else{
-                    transaction.show(vodfrg);
+                    transaction.show(profrg);
                 }
                 break;
             case 3:
@@ -166,11 +169,11 @@ class SwitchFragementBroadcast extends BroadcastReceiver{
         if(homefrg!=null){
             transaction.hide(homefrg);
         }
-        if(livefrg!=null){
-            transaction.hide(livefrg);
+        if(vediofrg!=null){
+            transaction.hide(vediofrg);
         }
-        if (vodfrg!=null){
-            transaction.hide(vodfrg);
+        if (profrg!=null){
+            transaction.hide(profrg);
         }
         if (cartfrg!=null){
             transaction.hide(cartfrg);
@@ -191,11 +194,50 @@ class SwitchFragementBroadcast extends BroadcastReceiver{
         }
 
     }
+    //防止InputmethodManager内存泄漏
+    public static void fixInputMethodManagerLeak(Context destContext) {
+        if (destContext == null) {
+            return;
+        }
 
+        InputMethodManager imm = (InputMethodManager) destContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm == null) {
+            return;
+        }
+
+        String [] arr = new String[]{"mCurRootView", "mServedView", "mNextServedView"};
+        Field f = null;
+        Object obj_get = null;
+        for (int i = 0;i < arr.length;i ++) {
+            String param = arr[i];
+            try{
+                f = imm.getClass().getDeclaredField(param);
+                if (f.isAccessible() == false) {
+                    f.setAccessible(true);
+                } // author: sodino mail:sodino@qq.com
+                obj_get = f.get(imm);
+                if (obj_get != null && obj_get instanceof View) {
+                    View v_get = (View) obj_get;
+                    if (v_get.getContext() == destContext) { // 被InputMethodManager持有引用的context是想要目标销毁的
+                        f.set(imm, null); // 置空，破坏掉path to gc节点
+                    } else {
+                        // 不是想要目标销毁的，即为又进了另一层界面了，不要处理，避免影响原逻辑,也就不用继续for循环了
+                       /* if (QLog.isColorLevel()) {
+                            QLog.d(ReflecterHelper.class.getSimpleName(), QLog.CLR, "fixInputMethodManagerLeak break, context is not suitable, get_context=" + v_get.getContext()+" dest_context=" + destContext);
+                        }*/
+                        break;
+                    }
+                }
+            }catch(Throwable t){
+                t.printStackTrace();
+            }
+        }
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
         unregisterReceiver(broadcast);
+        fixInputMethodManagerLeak(this);
     }
 }

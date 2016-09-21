@@ -24,6 +24,7 @@ public class MultiplicationArithmetic extends ArithmeticClass {
 
     @Override
     double arithmetic() {
+
         return a * b;
     }
 }

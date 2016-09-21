@@ -68,11 +68,6 @@
             android:background="@color/hui_line" />
     </RelativeLayout>
 
-    <!--<com.jude.easyrecyclerview.EasyRecyclerView-->
-        <!--android:id="@+id/erv_my_coupons"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-    <!--</com.jude.easyrecyclerview.EasyRecyclerView>-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/erv_my_coupons"
         android:layout_width="match_parent"
@@ -80,5 +75,6 @@
         android:scrollbars="none"
         android:overScrollMode="never">
     </android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>

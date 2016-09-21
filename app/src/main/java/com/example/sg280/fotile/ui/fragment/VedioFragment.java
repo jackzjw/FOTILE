@@ -1,25 +1,25 @@
 package com.example.sg280.fotile.ui.fragment;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+
+import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.widget.RadioButton;
 
 import com.example.sg280.fotile.R;
-import com.example.sg280.fotile.widget.TitleBar;
 
 import butterknife.Bind;
 
+
 /**
- * Created by sg280 on 2016-07-19.
+ * Created by sg280 on 2016/9/1.
  */
-public class VedioFragment extends BaseFragment {
-    @Bind(R.id.title_bar)
-    TitleBar title_bar;
-    @Bind(android.R.id.tabs)
-    TabLayout tabLayout;
-    @Bind(R.id.viewPager)
-    ViewPager viewPager;
+public class VedioFragment extends BaseFragment implements View.OnClickListener {
+    @Bind(R.id.rbtn_live)
+    RadioButton btn_live;
+    @Bind(R.id.rbtn_vod)
+    RadioButton btn_vod;
+    private LiveFragment livefrg;
+    private VODFragment vodfrg;
 
     @Override
     protected int getLayoutResource() {
@@ -28,50 +28,53 @@ public class VedioFragment extends BaseFragment {
 
     @Override
     protected void onInitView() {
-        title_bar.setTitle("点   播");
-        title_bar.setBackgroundColor(getResources().getColor(R.color.title_bg_color));
-        viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                switch (position) {
-                    case 0:
-                        return new DecorateFragment();
-                    case 1:
-                        return new CreativeAdFragment();
-                    case 2:
-                        return new ProductVedioFragment();
-                    case 3:
-                        return new Product2Fragment();
-                    default:
-                        return new DecorateFragment();
-                }
+      btn_live.setChecked(true);
+        setLiveShow(0);
+        btn_live.setOnClickListener(this);
+        btn_vod.setOnClickListener(this);
+    }
+   private void setLiveShow(int index){
+       FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+       switch (index){
+           case 0:
+               if (vodfrg != null) {
+                   transaction.hide(vodfrg);
+               }
+               if(null==livefrg){
+                   livefrg=new LiveFragment();
+                   transaction.add(R.id.vedio_containerId,livefrg);
+               }else {
+
+                   transaction.show(livefrg);
+               }
+               break;
+                   case 1:
+                       if(livefrg!=null){
+                           transaction.hide(livefrg);
+                       }
+               if(null==vodfrg){
+                   vodfrg=new VODFragment();
+                   transaction.add(R.id.vedio_containerId,vodfrg);
+               }else {
+                   transaction.show(vodfrg);
+               }
+               break;
+       }
+               transaction.commit();
 
 
-            }
+   }
 
-            @Override
-            public int getCount() {
-                return 4;
-            }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.rbtn_live:
+                setLiveShow(0);
+                break;
+            case R.id.rbtn_vod:
+                setLiveShow(1);
+                break;
+        }
 
-            @Override
-            public CharSequence getPageTitle(int position) {
-                switch (position) {
-                    case 0:
-                        return getString(R.string.title_decorate);
-                    case 1:
-                        return getString(R.string.title_ad);
-                    case 2:
-                        return getString(R.string.title_vedio);
-                    case 3:
-                        return "产品视频";
-
-                    default:
-                        return getString(R.string.title_decorate);
-                }
-            }
-
-        });
-              tabLayout.setupWithViewPager(viewPager);
     }
 }

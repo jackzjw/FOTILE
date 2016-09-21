@@ -668,8 +668,8 @@ public class StringUtil {
         else return mobiles.matches(telRegex);
     }
 
-    public static String format(Object c) {
-        java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
+   public static String format(Object c){
+        java.text.DecimalFormat   df   =new   java.text.DecimalFormat("#.00");
         return df.format(c);
     }
 }

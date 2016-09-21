@@ -10,12 +10,14 @@ import java.util.List;
  * Created by sg280 on 2016-07-29.
  */
 public interface ILiveVedioContacts {
-    interface View extends BaseView{
+    interface View extends BaseView {
         void refresh(List<VedioDetailsBean> data);
         void fetchSucc(List<VedioDetailsBean> data);
+
+
     }
     interface Present extends BasePresenter {
-        void start();
+
         void getVedioResource(int start,int limit,boolean isRefresh);
     }
 }

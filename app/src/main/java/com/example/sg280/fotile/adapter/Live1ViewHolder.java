@@ -9,26 +9,34 @@ import com.example.sg280.fotile.model.bean.VedioDetailsBean;
 import com.example.sg280.fotile.utils.Glides;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
+import retrofit2.http.HEAD;
+
 /**
  * Created by sg280 on 2016-07-29.
  */
 public class Live1ViewHolder extends BaseViewHolder<VedioDetailsBean> {
+
+    private  TextView tv_status;
     private  TextView tv_date;
     private  TextView tv_name;
     private  ImageView img_big;
 
     public Live1ViewHolder(ViewGroup parent) {
-        super(parent, R.layout.live_item1);
+
+        super(parent,R.layout.live_item1);
         img_big=$(R.id.live_img_big);
         tv_name=$(R.id.live_name);
         tv_date=$(R.id.live_date_1);
+        tv_status=$(R.id.live_status);
     }
 
     @Override
     public void setData(VedioDetailsBean data) {
         super.setData(data);
-        Glides.getInstance().load(getContext(),data.getLivePixSer(),img_big);
+
+        Glides.getInstance().load(getContext(), data.getLivePixSer(), img_big);
         tv_name.setText(data.getLiveName());
         tv_date.setText(data.getStartTime());
+        tv_status.setText(data.getStatusName());
     }
 }

@@ -3,6 +3,8 @@ package com.example.sg280.fotile.model.bean;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.http.HEAD;
+
 /**
  * 加、减、乘计算
  * Created by Tian on 2016/8/15.
@@ -19,6 +21,7 @@ public class ArithmeticUtil {
      * @param b   参数b
      */
     public static double getResultWithTwoParam(String ari, int a, int b) {
+
 
         switch (ari) {
             case "+":
@@ -44,6 +47,7 @@ public class ArithmeticUtil {
      */
     public static double getResultWithMoreAdd(List<Double> list) {
 
+
         arithmeticClass = new AddMoreArithmetic(list);
 
         return arithmeticClass.arithmetic();
@@ -59,6 +63,7 @@ public class ArithmeticUtil {
         List<Double> doubleList = new ArrayList<>();
         if(null == list || list.size() == 0){
             return 0.00;
+
         }
 
         for (int i = 0; i < list.size(); i++) {
@@ -68,6 +73,7 @@ public class ArithmeticUtil {
             }
         }
         return new AddMoreArithmetic(doubleList).arithmetic();
+
     }
 
 

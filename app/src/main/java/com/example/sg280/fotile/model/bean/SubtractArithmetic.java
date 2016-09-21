@@ -24,6 +24,7 @@ public class SubtractArithmetic extends ArithmeticClass {
 
     @Override
     double arithmetic() {
+
         return a - b;
     }
 }

@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class AddMoreArithmetic extends ArithmeticClass {
 
+
     private List<Double> list;
     private int result = 0;
 
@@ -17,6 +18,7 @@ public class AddMoreArithmetic extends ArithmeticClass {
 
     @Override
     double arithmetic() {
+
         if(null == list || list.size() == 0){
             return 0;
         }

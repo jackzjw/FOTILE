@@ -8,4 +8,5 @@ public abstract class ArithmeticClass {
 
     abstract double arithmetic ();
 
+
 }

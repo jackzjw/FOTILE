@@ -21,6 +21,8 @@ public class RegisterSubject extends BaseResultEntity {
     }
     @Override
     public Observable getObservable(HttpService methods) {
+
+
         return methods.register(tel,code,pwd);
     }
 

@@ -1,9 +1,6 @@
 package com.example.sg280.fotile.adapter;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;

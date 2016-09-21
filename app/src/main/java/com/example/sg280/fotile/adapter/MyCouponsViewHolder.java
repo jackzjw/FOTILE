@@ -32,6 +32,7 @@ public class MyCouponsViewHolder extends BaseViewHolder<CouponsBean> {
     public ImageView iv_arrow_down;//使用规则的小箭头
 
 
+
     public MyCouponsViewHolder(ViewGroup parent,Context context) {
         super(parent, R.layout.item_coupons_disabled);
         this.context = context;
@@ -78,6 +79,7 @@ public class MyCouponsViewHolder extends BaseViewHolder<CouponsBean> {
             tv_use_rule_describe.setVisibility(View.GONE);
             iv_arrow_down.setImageResource(R.drawable.user_icon_arrow_down_gray);
         }
+
 
         rl_use_rule.setOnClickListener(new View.OnClickListener() {
             @Override

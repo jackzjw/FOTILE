@@ -21,14 +21,21 @@
     <color name="red">#820429</color>
     <!--标题栏的背景颜色-->
     <color name="title_bg">#FBFBFB</color>
-<!--删除购物车产品的蓝色字体颜色-->
-    <color name="blue_cart">#247CEB</color>
 
-    <!--领取优惠码的上半部分的红色-->
-    <color name="bg_get_coupons">#910025</color>
+
     <color name="theme_gray">#636363</color>
 
     <color name="home_divide_gray">#F4F4F4</color>
-    <!--标题栏颜色 -->
+    <!--标题栏颜色
+    -->
     <color name="title_bg_color">#FBFBFB</color>
+    <!--弹幕框颜色-->
+    <color name="barrage_color">#979797</color>
+    <color name="add_cart_bg">#AD9D84</color>
+    <color name="dot_black60">#6C6C6C</color>
+    <color name="dot_black20">#E0E0E0</color>
+    <!--删除购物车产品的蓝色字体颜色-->
+    <color name="blue_cart">#247CEB</color>
+    <!--领取优惠码的上半部分的红色-->
+    <color name="bg_get_coupons">#910025</color>
 </resources>

@@ -7,6 +7,7 @@ import android.os.Parcelable;
  * Created by sg280 on 2016-07-18.
  */
 public class VedioBean implements Parcelable {
+
     private  String ID;//直播ID,
     private  String LiveName;// "直播名称",
     private  String  ClassID;// 直播类型ID,

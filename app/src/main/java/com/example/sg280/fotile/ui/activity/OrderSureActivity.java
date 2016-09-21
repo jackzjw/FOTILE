@@ -33,6 +33,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import retrofit2.http.HEAD;
 
 /**
  * 订单确认界面
@@ -104,6 +105,7 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
     private CouponsBean couponsBean;
     private double temporaryPrice;//临时储存订单价格，防止连续更改积分数量导致订单价格的错乱
 
+
     @Override
     protected int getLayoutResource() {
         return R.layout.activity_order_sure;
@@ -124,7 +126,8 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
             list.add(bean);
             //获取可用优惠券数量
             orderSurePresent.getCouponsNumAtOnce(ACTION, bean.getProductID(), bean.getSkuID(), bean.getProductQuantity());
-            goodsPrice = "￥ " + (Double.valueOf(bean.getProductQuantity()) * Double.valueOf(bean.getPricePromo()));
+
+            goodsPrice = "￥ " + StringUtil.format(Double.valueOf(bean.getProductQuantity()) * Double.valueOf(bean.getPricePromo()));
         } else if (1 == which) {
 
             list = intent.getParcelableArrayListExtra("list");
@@ -164,6 +167,7 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
         tvGoodsPrice.setText(goodsPrice);
         tvOrderPrice.setText(goodsPrice);
         temporaryPrice = Double.valueOf(goodsPrice.substring(2));//先将没有优惠前的价格存起来
+
         rvGoods.setLayoutManager(new LinearLayoutManager(this));
         //RecyclerView的间距
         DividerDecoration divider = new DividerDecoration(ContextCompat.getColor(this, R.color.white), DensityUtil.dp2px(this, 1), 0, 0);
@@ -342,6 +346,7 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
             return false;
         }
         afterPointPrice(point);
+
         return true;
     }
 
@@ -380,4 +385,5 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
     private void afterPointPrice(String point){
         tvOrderPrice.setText("￥ "+ StringUtil.format(temporaryPrice-Double.valueOf(point)));
     }
+
 }

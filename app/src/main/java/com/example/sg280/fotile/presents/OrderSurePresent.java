@@ -119,11 +119,13 @@ public class OrderSurePresent implements OrderSureContacts.present {
         HttpOnNextListener pointNextListener = new HttpOnNextListener<UserInfoBean>() {
             @Override
             public void onNext(UserInfoBean userInfoBean) {
+
                 String pointAll = (null == userInfoBean.getIntegralTotal())?"0":userInfoBean.getIntegralTotal();
                 String pointUsed = (null == userInfoBean.getIntegralUsed())?"0":userInfoBean.getIntegralUsed();
                 view.setPoint(String.valueOf(Integer.valueOf(pointAll)-Integer.valueOf(pointUsed)));
             }
         };
+
         UserInfoSubject userInfoSubject = new UserInfoSubject(new ProgressSubscriber(pointNextListener,context),
                 SharedPreferencesUtil.getId(context));
         FotileRetrofit.getInstance().doHttpDeal2(userInfoSubject);

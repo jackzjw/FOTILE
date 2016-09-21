@@ -146,6 +146,7 @@ public class ShippingAddressBean implements Parcelable {
     }
 
     public static final Parcelable.Creator<ShippingAddressBean> CREATOR = new Parcelable.Creator<ShippingAddressBean>() {
+
         @Override
         public ShippingAddressBean createFromParcel(Parcel source) {
             return new ShippingAddressBean(source);

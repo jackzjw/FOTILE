@@ -33,7 +33,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
     public ProgressSubscriber(HttpOnNextListener mSubscriberOnNextListener, Context context) {
         this.mSubscriberOnNextListener = mSubscriberOnNextListener;
         this.mActivity = new WeakReference<>(context);
-        this.cancel = false;
+        this.cancel = true;
         initProgressDialog();
     }
     public ProgressSubscriber(HttpOnNextListener mSubscriberOnNextListener){
@@ -44,7 +44,9 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
         this.mSubscriberOnNextListener = mSubscriberOnNextListener;
         this.mActivity = new WeakReference<>(context);
         this.cancel = cancel;
-        initProgressDialog();
+        if (cancel) {
+            initProgressDialog();
+        }
     }
 
 
@@ -52,6 +54,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      * 初始化加载框
      */
     private void initProgressDialog() {
+
         Context context = mActivity.get();
         if (pd == null && context != null) {
             pd = new ProgressDialog(context);
@@ -97,7 +100,10 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      */
     @Override
     public void onStart() {
-        showProgressDialog();
+
+        if (cancel)
+
+            showProgressDialog();
     }
 
     /**
@@ -105,6 +111,8 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      */
     @Override
     public void onCompleted() {
+
+        if (cancel)
         dismissProgressDialog();
     }
 
@@ -118,6 +126,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
     public void onError(Throwable e) {
         Context context = mActivity.get();
         if (context == null) return;
+
         if (e instanceof SocketTimeoutException) {
             Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
         } else if (e instanceof ConnectException) {

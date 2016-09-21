@@ -11,5 +11,9 @@
         <attr name="title_text" format="string|reference"/>
         <attr name="backfinish_enable" format="boolean"/>
     </declare-styleable>
-
+    <declare-styleable name="round_textview">
+        <attr name="round_tv_color" format="reference"></attr>
+        <attr name="round_tv_corner_size" format="dimension"></attr>
+        <attr name="round_tv_edge_color" format="reference"/>
+    </declare-styleable>
 </resources>

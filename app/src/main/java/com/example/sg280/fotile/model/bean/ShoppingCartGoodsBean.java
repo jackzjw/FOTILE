@@ -236,6 +236,7 @@ public class ShoppingCartGoodsBean implements Parcelable {
     }
 
     public static final Parcelable.Creator<ShoppingCartGoodsBean> CREATOR = new Parcelable.Creator<ShoppingCartGoodsBean>() {
+
         @Override
         public ShoppingCartGoodsBean createFromParcel(Parcel source) {
             return new ShoppingCartGoodsBean(source);

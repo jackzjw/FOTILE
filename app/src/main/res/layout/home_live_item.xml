@@ -1,122 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
     <include
         android:id="@+id/layout1"
         layout="@layout/home_item_title"
         />
-    
-    <LinearLayout
-        android:layout_below="@+id/layout1"
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:orientation="horizontal">
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/live_img1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginTop="45dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/live_type_shape"
-
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                     android:id="@+id/live_status1"
-                    android:text="正在直播"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
-            <TextView
-                android:id="@+id/live_name_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/live_img1"
-               android:layout_marginLeft="10dp"
-                android:layout_marginTop="8dp"
-                android:text="方太直播"
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textSize="11sp"
-                android:layout_below="@+id/live_name_1"
-                android:id="@+id/live_date_1"
-                android:text="2016年7月18号"/>
-
-        </RelativeLayout>
-        <View
-            android:layout_width="4dp"
-
-            android:layout_height="match_parent"/>
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/live_img2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:src="@mipmap/ic_launcher"
-                />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginTop="45dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/live_type_shape"
-
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/live_status2"
-                    android:text="正在直播"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
-            <TextView
-                android:id="@+id/live_name_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/live_img2"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
-                android:text="方太直播"
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-
-                android:textSize="11sp"
-                android:layout_below="@+id/live_name_2"
-                android:id="@+id/live_date_2"
-                android:text="2016年7月18号"/>
-
-        </RelativeLayout>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout1"></com.jude.easyrecyclerview.EasyRecyclerView>
 
 
 </RelativeLayout>

@@ -18,6 +18,8 @@ public class HomeSubject extends BaseEntity {
 
     @Override
     public Observable getObservable(HttpService methods) {
+
+
         return methods.getHotLiveList();
     }
 

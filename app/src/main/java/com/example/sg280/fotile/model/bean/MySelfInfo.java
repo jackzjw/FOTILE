@@ -25,6 +25,25 @@ public class MySelfInfo {
     private String identifier;
     private List<String> liveCategory;
 
+    private boolean islogin;
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public boolean islogin() {
+        return islogin;
+    }
+
+    public void setIslogin(boolean islogin) {
+        this.islogin = islogin;
+    }
+
     public List<String> getLiveCategory() {
         return liveCategory;
     }
@@ -133,7 +152,10 @@ public class MySelfInfo {
         editor.putString(Constants.USER_NICK, nickName);
         editor.putString(Constants.USER_AVATAR, avatar);
         editor.putString(Constants.USER_SIGN, sign);
+        editor.putBoolean(Constants.ISLOGIN, islogin);
+        editor.putString(Constants.USER_IDENTIFY, identifier);
         editor.putInt(Constants.USER_ROOM_NUM, myRoomNum);
+        editor.putString(Constants.USER_PHONE,phone);
         editor.commit();
     }
 
@@ -154,9 +176,12 @@ public class MySelfInfo {
         nickName = sharedata.getString(Constants.USER_NICK, null);
         avatar = sharedata.getString(Constants.USER_AVATAR, null);
         sign = sharedata.getString(Constants.USER_SIGN, null);
-
+        identifier=sharedata.getString(Constants.USER_IDENTIFY,null);
+        islogin=sharedata.getBoolean(Constants.ISLOGIN, false);
+        phone=sharedata.getString(Constants.USER_PHONE, null);
         LogUtil.i(TAG, " getCache id: " + id);
 //sdfsefs
     }
+
 
 }

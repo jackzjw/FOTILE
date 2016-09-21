@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sg280.fotile.R;
+import com.example.sg280.fotile.adapter.MyOrderAdapter;
 import com.example.sg280.fotile.presents.Interface.MyOrderContacts;
 import com.example.sg280.fotile.presents.MyOrderPresent;
 
@@ -124,4 +125,5 @@ public class MyOrderActivity extends BaseActivity implements MyOrderContacts.Vie
     public Activity getActivity() {
         return this;
     }
+
 }

@@ -8,6 +8,8 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 
+
+
 /**
  * 请求数据统一封装类
  * Created by WZG on 2016/7/16.
@@ -31,6 +33,7 @@ public abstract class BaseEntity<T> implements Func1<HttpResult<T>, T> {
 
     @Override
     public T call(HttpResult<T> httpResult) {
+
         LogUtil.i("返回的数据",httpResult.toString());
         if (httpResult.getSuccess().equals("0")) {
             throw new BaseException(httpResult.getErrorMessage());

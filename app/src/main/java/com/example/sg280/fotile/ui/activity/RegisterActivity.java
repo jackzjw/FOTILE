@@ -15,6 +15,8 @@ import com.example.sg280.fotile.utils.ToastUtil;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import retrofit2.http.HEAD;
+
 
 /**
  * Created by sg280 on 2016-07-26.
@@ -78,12 +80,15 @@ public class RegisterActivity extends BaseActivity implements IRegisterContracts
             ToastUtil.showLong(this,"手机号码格式不正确");
             return;
         }
+
+        handler.removeCallbacks(run);
         present.userValid(et_phone.getText().toString(),
                 et_verify.getText().toString());
 
     }
     //返回上一界面
-    @OnClick(R.id.iv_back_title)
+
+    @OnClick(R.id.icon_back)
     void back(){
         finish();
     }
@@ -97,6 +102,10 @@ public class RegisterActivity extends BaseActivity implements IRegisterContracts
         ToastUtil.showLong(this, "注册成功");
         SharedPreferencesUtil.setPwd(getApplication(),et_pwd.getText().toString().trim());//密码保存到本地
         startActivity(new Intent(this, MainActivity.class));
+
+//在跳转新界面时，应清除handler的消息，不然会引起内存泄漏
+        handler.removeCallbacksAndMessages(null);
+
         finish();
 
     }

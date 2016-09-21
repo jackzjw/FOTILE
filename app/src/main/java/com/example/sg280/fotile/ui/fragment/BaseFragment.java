@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+import com.example.sg280.fotile.app.FTApplication;
 import com.example.sg280.fotile.widget.LoadingView;
+import com.squareup.leakcanary.RefWatcher;
 
 import butterknife.ButterKnife;
 
@@ -50,4 +53,11 @@ public abstract class BaseFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        RefWatcher reWatcher = FTApplication.getRefWatcher(getActivity());
+        reWatcher.watch(this);
+    }
 }

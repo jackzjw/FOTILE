@@ -36,6 +36,16 @@ public class VedioDetailsBean {
     private String IsHot;//是否热门,
     private String MasterUserID;//直播主号
 
+    private String LivePixType;
+
+    public String getLivePixType() {
+        return LivePixType;
+    }
+
+    public void setLivePixType(String livePixType) {
+        LivePixType = livePixType;
+    }
+
     public String getID() {
         return ID;
     }
@@ -282,5 +292,43 @@ public class VedioDetailsBean {
 
     public void setMasterUserID(String masterUserID) {
         MasterUserID = masterUserID;
+    }
+
+
+    @Override
+    public String toString() {
+        return "VedioDetailsBean{" +
+                "ID='" + ID + '\'' +
+                ", LiveName='" + LiveName + '\'' +
+                ", ClassID='" + ClassID + '\'' +
+                ", ChannelID='" + ChannelID + '\'' +
+                ", AppID='" + AppID + '\'' +
+                ", StatusCode='" + StatusCode + '\'' +
+                ", StatusName='" + StatusName + '\'' +
+                ", BrandID='" + BrandID + '\'' +
+                ", FavID='" + FavID + '\'' +
+                ", BrandName='" + BrandName + '\'' +
+                ", LivePix='" + LivePix + '\'' +
+                ", LivePixSer='" + LivePixSer + '\'' +
+                ", StartTime='" + StartTime + '\'' +
+                ", PreStartTime='" + PreStartTime + '\'' +
+                ", EndTime='" + EndTime + '\'' +
+                ", BrandLogo='" + BrandLogo + '\'' +
+                ", BrandIntro='" + BrandIntro + '\'' +
+                ", ClassName='" + ClassName + '\'' +
+                ", ClassType='" + ClassType + '\'' +
+                ", SdkAppID='" + SdkAppID + '\'' +
+                ", AccountType='" + AccountType + '\'' +
+                ", AvChatRoomID='" + AvChatRoomID + '\'' +
+                ", Identifier='" + Identifier + '\'' +
+                ", userSig='" + userSig + '\'' +
+                ", IsFav='" + IsFav + '\'' +
+                ", ProductLinkType='" + ProductLinkType + '\'' +
+                ", URL='" + URL + '\'' +
+                ", HitCount='" + HitCount + '\'' +
+                ", CommentCount='" + CommentCount + '\'' +
+                ", IsHot='" + IsHot + '\'' +
+                ", MasterUserID='" + MasterUserID + '\'' +
+                '}';
     }
 }

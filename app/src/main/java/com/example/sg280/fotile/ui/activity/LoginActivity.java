@@ -20,6 +20,7 @@ import com.example.sg280.fotile.widget.TitleBar;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.http.HEAD;
 
 public class LoginActivity extends Activity implements ILoginContacts.View {
     @Bind(R.id.title_bar)
@@ -37,15 +38,15 @@ public class LoginActivity extends Activity implements ILoginContacts.View {
         //获取本地缓存
         MySelfInfo.getInstance().getCache(getApplicationContext());
         present = new LoginPresent(this, this);
-        if (needLogin()) {//没有账号，需要登录
+   ///     if (needLogin()) {//没有账号，需要登录
             setContentView(R.layout.activity_login);
             ButterKnife.bind(this);
             initView();
-        } else {
-            jumpIntoHomeActivity();
+      //  } else {
+      //      jumpIntoHomeActivity();
             //直接登录
    //         present.imLogin(MySelfInfo.getInstance().getId(), MySelfInfo.getInstance().getUserSig());
-       }
+   //    }
 //
 
     }
@@ -85,7 +86,7 @@ public class LoginActivity extends Activity implements ILoginContacts.View {
     //忘记密码
      @OnClick(R.id.tv_forget_pwd)
      void forget(){
-         startActivity(new Intent(this,ForgetPwdActivity.class));
+         startActivity(new Intent(this, ForgetPwdActivity.class));
      }
 
     /**
@@ -107,8 +108,8 @@ public class LoginActivity extends Activity implements ILoginContacts.View {
      * 直接跳转主界面
      */
     private void jumpIntoHomeActivity() {
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
+        SharedPreferencesUtil.setPwd(this, MD5Util.getStringMD5(et_pwd.getText().toString().trim() + "FOTILE"));
+        setResult(Activity.RESULT_OK);
         finish();
     }
 
@@ -117,19 +118,26 @@ public class LoginActivity extends Activity implements ILoginContacts.View {
         ToastUtil.showLong(this, "登录成功");
         SharedPreferencesUtil.setPwd(this, MD5Util.getStringMD5(et_pwd.getText().toString().trim() + "FOTILE"));
         jumpIntoHomeActivity();
+
     }
 
     @Override
     public void loginFailed() {
-
+     //   ToastUtil.showLong(this, "IM登陆失败");
+        jumpIntoHomeActivity();
     }
     /**
      * 验证手机格式
      */
     private boolean isMobileNO(String mobiles) {
-
         String telRegex = "[1][2345789]\\d{9}";//"[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
         if (TextUtils.isEmpty(mobiles)) return false;
         else return mobiles.matches(telRegex);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        present.ondestory();
     }
 }

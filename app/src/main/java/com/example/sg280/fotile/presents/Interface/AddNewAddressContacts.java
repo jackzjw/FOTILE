@@ -3,8 +3,6 @@ package com.example.sg280.fotile.presents.Interface;
 import com.example.sg280.fotile.presents.BasePresenter;
 import com.example.sg280.fotile.ui.BaseView;
 
-import retrofit2.http.Field;
-
 /**
  * Created by Tian on 2016/8/22.
  */
@@ -21,6 +19,7 @@ public interface AddNewAddressContacts {
 
         //添加收货地址
         void addAddress(String type, String userid, String pcr,String address, String tel, String postcode,  String recipients, String isdefault);
+
 
         //修改收货地址
         void modifyAddress(String action, String userId, String pcr, String address, String tel,

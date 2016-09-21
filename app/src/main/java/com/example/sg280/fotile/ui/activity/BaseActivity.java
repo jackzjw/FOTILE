@@ -1,19 +1,25 @@
 package com.example.sg280.fotile.ui.activity;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.Window;
 
+import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.widget.LoadingView;
 
 import butterknife.ButterKnife;
 
 
 
-public abstract class BaseActivity extends Activity {
+
+public abstract class  BaseActivity extends Activity {
 
     private LoadingView mLoadingView;
+    private BroadcastReceiver recv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,20 @@ public abstract class BaseActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayoutResource());
         ButterKnife.bind(this);
+
+        recv = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (intent.getAction().equals(Constants.BD_EXIT_APP)){
+                    finish();
+                }
+            }
+        };
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Constants.BD_EXIT_APP);
+
+        registerReceiver(recv, filter);
         mLoadingView = new LoadingView(this);
         onInitView();
     }
@@ -56,6 +76,11 @@ public abstract class BaseActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+
+        try {
+            unregisterReceiver(recv);
+        }catch (Exception e){
+        }
     }
 
 }

@@ -31,6 +31,7 @@ public abstract class BaseResultEntity<T> implements Func1<HttpDataResult<T>, T>
 
     @Override
     public T call(HttpDataResult<T> httpResult) {
+
         LogUtil.i("返回数据",httpResult.toString());
         if ("0".equals(httpResult.getSuccess())) {
             LogUtil.e(httpResult.getErrorMessage());

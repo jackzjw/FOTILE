@@ -41,11 +41,13 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/tv_order_number"/>
 
+
                 <TextView
                     android:id="@+id/tv_order_state"
                     style="@style/my_word_14_red_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"/>
+
 
             </RelativeLayout>
 
@@ -75,11 +77,13 @@
                     android:layout_alignBaseline="@+id/tv_consignee"
                     android:layout_toRightOf="@+id/tv_consignee" />
 
+
                 <TextView
                     android:id="@+id/tv_phone_number"
                     style="@style/my_word_16_black_style"
                     android:layout_alignBaseline="@+id/tv_consignee"
                     android:layout_alignParentRight="true" />
+
 
 
                 <TextView
@@ -96,6 +100,7 @@
                     style="@style/my_word_14_gray_style"
                     android:layout_alignBaseline="@+id/tv_delivery_address"
                     android:layout_toRightOf="@+id/tv_delivery_address" />
+
 
                 <TextView
                     android:id="@+id/tv_postcode"
@@ -127,6 +132,7 @@
                     <!--android:layout_alignBaseline="@+id/tv_leave_a_message"-->
                     <!--android:layout_toRightOf="@+id/tv_leave_a_message"-->
                     <!--android:text="双休日照常收货" />-->
+
             </RelativeLayout>
 
             <LinearLayout
@@ -264,12 +270,14 @@
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
 
+
                     <TextView
                         android:id="@+id/tv_commit_order_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_commit_order"
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -283,12 +291,14 @@
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
 
+
                     <TextView
                         android:id="@+id/tv_pay_time_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_pay_time"
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -302,12 +312,14 @@
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
 
+
                     <TextView
                         android:id="@+id/tv_shipments_time_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_shipments_time"
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -321,12 +333,14 @@
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
 
+
                     <TextView
                         android:id="@+id/tv_receipt_time_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_receipt_time"
                         android:layout_marginLeft="20dp"
                         android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
             </LinearLayout>
 
@@ -343,9 +357,11 @@
                     android:layout_width="70dp"
                     android:layout_height="20dp"
                     android:scaleType="fitXY"
+
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/user_logo_fotile" />
             </RelativeLayout>
+
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_goods"
@@ -354,6 +370,7 @@
                 android:scrollbars="none"
                 android:overScrollMode="never">
             </android.support.v7.widget.RecyclerView>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -368,6 +385,7 @@
 
                 <TextView
                     android:id="@+id/tv_goods_price"
+
                     style="@style/my_word_14_black_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -389,6 +407,7 @@
                     android:text="@string/freight" />
 
                 <TextView
+
                     android:id="@+id/tv_freight"
                     style="@style/my_word_14_black_style"
                     android:layout_alignParentRight="true"
@@ -440,6 +459,7 @@
                     android:layout_marginRight="20dp"
                     android:text="¥ 0" />
 
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -460,6 +480,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp" />
+
 
             </RelativeLayout>
 
@@ -553,4 +574,5 @@
 
         </LinearLayout>
     </com.example.sg280.fotile.widget.MyScrollview>
+
 </LinearLayout>

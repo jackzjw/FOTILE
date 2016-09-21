@@ -32,10 +32,11 @@ public class Live2ViewHolder extends BaseViewHolder<VedioDetailsBean>{
     public void setData(VedioDetailsBean data) {
         super.setData(data);
         Glides.getInstance().load(getContext(),data.getLivePixSer(),img_pic);
-        if(data.getStatusName().equals("即将开始")){
-            img_status.setImageResource(R.drawable.home_icon_prepare);
-        }else {
+
+        if(data.getStatusName().equals("正在直播")){
             img_status.setImageResource(R.drawable.home_icon_playing);
+        }else {
+            img_status.setImageResource(R.drawable.home_icon_prepare);
         }
         tv_status.setText(data.getStatusName());
         tv_date.setText(data.getStartTime());

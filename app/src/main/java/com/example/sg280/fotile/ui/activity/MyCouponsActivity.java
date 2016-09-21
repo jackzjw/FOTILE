@@ -1,25 +1,36 @@
 package com.example.sg280.fotile.ui.activity;
 
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sg280.fotile.R;
+import com.example.sg280.fotile.adapter.MyCouponsAdapter;
+import com.example.sg280.fotile.model.bean.CouponsBean;
 import com.example.sg280.fotile.presents.Interface.UserCouponsContacts;
 import com.example.sg280.fotile.presents.UserCouponsPresent;
+import com.jude.easyrecyclerview.EasyRecyclerView;
+import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import retrofit2.http.HEAD;
+
 
 /**
  * Created by Tian on 2016/8/3.
  * 我的优惠码界面
  */
+
 public class MyCouponsActivity extends BaseActivity implements UserCouponsContacts.View {
+
 
     @Bind(R.id.iv_back_title)//标题的返回图标
             ImageView iv_back_title;
@@ -33,6 +44,7 @@ public class MyCouponsActivity extends BaseActivity implements UserCouponsContac
             RecyclerView erv_my_coupons;
 
     private UserCouponsPresent userCouponsPresent;
+
     private String USABLE = "GetMyCoupon";//获取所有可用优惠码的Action
     private String USED = "GetMyUselessCoupon";//获取所有不可用优惠码的Action
 
@@ -46,6 +58,7 @@ public class MyCouponsActivity extends BaseActivity implements UserCouponsContac
 
         tv_title.setText(R.string.my_coupons);//修改标题栏的标题
         userCouponsPresent = new UserCouponsPresent(this,erv_my_coupons);
+
         clickWaitUse();//默认点击可使用
 
     }
@@ -54,6 +67,7 @@ public class MyCouponsActivity extends BaseActivity implements UserCouponsContac
     @OnClick(R.id.iv_back_title)
     void goBack() {
         onBackPressed();
+
     }
 
     //点击可使用
@@ -61,6 +75,7 @@ public class MyCouponsActivity extends BaseActivity implements UserCouponsContac
     void clickWaitUse() {
         init(0);
         userCouponsPresent.getCoupons(USABLE);
+
     }
 
     //点击已失效
@@ -90,6 +105,7 @@ public class MyCouponsActivity extends BaseActivity implements UserCouponsContac
     private void initTitle() {
         for (TextView textView : couponsTitleList) {
             textView.setTextColor(ContextCompat.getColor(this, R.color.hui_text));
+
         }
     }
 

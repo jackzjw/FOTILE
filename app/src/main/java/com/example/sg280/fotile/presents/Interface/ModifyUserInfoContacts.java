@@ -11,9 +11,11 @@ public interface ModifyUserInfoContacts {
 
         void modifySuc();//修改成功
     }
+
     interface Present extends BasePresenter {
         //完成修改
-        void overModify(String userId, String userName, String userTel, String oldPwd,String pwdNew,String againNewPwd);
+        void overModify(String userId, String userName, String userTel, String oldPwd, String pwdNew, String againNewPwd);
+
 
     }
 }

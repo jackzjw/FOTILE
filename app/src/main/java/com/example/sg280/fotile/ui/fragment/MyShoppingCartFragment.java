@@ -84,6 +84,7 @@ public class MyShoppingCartFragment extends BaseFragment implements ShoppingCart
         rl_noData.setVisibility(View.VISIBLE);
         erv_goods_shoppingCart.setVisibility(View.GONE);
         tv_goods_price_info.setText("￥ 0");
+
     }
 
     @Override

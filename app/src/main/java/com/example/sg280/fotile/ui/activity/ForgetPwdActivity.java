@@ -42,7 +42,7 @@ public class ForgetPwdActivity extends BaseActivity implements IRegisterContract
         handler=new Handler();
     }
     //返回
-    @OnClick(R.id.iv_back_title)
+    @OnClick(R.id.icon_back)
     void back(){
         finish();
     }
@@ -57,6 +57,7 @@ public class ForgetPwdActivity extends BaseActivity implements IRegisterContract
             ToastUtil.showLong(this,"手机号码格式不正确");
             return;
         }
+        handler.removeCallbacks(run);
         present.getDycode(et_phone.getText().toString());
     }
     //下一步
@@ -107,4 +108,10 @@ public class ForgetPwdActivity extends BaseActivity implements IRegisterContract
             }
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null);
+    }
 }

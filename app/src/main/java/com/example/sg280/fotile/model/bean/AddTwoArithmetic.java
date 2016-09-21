@@ -24,6 +24,7 @@ public class AddTwoArithmetic extends ArithmeticClass {
 
     @Override
     double arithmetic() {
+
         return a + b;
     }
 }

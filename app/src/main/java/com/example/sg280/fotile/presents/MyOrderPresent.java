@@ -18,6 +18,8 @@ import com.jude.easyrecyclerview.decoration.DividerDecoration;
 
 import java.util.List;
 
+import retrofit2.http.HEAD;
+
 /**
  * Created by sg027 on 2016/8/30.
  */
@@ -33,7 +35,7 @@ public class MyOrderPresent implements MyOrderContacts.Present {
     private List<OrderBean> orderIsDoneList = null;//已完成订单列表
     private MyOrderAdapter adapter;
 
-    public MyOrderPresent(Context context, MyOrderContacts.View view,RecyclerView recyclerView) {
+    public MyOrderPresent(Context context, MyOrderContacts.View view, RecyclerView recyclerView) {
         this.context = context;
         this.view = view;
         this.recyclerView = recyclerView;
@@ -51,7 +53,7 @@ public class MyOrderPresent implements MyOrderContacts.Present {
             @Override
             public void onNext(List<OrderBean> orderList) {
 
-                switch (orderStatus){
+                switch (orderStatus) {
                     case "":
                         allOrderList = orderList;
                         getAll();
@@ -78,42 +80,42 @@ public class MyOrderPresent implements MyOrderContacts.Present {
             }
         };
 
-        MyOrderSubject myOrderSubject = new MyOrderSubject(new ProgressSubscriber(getOrderOnNextListener,context),
-                SharedPreferencesUtil.getId(context),"10",1,orderStatus);
+        MyOrderSubject myOrderSubject = new MyOrderSubject(new ProgressSubscriber(getOrderOnNextListener, context),
+                SharedPreferencesUtil.getId(context), "10", 1, orderStatus);
 
-        switch (orderStatus){
+        switch (orderStatus) {
             case "":
-                if(null == allOrderList){
+                if (null == allOrderList) {
                     FotileRetrofit.getInstance().doHttpDeal(myOrderSubject);
-                }else {
+                } else {
                     getAll();
                 }
                 break;
             case "1":
-                if(null == waitPayList){
+                if (null == waitPayList) {
                     FotileRetrofit.getInstance().doHttpDeal(myOrderSubject);
-                }else{
+                } else {
                     getWaitPay();
                 }
                 break;
             case "2":
-                if(null == waitShipmentsList){
+                if (null == waitShipmentsList) {
                     FotileRetrofit.getInstance().doHttpDeal(myOrderSubject);
-                }else{
+                } else {
                     getWaitShipments();
                 }
                 break;
             case "3":
-                if(null == waitReceiptList){
+                if (null == waitReceiptList) {
                     FotileRetrofit.getInstance().doHttpDeal(myOrderSubject);
-                }else{
+                } else {
                     getWaitReceipt();
                 }
                 break;
             case "4":
-                if(null == orderIsDoneList){
+                if (null == orderIsDoneList) {
                     FotileRetrofit.getInstance().doHttpDeal(myOrderSubject);
-                }else{
+                } else {
                     getOrderIsDone();
                 }
                 break;
@@ -124,28 +126,35 @@ public class MyOrderPresent implements MyOrderContacts.Present {
 
     }
 
-    public void getAll(){
-        adapter = new MyOrderAdapter(context,allOrderList,view.getActivity());
+    public void getAll() {
+        adapter = new MyOrderAdapter(context, allOrderList, view.getActivity());
+
         recyclerView.setAdapter(adapter);
     }
 
-    public void getWaitPay(){
-        adapter = new MyOrderAdapter(context,waitPayList,view.getActivity());
+    public void getWaitPay() {
+        adapter = new MyOrderAdapter(context, waitPayList, view.getActivity());
+
         recyclerView.setAdapter(adapter);
     }
 
-    public void getWaitShipments(){
-        adapter = new MyOrderAdapter(context,waitShipmentsList,view.getActivity());
+    public void getWaitShipments() {
+        adapter = new MyOrderAdapter(context, waitShipmentsList, view.getActivity());
+
         recyclerView.setAdapter(adapter);
     }
 
-    public void getWaitReceipt(){
-        adapter = new MyOrderAdapter(context,waitReceiptList,view.getActivity());
+    public void getWaitReceipt() {
+
+        adapter = new MyOrderAdapter(context, waitReceiptList, view.getActivity());
+
         recyclerView.setAdapter(adapter);
     }
 
-    public void getOrderIsDone(){
-        adapter = new MyOrderAdapter(context,orderIsDoneList,view.getActivity());
+    public void getOrderIsDone() {
+
+        adapter = new MyOrderAdapter(context, orderIsDoneList, view.getActivity());
+
         recyclerView.setAdapter(adapter);
     }
 

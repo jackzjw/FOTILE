@@ -11,6 +11,7 @@
         android:layout_margin="20dp"
         android:src="@mipmap/freeloop" />
 
+
     <TextView
         android:id="@+id/tv_goods_name"
         style="@style/my_word_16_black_style"

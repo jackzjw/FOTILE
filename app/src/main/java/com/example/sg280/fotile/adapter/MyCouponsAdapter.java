@@ -8,6 +8,7 @@ import com.example.sg280.fotile.model.bean.CouponsBean;
 
 import java.util.List;
 
+
 /**
  * 我的优惠券的Adapter
  * Created by Tian on 2016/8/11.
@@ -42,4 +43,5 @@ public class MyCouponsAdapter extends RecyclerView.Adapter<MyCouponsViewHolder> 
     public int getItemCount() {
         return null == list?0:list.size();
     }
+
 }
