@@ -31,4 +31,13 @@ public class NoResponseResult {
     public void setSuccess(String success) {
         Success = success;
     }
+
+    @Override
+    public String toString() {
+        return "NoResponseResult{" +
+                "ErrorCode='" + ErrorCode + '\'' +
+                ", ErrorMessage='" + ErrorMessage + '\'' +
+                ", Success='" + Success + '\'' +
+                '}';
+    }
 }

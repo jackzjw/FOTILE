@@ -7,20 +7,19 @@
 
     <include
         android:id="@+id/base_title"
-        layout="@layout/base_title" />
+        layout="@layout/item_base_title" />
 
     <TextView
-        android:layout_below="@+id/base_title"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/hui_line"/>
-
-    <ScrollView
         android:layout_below="@+id/base_title"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="50dp"
+        android:background="@color/hui_line" />
+
+    <com.example.sg280.fotile.widget.MyScrollview
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/base_title"
+        android:layout_marginTop="1dp"
         android:overScrollMode="never"
         android:scrollbars="none">
 
@@ -30,8 +29,10 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/rl_add_address"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
                 android:background="@color/white"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp">
@@ -48,7 +49,6 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/tv_add_address"
                     style="@style/my_word_14_gray_style"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="5dp"
@@ -65,11 +65,12 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:background="@color/white"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/iv_location"
@@ -149,6 +150,13 @@
                     android:src="@drawable/user_logo_fotile" />
             </RelativeLayout>
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -161,6 +169,7 @@
                     android:text="@string/goods_amount" />
 
                 <TextView
+                    android:id="@+id/tv_goods_price"
                     style="@style/my_word_14_black_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -197,10 +206,48 @@
                 android:background="@color/white">
 
                 <TextView
+                    android:id="@+id/tv_usablePointNum"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="可用0积分" />
+
+                <EditText
+                    android:id="@+id/et_usePoint"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical|right"
+                    android:background="@null"
+                    android:textColor="@color/black"
+                    android:inputType="number"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:hint="@string/hint_point"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_coupons"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0.7dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_coupon"
                     style="@style/my_word_14_gray_style"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:text="@string/coupons_code" />
+
+                <TextView
+                    android:id="@+id/tv_couponUsableNum"
+                    style="@style/my_word_14_gray_style"
+                    android:layout_toRightOf="@+id/tv_coupon"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="（可用0张）"/>
 
                 <ImageView
                     android:id="@+id/iv_arrow_right"
@@ -212,11 +259,11 @@
                     android:src="@drawable/user_icon_arrow_right_gray" />
 
                 <TextView
+                    android:id="@+id/tv_coupon_price"
                     style="@style/my_word_14_black_style"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/iv_arrow_right"
-                    android:text="¥ 200" />
+                    android:layout_toLeftOf="@+id/iv_arrow_right"/>
 
             </RelativeLayout>
 
@@ -233,6 +280,7 @@
                     android:text="@string/order_money_" />
 
                 <TextView
+                    android:id="@+id/tv_order_price"
                     style="@style/my_word_14_red_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -267,6 +315,7 @@
             <include layout="@layout/item_underline_long"></include>
 
             <RelativeLayout
+                android:id="@+id/rl_payOnDelivery"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/white">
@@ -278,6 +327,7 @@
                     android:text="@string/pay_on_delivery" />
 
                 <ImageView
+                    android:id="@+id/iv_payOnDelivery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -290,6 +340,7 @@
             <include layout="@layout/item_underline_long"></include>
 
             <RelativeLayout
+                android:id="@+id/rl_payWeChat"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/white">
@@ -301,6 +352,7 @@
                     android:text="@string/weChat_pay" />
 
                 <ImageView
+                    android:id="@+id/iv_payWeChat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -326,8 +378,8 @@
                 <TextView
                     android:id="@+id/tv_leave_another_message"
                     style="@style/my_word_16_black_style"
-                    android:layout_marginLeft="10dp"
                     android:layout_alignBaseline="@+id/iv_leave_another_message"
+                    android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/iv_leave_another_message"
                     android:text="@string/order_leave_message" />
 
@@ -348,14 +400,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp" />
 
+            <Button
+                android:id="@+id/btn_sure"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/red"
+                android:text="@string/sure_"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
         </LinearLayout>
-    </ScrollView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/red"
-        android:text="@string/sure_"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
+    </com.example.sg280.fotile.widget.MyScrollview>
+    <!--<Button-->
+    <!--android:id="@+id/btn_sure"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:background="@color/red"-->
+    <!--android:text="@string/sure_"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="14sp" />-->
 </RelativeLayout>

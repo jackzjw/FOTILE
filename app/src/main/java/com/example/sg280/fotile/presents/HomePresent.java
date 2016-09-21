@@ -17,7 +17,7 @@ import java.util.List;
 public class HomePresent implements IHomeContacts.Present {
 
     private IHomeContacts.View mview;
-    private HomeDataSource source;
+    private HomeSubject source;
     private Activity act;
     public HomePresent(IHomeContacts.View view,Activity activity){
         this.mview=view;

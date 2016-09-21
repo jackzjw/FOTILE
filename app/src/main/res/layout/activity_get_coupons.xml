@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/hui_bg">
 
-    <include layout="@layout/base_title"
+    <include layout="@layout/item_base_title"
         android:id="@+id/base_title"></include>
 
     <com.jude.easyrecyclerview.EasyRecyclerView

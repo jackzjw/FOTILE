@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/hui_bg">
-   <include layout="@layout/view_toolbar"/>
+    android:background="@mipmap/my_bg">
+
+    <include layout="@layout/view_toolbar" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        >
+        android:layout_centerInParent="true">
+
         <EditText
             android:id="@+id/et_phone_number"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
-            android:hint="@string/phone"
-            android:singleLine="true"
-            android:paddingLeft="10dp"
-            android:gravity="left|center_vertical"
             android:background="@drawable/shape_login_et_white_bg"
-            />
-       <EditText
-           android:layout_below="@+id/et_phone_number"
-           android:layout_marginTop="15dp"
-           android:id="@+id/et_pwd_number"
-           android:layout_centerHorizontal="true"
-           android:layout_width="250dp"
-           android:paddingLeft="10dp"
-           android:password="true"
-           android:layout_height="40dp"
-           android:hint="@string/passward"
-           android:singleLine="true"
-           android:gravity="left|center_vertical"
-           android:background="@drawable/shape_login_et_white_bg"
-           />
-        <Button
+            android:gravity="center_vertical"
+            android:hint="@string/phone"
+            android:paddingLeft="20dp"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:inputType="phone"/>
+
+        <EditText
+            android:id="@+id/et_pwd_number"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:id="@+id/bt_login"
-            android:text="@string/login"
+            android:layout_below="@+id/et_phone_number"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:gravity="center"
-            android:background="@drawable/shape_login_bt_red_bg"
             android:layout_marginTop="15dp"
+            android:background="@drawable/shape_login_et_white_bg"
+            android:gravity="center_vertical"
+            android:hint="@string/passward"
+            android:paddingLeft="20dp"
+            android:inputType="textPassword"
+            android:textSize="14sp"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_below="@+id/et_pwd_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_login_bt_red_bg"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="@color/white"
 
             />
     </RelativeLayout>
@@ -53,22 +58,19 @@
         android:id="@+id/tv_forget_pwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forget_pwd"
-        android:textSize="12sp"
-
-        android:textColor="@color/theme_red"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        />
-<View
-    android:layout_width="60dp"
-    android:layout_height="1dp"
-    android:layout_marginTop="5dp"
-    android:background="@color/theme_red"
-    android:layout_centerHorizontal="true"
-   android:layout_alignParentBottom="true"
-    android:layout_marginBottom="35dp"
+        android:text="@string/forget_pwd"
+        android:textColor="@color/theme_red"
+        android:textSize="12sp" />
 
-  />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/theme_red" />
 </RelativeLayout>

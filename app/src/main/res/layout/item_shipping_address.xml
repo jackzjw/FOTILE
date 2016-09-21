@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/hui_bg">
 
@@ -12,27 +12,9 @@
         android:background="@color/white"
         android:padding="20dp">
 
-        <!--<ImageView-->
-            <!--android:id="@+id/iv_location"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:src="@drawable/cart_icon_choice_selected_red" />-->
-
-        <CheckBox
-            android:id="@+id/cb_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            style="@style/myCheckbox"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"/>
-
         <TextView
             android:id="@+id/tv_consignee"
             style="@style/my_word_16_black_style"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/cb_address"
             android:text="@string/consignee" />
 
         <TextView
@@ -54,9 +36,7 @@
             android:id="@+id/tv_delivery_address"
             style="@style/my_word_14_gray_style"
             android:layout_below="@+id/tv_consignee"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_toRightOf="@+id/cb_address"
             android:text="@string/delivery_address" />
 
         <TextView
@@ -70,9 +50,7 @@
             android:id="@+id/tv_postcode"
             style="@style/my_word_14_gray_style"
             android:layout_below="@+id/tv_delivery_address"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_toRightOf="@+id/cb_address"
             android:text="@string/postcode" />
 
         <TextView
@@ -87,14 +65,41 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/hui_bg"
+    android:background="@color/white"
     android:layout_marginTop="1dp"
     android:orientation="horizontal">
 
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <CheckBox
+            android:id="@+id/cb_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            style="@style/myCheckbox"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_default"
+            android:layout_toRightOf="@+id/cb_address"
+            android:layout_marginLeft="5dp"
+            style="@style/my_word_14_red_style"
+            android:layout_centerVertical="true"
+            android:text="@string/default_address"/>
+
+
+
+    </RelativeLayout>
+
    <RelativeLayout
-       android:layout_width="0dp"
+       android:id="@+id/rl_edit"
+       android:layout_width="wrap_content"
        android:layout_height="match_parent"
-       android:layout_weight="1"
+       android:paddingRight="20dp"
        android:background="@color/white"
        android:gravity="center_horizontal">
 
@@ -114,10 +119,10 @@
    </RelativeLayout>
 
    <RelativeLayout
-       android:layout_width="0dp"
+       android:id="@+id/rl_delete"
+       android:layout_width="wrap_content"
        android:layout_height="match_parent"
-       android:layout_marginLeft="1dp"
-       android:layout_weight="1"
+       android:paddingRight="20dp"
        android:background="@color/white"
        android:gravity="center_horizontal">
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/base_title"
+    <include layout="@layout/item_base_title"
         android:id="@+id/base_title"></include>
 
     <include layout="@layout/item_underline_long_hui_line"></include>

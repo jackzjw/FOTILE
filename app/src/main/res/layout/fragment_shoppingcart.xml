@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/hui_bg">
@@ -11,9 +12,10 @@
 
         <include
             android:id="@+id/base_title"
-            layout="@layout/base_title" />
+            layout="@layout/item_base_title" />
 
         <TextView
+            android:id="@+id/tv_batch_remove"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
@@ -37,50 +39,69 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/rl_noData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/iv_noCoupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart_icon_cart_empty"
+                android:layout_centerInParent="true"/>
+            <TextView
+                android:layout_below="@+id/iv_noCoupon"
+                style="@style/my_word_14_gray_style"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/shop_empty"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_brand"
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
-            <ImageView
-                android:id="@+id/iv_is_selected"
+            <CheckBox
+                android:id="@+id/cb_is_selected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/myCheckbox"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/cart_icon_choice_unselected_gray" />
+                android:layout_marginLeft="20dp"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/iv_brand_logo"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/iv_is_selected"
+                android:layout_toRightOf="@+id/cb_is_selected"
+                android:scaleType="fitXY"
                 android:src="@drawable/user_logo_fotile" />
         </RelativeLayout>
 
-        <com.jude.easyrecyclerview.EasyRecyclerView
+        <!--<com.jude.easyrecyclerview.EasyRecyclerView-->
+            <!--android:id="@+id/erv_goods_shoppingCart"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:scrollbars="none"-->
+            <!--android:overScrollMode="never"/>-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/erv_goods_shoppingCart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:scrollbars="none"
+            android:overScrollMode="never"/>
 
         <include layout="@layout/item_underline_long"></include>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp">
-
-            <TextView
-                android:id="@+id/tv_goods_price"
-                style="@style/my_word_14_black_style"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="120dp"
-                android:text="@string/goods_price" />
-
-            <TextView
-                android:id="@+id/tv_goods_price_info"
-                style="@style/my_word_20_red_style"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/tv_goods_price"
-                android:text="¥ 19999" />
+            android:layout_height="50dp">
 
             <TextView
                 android:id="@+id/tv_settlement"
@@ -89,8 +110,26 @@
                 android:layout_alignParentRight="true"
                 android:background="@color/red"
                 android:gravity="center"
+                android:textSize="16sp"
                 android:text="@string/settlement"
                 android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_goods_price_info"
+                style="@style/my_word_18_red_style"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_settlement"
+                android:text="￥ 0"/>
+
+            <TextView
+                android:id="@+id/tv_goods_price"
+                style="@style/my_word_14_black_style"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_goods_price_info"
+                android:text="@string/goods_price" />
+
 
         </RelativeLayout>
     </LinearLayout>
@@ -99,7 +138,8 @@
         android:id="@+id/rl_cart_is_null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/iv_no_goods"

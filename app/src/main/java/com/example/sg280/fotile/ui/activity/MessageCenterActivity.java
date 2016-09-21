@@ -1,8 +1,5 @@
 package com.example.sg280.fotile.ui.activity;
 
-import android.content.Intent;
-import android.widget.RelativeLayout;
-
 import com.example.sg280.fotile.R;
 
 /**

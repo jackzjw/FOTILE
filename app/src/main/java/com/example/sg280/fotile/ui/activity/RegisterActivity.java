@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.presents.Interface.IRegisterContracts;
 import com.example.sg280.fotile.presents.RegisterPresent;
+import com.example.sg280.fotile.utils.SharedPreferencesUtil;
 import com.example.sg280.fotile.utils.ToastUtil;
 
 import butterknife.Bind;
@@ -82,7 +83,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterContracts
 
     }
     //返回上一界面
-    @OnClick(R.id.icon_back)
+    @OnClick(R.id.iv_back_title)
     void back(){
         finish();
     }
@@ -94,6 +95,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterContracts
     @Override
     public void RegisterSucc() {
         ToastUtil.showLong(this, "注册成功");
+        SharedPreferencesUtil.setPwd(getApplication(),et_pwd.getText().toString().trim());//密码保存到本地
         startActivity(new Intent(this, MainActivity.class));
         finish();
 

@@ -14,6 +14,8 @@
     <string name="my_coupons">我的优惠券</string>
     <string name="my_collections">我的收藏</string>
     <string name="message_center">消息中心</string>
+    <string name="point_center">积分中心</string>
+    <string name="my_address">我的收货地址</string>
     <string name="all">全部</string>
     <string name="order_number">订单号：</string>
     <string name="order_money">订单金额：</string>
@@ -22,8 +24,10 @@
     <string name="goods">商品</string>
     <string name="goto_info">查看详情</string>
     <string name="living">正在直播</string>
+    <string name="will_living">即将开始</string>
+    <string name="living_over">直播完毕</string>
     <string name="vod">点播</string>
-    <string name="wait_user">可使用</string>
+    <string name="wait_use">可使用</string>
     <string name="disabled">已失效</string>
     <string name="fotile_ec">方太电商</string>
     <string name="use_rule">使用规则</string>
@@ -31,11 +35,15 @@
     <string name="user_name">用户名</string>
     <string name="user_phone">手机号</string>
     <string name="user_password">密码</string>
+    <string name="new_password">新密码</string>
+    <string name="old_password">旧密码</string>
     <string name="user_password_sure">确认密码</string>
+    <string name="new_password_sure">确认新密码</string>
     <string name="please_set_user_name">请输入用户名</string>
     <string name="please_set_user_phone">请输入手机号</string>
-    <string name="please_set_user_pwd">请输入密码</string>
-    <string name="please_set_user_pwd_sure">请再次输入密码</string>
+    <string name="please_set_user_pwd">请输入新密码</string>
+    <string name="please_set_old_pwd">请输入旧密码</string>
+    <string name="please_set_user_pwd_sure">请再次输入新密码</string>
     <string name="ok">完&#x0020;&#x0020;&#x0020;&#x0020;成</string>
     <string name="had_ok">已完成</string>
     <string name="consignee">收货人：</string>
@@ -54,12 +62,59 @@
     <string name="order_leave_message">订单留言</string>
     <string name="logistics_company">物流公司：</string>
     <string name="waybill_number">运单编号：</string>
+    <string name="modify_user_info">修改个人资料</string>
+    <string name="order_money_">订单金额</string>
+    <string name="point_money">积分抵扣金额</string>
+    <string name="order_info">订单详情</string>
+    <string name="all_point">全部积分</string>
+    <string name="used_point">已用积分</string>
+    <string name="usable_point">可用积分</string>
+    <string name="point_info">积分明细</string>
+    <string name="my_point">我的积分</string>
+
 
     <!--购物车-->
+    <string name="shopping_cart">购物车</string>
     <string name="shopping_cart_is_null">您的购物车是空的</string>
     <string name="bulk_operation">批量操作</string>
     <string name="goods_price">商品金额：</string>
     <string name="settlement">结算</string>
+    <string name="add">＋</string>
+    <string name="subtract">－</string>
+    <string name="shipping_address">收货地址</string>
+    <string name="add_address">添加新地址</string>
+    <string name="default_address">默认地址</string>
+    <string name="add_shipping_address">添加收货地址</string>
+    <string name="modify_shipping_address">编辑收货地址</string>
+    <string name="compile">编辑</string>
+    <string name="delete">删除</string>
+    <string name="name">姓名</string>
+    <string name="phoneNum">手机号</string>
+    <string name="province_city_region">省市区</string>
+    <string name="address_info">详细地址</string>
+    <string name="postcode_">邮政编码</string>
+    <string name="hint_name">请输入姓名</string>
+    <string name="hint_address_info">请输入详细的地址</string>
+    <string name="hint_postcode">请输入邮政编码</string>
+    <string name="sure_">确 认</string>
+    <string name="coupons_code">优惠码</string>
+    <string name="weChat_pay">微信支付</string>
+    <string name="pay_on_delivery">货到付款</string>
+    <string name="leave_message_info">可填写您与卖家达成的一致的要求</string>
+    <string name="standard">规格</string>
+    <string name="standard_">规格：</string>
+    <string name="number">数量</string>
+    <string name="pay_successful">支付成功</string>
+    <string name="pay_fail">支付失败</string>
+    <string name="pay_price">支付金额：</string>
+    <string name="we_all_buy">大家都在买</string>
+    <string name="pay_fail_msg">个人账户支付失败\n请稍后再付款</string>
+    <string name="sure_order">订单确认</string>
+    <string name="hint_point">输入本次使用积分，1积分为1元</string>
+    <string name="choice_coupon">选择优惠券</string>
+    <string name="no_coupons">目前没有可用的优惠券</string>
+    <string name="shop_empty">您的购物车是空的哟</string>
+
 
     <!--登录注册-->
 

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hui_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_my_orders"
+        layout="@layout/item_base_title"></include>
+
+    <include layout="@layout/item_underline_long_hui_line"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_point_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="100"
+            android:textColor="@color/red"
+            android:textSize="36sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            style="@style/my_word_14_gray_style"
+            android:layout_below="@+id/tv_point_num"
+            android:layout_centerHorizontal="true"
+            android:text="@string/usable_point"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="0.7dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_all_point"
+                style="@style/my_word_14_gray_style"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/all_point"/>
+
+            <TextView
+                android:id="@+id/tv_all_point_info"
+                style="@style/my_word_16_black_style"
+                android:layout_below="@+id/tv_all_point"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="100"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0.7dp"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_used_point"
+                style="@style/my_word_14_gray_style"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/used_point"/>
+
+            <TextView
+                android:id="@+id/tv_used_point_info"
+                style="@style/my_word_16_black_style"
+                android:layout_below="@+id/tv_used_point"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="100"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_point_info"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_point_info"
+            style="@style/my_word_14_gray_style"
+            android:text="@string/point_info"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:id="@+id/iv_point_info"
+            android:layout_width="10dp"
+            android:layout_height="7dp"
+            android:src="@drawable/user_icon_arrow_down_gray"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_point_info"
+            android:layout_marginLeft="3dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

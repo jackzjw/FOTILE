@@ -19,4 +19,13 @@ public class IntentUtil {
         intent = new Intent(context,c);
         context.startActivity(intent);
     }
+
+    /**
+     * activity有参跳转
+     * @param context 上下文本
+     * @param intent 带参数的intent
+     */
+    public static void jumpToActivityIntent(Context context,Intent intent){
+        context.startActivity(intent);
+    }
 }

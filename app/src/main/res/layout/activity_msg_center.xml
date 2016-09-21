@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/title_my_orders"
-        layout="@layout/base_title"></include>
+        layout="@layout/item_base_title"></include>
 
     <include layout="@layout/item_underline_long_hui_line"></include>
 

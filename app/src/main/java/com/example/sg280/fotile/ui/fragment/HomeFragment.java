@@ -28,7 +28,7 @@ public class HomeFragment extends BaseFragment implements IHomeContacts.View, Sw
     EasyRecyclerView recyclerView;
     @Bind(R.id.network_error_layout)
     ViewStub mNetworkErrorLayout;
-    private BasePresenter present;
+    private HomePresent present;
     private HomeAdapter adapter;
     private View networkErrorView;
 
@@ -53,7 +53,7 @@ public class HomeFragment extends BaseFragment implements IHomeContacts.View, Sw
     public void load(List<HomeLiveList> list) {
 
         adapter.clear();
-        adapter.addAll(list);
+//        adapter.addAll(list);
         adapter.notifyDataSetChanged();
     }
 

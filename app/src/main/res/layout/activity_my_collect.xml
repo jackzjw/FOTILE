@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/base_title"
-        layout="@layout/base_title"></include>
+        layout="@layout/item_base_title"></include>
 
     <include layout="@layout/item_underline_long_hui_line"></include>
 
@@ -27,19 +27,18 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/live_or_demand"
-                    android:textSize="14sp"
-                    android:textColor="@color/hui_text"/>
+                    android:id="@+id/tv_live_or_demand"
+                    style="@style/my_word_14_gray_match_style"
+                    android:text="@string/live_or_demand"/>
 
                 <TextView
+                    android:id="@+id/tv_live_or_demand_line"
                     android:layout_width="70dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@color/red" />
+                    android:background="@color/red"
+                    android:visibility="invisible"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -48,28 +47,35 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/goods"
-                    android:textSize="14sp"
-                    android:textColor="@color/hui_text"/>
+                    android:id="@+id/tv_goods"
+                    style="@style/my_word_14_gray_match_style"
+                    android:text="@string/goods"/>
 
                 <TextView
+                    android:id="@+id/tv_goods_line"
                     android:layout_width="28dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@color/red" />
+                    android:background="@color/red"
+                    android:visibility="invisible"/>
             </RelativeLayout>
 
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+            android:layout_height="0.7dp"
             android:layout_alignParentBottom="true"
             android:background="@color/hui_line" />
     </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/erv_myCollection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never"/>
+
 
 </LinearLayout>

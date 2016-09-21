@@ -42,7 +42,7 @@ public class ForgetPwdActivity extends BaseActivity implements IRegisterContract
         handler=new Handler();
     }
     //返回
-    @OnClick(R.id.icon_back)
+    @OnClick(R.id.iv_back_title)
     void back(){
         finish();
     }

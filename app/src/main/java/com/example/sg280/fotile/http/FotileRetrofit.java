@@ -3,6 +3,7 @@ package com.example.sg280.fotile.http;
 import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.app.FTApplication;
 import com.example.sg280.fotile.model.bean.BaseEntity;
+import com.example.sg280.fotile.model.bean.BaseNoResultEntity;
 import com.example.sg280.fotile.model.bean.BaseResultEntity;
 import com.example.sg280.fotile.model.source.HttpService;
 
@@ -67,6 +68,19 @@ public class FotileRetrofit {
      * @param basePar
      */
     public void doHttpDeal2(BaseResultEntity basePar) {
+        Observable observable = basePar.getObservable(httpservice)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(basePar);
+        observable.subscribe(basePar.getSubscirber());
+    }
+
+    /**
+     * 没有result和rows 只有success
+     * @param basePar
+     */
+    public void doHttpDealNo(BaseNoResultEntity basePar) {
         Observable observable = basePar.getObservable(httpservice)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

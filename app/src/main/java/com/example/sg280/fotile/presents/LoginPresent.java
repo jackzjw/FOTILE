@@ -11,6 +11,7 @@ import com.example.sg280.fotile.model.source.LoginSubject;
 import com.example.sg280.fotile.presents.Interface.ILoginContacts;
 import com.example.sg280.fotile.utils.LogUtil;
 import com.example.sg280.fotile.utils.MD5Util;
+import com.example.sg280.fotile.utils.SharedPreferencesUtil;
 
 /**
  * Created by sg280 on 2016-07-25.
@@ -37,19 +38,18 @@ public LoginPresent(ILoginContacts.View view,Activity activity){
         public void onNext(UserInfo subjects) {
             LogUtil.e(subjects.toString());
             MySelfInfo.getInstance().setId(subjects.getUserID());
+            MySelfInfo.getInstance().setNickName(subjects.getUserName());
             MySelfInfo.getInstance().writeToCache(activity);
+            SharedPreferencesUtil.setPhone(activity,subjects.getUserTel());
             mview.loginSucc();
         }
+
     };
     @Override
     public void imLogin(String indentify, String usersig) {
 
     }
 
-    @Override
-    public void start() {
-
-    }
 
     @Override
     public void ondestory() {

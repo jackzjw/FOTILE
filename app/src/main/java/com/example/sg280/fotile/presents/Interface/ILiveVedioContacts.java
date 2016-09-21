@@ -15,6 +15,7 @@ public interface ILiveVedioContacts {
         void fetchSucc(List<VedioDetailsBean> data);
     }
     interface Present extends BasePresenter {
+        void start();
         void getVedioResource(int start,int limit,boolean isRefresh);
     }
 }

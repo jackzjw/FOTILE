@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/hui_bg">
 
-    <include layout="@layout/base_title" android:id="@+id/base_title"></include>
+    <include layout="@layout/item_base_title" android:id="@+id/base_title"></include>
 
     <include layout="@layout/item_underline_long_hui_line"></include>
 
@@ -27,6 +27,8 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
             android:layout_marginRight="20dp"
+            android:gravity="right|center_vertical"
+            android:maxLength="24"
             android:background="@null"
             android:hint="@string/please_set_user_name"
             android:textSize="14sp"
@@ -45,17 +47,20 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:text="@string/user_phone"/>
-        <EditText
-            android:id="@+id/et_phoneNum"
+        <TextView
+            android:id="@+id/tv_phoneNum"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
             android:layout_marginRight="20dp"
+            android:gravity="right|center_vertical"
+            android:inputType="phone"
+            android:maxLength="11"
             android:background="@null"
-            android:hint="@string/please_set_user_phone"
             android:textSize="14sp"
             android:textColor="@color/hui_text"/>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -68,13 +73,42 @@
             android:textColor="@color/black"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="@string/user_password"/>
+            android:text="@string/old_password"/>
+        <EditText
+            android:id="@+id/et_old_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="20dp"
+            android:gravity="right|center_vertical"
+            android:inputType="textPassword"
+            android:background="@null"
+            android:hint="@string/please_set_old_pwd"
+            android:textSize="14sp"
+            android:textColor="@color/hui_text"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_marginTop="1dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/new_password"/>
         <EditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
             android:layout_marginRight="20dp"
+            android:gravity="right|center_vertical"
+            android:inputType="textPassword"
             android:background="@null"
             android:hint="@string/please_set_user_pwd"
             android:textSize="14sp"
@@ -92,13 +126,15 @@
             android:textColor="@color/black"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="@string/user_password_sure"/>
+            android:text="@string/new_password_sure"/>
         <EditText
             android:id="@+id/et_password_again"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="90dp"
             android:layout_marginRight="20dp"
+            android:inputType="textPassword"
+            android:gravity="right|center_vertical"
             android:background="@null"
             android:hint="@string/please_set_user_pwd_sure"
             android:textSize="14sp"

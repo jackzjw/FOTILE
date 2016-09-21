@@ -11,4 +11,5 @@
         <attr name="title_text" format="string|reference"/>
         <attr name="backfinish_enable" format="boolean"/>
     </declare-styleable>
+
 </resources>

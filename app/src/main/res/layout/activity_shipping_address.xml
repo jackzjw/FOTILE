@@ -7,18 +7,20 @@
 
     <include
         android:id="@+id/base_title"
-        layout="@layout/base_title"></include>
+        layout="@layout/item_base_title"></include>
 
     <include layout="@layout/item_underline_long_hui_line"></include>
 
-    <com.jude.easyrecyclerview.EasyRecyclerView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_address"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-
-    </com.jude.easyrecyclerview.EasyRecyclerView>
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
 
     <RelativeLayout
+        android:id="@+id/rl_add_address"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/red"

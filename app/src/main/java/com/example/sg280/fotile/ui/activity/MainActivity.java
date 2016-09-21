@@ -16,8 +16,8 @@ import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.ui.fragment.HomeFragment;
 import com.example.sg280.fotile.ui.fragment.LiveFragment;
-import com.example.sg280.fotile.ui.fragment.MyFragment;
-import com.example.sg280.fotile.ui.fragment.ShoppingCartFragement;
+import com.example.sg280.fotile.ui.fragment.MyAccountFragment;
+import com.example.sg280.fotile.ui.fragment.MyShoppingCartFragment;
 import com.example.sg280.fotile.ui.fragment.VedioFragment;
 
 import java.util.List;
@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
            navi.setOnClickListener(this);
        }
         setBroadCast();
-      setChoiceItem(0);
+      setChoiceItem(4);
 
 
 
@@ -141,7 +141,7 @@ class SwitchFragementBroadcast extends BroadcastReceiver{
                 img_navis.get(3).setImageResource(R.drawable.navi_cart_red);
                 tv_navis.get(3).setTextColor(getResources().getColor(R.color.theme_red));
                 if(cartfrg==null){
-                    cartfrg=new ShoppingCartFragement();
+                    cartfrg=new MyShoppingCartFragment();
                     transaction.add(R.id.main_container,cartfrg);
                 }else{
                     transaction.show(cartfrg);
@@ -151,7 +151,7 @@ class SwitchFragementBroadcast extends BroadcastReceiver{
                 img_navis.get(4).setImageResource(R.drawable.navi_user_red);
                 tv_navis.get(4).setTextColor(getResources().getColor(R.color.theme_red));
                 if(userfrg==null){
-                    userfrg=new MyFragment();
+                    userfrg=new MyAccountFragment();
                     transaction.add(R.id.main_container,userfrg);
                 }else{
                     transaction.show(userfrg);

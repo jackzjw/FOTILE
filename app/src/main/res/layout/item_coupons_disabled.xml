@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:background="@drawable/shape_my_coupons"
     android:orientation="vertical">
 
@@ -11,6 +13,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/tv_title_type"
             android:layout_width="match_parent"
             android:layout_height="12.5dp"
             android:background="@drawable/user_img_discount_gray" />
@@ -48,6 +51,7 @@
             android:textSize="14sp" />
 
         <RelativeLayout
+            android:id="@+id/rl_use_rule"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_below="@+id/tv_coupons_user_time"
@@ -65,7 +69,7 @@
                 android:textSize="14sp" />
 
             <ImageView
-                android:id="@+id/tv_arrow_down"
+                android:id="@+id/iv_arrow_down"
                 android:layout_width="10dp"
                 android:layout_height="7dp"
                 android:layout_centerVertical="true"
@@ -85,6 +89,7 @@
             android:background="@color/hui_bg" />
 
         <ImageView
+            android:id="@+id/iv_is_used"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginRight="5dp"
@@ -101,14 +106,13 @@
             android:layout_marginTop="40dp"
             android:text="100"
             android:textColor="@color/hui_text"
-            android:textSize="40sp" />
+            android:textSize="26sp" />
 
         <TextView
             android:id="@+id/tv_money_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/tv_privilege_number"
-            android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/tv_privilege_number"
             android:text="¥"
             android:textColor="@color/hui_text"
@@ -142,6 +146,7 @@
         android:layout_marginTop="15dp"
         android:text="@string/test_describe"
         android:textColor="@color/hui_text"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:visibility="gone"/>
 
 </LinearLayout>

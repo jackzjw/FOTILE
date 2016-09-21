@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/hui_bg">
+
+    <include
+        android:id="@+id/title_my_orders"
+        layout="@layout/item_base_title"></include>
+
+    <include layout="@layout/item_underline_long_hui_line"></include>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_choice_coupon"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_noData"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/iv_noCoupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user_img_seal_used"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:layout_below="@+id/iv_noCoupon"
+            style="@style/my_word_14_gray_style"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/no_coupons"/>
+    </RelativeLayout>
+
+</LinearLayout>

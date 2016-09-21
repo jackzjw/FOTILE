@@ -14,6 +14,7 @@ import com.example.sg280.fotile.model.source.HttpService;
 import com.example.sg280.fotile.model.source.RegisterSubject;
 import com.example.sg280.fotile.presents.Interface.IRegisterContracts;
 import com.example.sg280.fotile.utils.MD5Util;
+import com.example.sg280.fotile.utils.SharedPreferencesUtil;
 import com.example.sg280.fotile.utils.ToastUtil;
 
 import java.net.ConnectException;
@@ -129,6 +130,7 @@ public class RegisterPresent  implements IRegisterContracts.Present{
           //  LogUtil.e(info.toString());
             MySelfInfo.getInstance().setIdentifier(info.getIdentifier());
             MySelfInfo.getInstance().setUserSig(info.getTlsSig());
+            SharedPreferencesUtil.setPhone(context,info.getUserTel());
                    mview.RegisterSucc();
         }
     };

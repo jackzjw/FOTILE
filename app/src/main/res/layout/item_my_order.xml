@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -10,10 +10,13 @@
         android:layout_height="50dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/iv_product"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:scaleType="fitXY"
             android:layout_marginLeft="20dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_centerVertical="true"
+            android:src="@drawable/user_logo_fotile" />
     </RelativeLayout>
 
     <include layout="@layout/item_underline_long_hui_line"></include>
@@ -34,6 +37,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/tv_order_number_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -44,6 +48,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/tv_order_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -55,11 +60,16 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/erv_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+    </android.support.v7.widget.RecyclerView>
 
     <RelativeLayout
+        android:id="@+id/rl_to_info"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -74,6 +84,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/tv_order_money_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

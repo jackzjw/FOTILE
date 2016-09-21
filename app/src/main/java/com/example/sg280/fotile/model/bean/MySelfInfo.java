@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.utils.LogUtil;
 
+import java.util.List;
+
 /**
  * Created by sg280 on 2016-07-25.
  *
@@ -20,7 +22,33 @@ public class MySelfInfo {
     private String sign;      // 签名
     private String CosSig;
     private int id_status;
+    private String identifier;
+    private List<String> liveCategory;
 
+    public List<String> getLiveCategory() {
+        return liveCategory;
+    }
+
+    public void setLiveCategory(List<String> liveCategory) {
+        this.liveCategory = liveCategory;
+    }
+
+    public List<String> getVedioCategory() {
+        return vedioCategory;
+    }
+
+    public void setVedioCategory(List<String> vedioCategory) {
+        this.vedioCategory = vedioCategory;
+    }
+
+    private List<String> vedioCategory;
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
 
     private int myRoomNum = -1;
 

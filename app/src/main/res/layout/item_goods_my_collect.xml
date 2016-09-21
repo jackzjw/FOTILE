@@ -9,9 +9,10 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/freeloop" />
 
     <TextView
+        android:id="@+id/tv_goods_name"
         style="@style/my_word_16_black_style"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/iv_goods_my_order"
@@ -27,27 +28,19 @@
         android:layout_toRightOf="@+id/iv_goods_my_order"
         android:text="¥ 1234" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <TextView
+        android:id="@+id/tv_market_money"
+        style="@style/my_word_14_gray_style"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/tv_now_money">
+        android:layout_toRightOf="@+id/tv_now_money"
+        android:text="¥ 1235" />
 
-        <TextView
-            style="@style/my_word_14_gray_style"
-            android:text="¥ 1235" />
-
-        <TextView
-            android:layout_width="45dp"
-            android:layout_height="1dp"
-            android:layout_centerVertical="true"
-            android:background="@color/hui_text" />
-
-    </RelativeLayout>
 
     <Button
+        android:id="@+id/btn_goto_info"
         android:layout_width="110dp"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
@@ -56,6 +49,7 @@
         android:background="@drawable/shape_goto_info"
         android:text="@string/goto_info"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        style="?android:attr/borderlessButtonStyle"/>
 
 </RelativeLayout>

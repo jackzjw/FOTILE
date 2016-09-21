@@ -1,9 +1,12 @@
 package com.example.sg280.fotile.utils;
 
+import android.text.TextUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -640,5 +643,33 @@ public class StringUtil {
      */
     public static String checkLength(String string, int maxLength) {
         return checkLength(string, maxLength, "…");
+    }
+
+    /**
+     * 判断一个List集合是否为空
+     * @param list
+     * @return
+     */
+    public static boolean listIsNull(List list){
+        if(null == list || list.size() == 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    /**
+     * 验证手机格式
+     */
+    public static boolean isMobileNO(String mobiles) {
+
+        String telRegex = "[1][2345789]\\d{9}";//"[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
+        if (TextUtils.isEmpty(mobiles)) return false;
+        else return mobiles.matches(telRegex);
+    }
+
+    public static String format(Object c) {
+        java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
+        return df.format(c);
     }
 }

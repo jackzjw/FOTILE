@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="180dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -10,11 +12,13 @@
         android:layout_height="135dp">
 
         <ImageView
+            android:id="@+id/iv_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@mipmap/chunhei" />
+            android:layout_height="135dp"
+            android:scaleType="centerCrop"/>
 
         <RelativeLayout
+            android:id="@+id/rl_living"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_centerInParent="true"
@@ -25,15 +29,17 @@
 
             <ImageView
                 android:id="@+id/iv_living_my_collect"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/navi_home_gray" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:src="@drawable/live_icon_playing" />
+
+            <TextView
+                android:id="@+id/tv_living_my_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
                 android:layout_toRightOf="@+id/iv_living_my_collect"
                 android:text="@string/living"
                 android:textColor="@color/white"
@@ -45,8 +51,9 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
-            android:background="@drawable/shape_living_my_collect"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_vod_my_collect"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -62,9 +69,6 @@
             android:layout_alignParentRight="true"
             android:background="@android:color/black"
             android:gravity="center"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="2016-12-12 12:12"
             android:textColor="@color/white"
             android:textSize="12dp" />
 
@@ -95,15 +99,15 @@
     <RelativeLayout
         android:id="@+id/rl_watch_comment_number"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center_vertical">
+        android:layout_height="20dp">
 
         <ImageView
             android:id="@+id/iv_watch_number"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/navi_live_gray" />
+            android:layout_centerVertical="true"
+            android:src="@drawable/vod_icon_hitcount"/>
 
         <TextView
             android:id="@+id/tv_watch_number"
@@ -111,22 +115,25 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/iv_watch_number"
+            android:layout_centerVertical="true"
             android:text="5456"
             android:textColor="@color/hui_text"
             android:textSize="12sp" />
 
         <ImageView
             android:id="@+id/iv_comment_number"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/tv_watch_number"
-            android:src="@drawable/navi_cart_gray" />
+            android:src="@drawable/vod_icon_comment" />
 
         <TextView
             android:id="@+id/tv_comment_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/iv_comment_number"
             android:text="147"

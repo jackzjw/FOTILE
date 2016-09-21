@@ -17,6 +17,6 @@ public interface IHomeContacts {
         void showNormal();
     }
     interface Present extends BasePresenter {
-
+        void start();
     }
 }

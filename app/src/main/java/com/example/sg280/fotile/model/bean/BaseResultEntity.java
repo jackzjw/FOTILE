@@ -31,9 +31,14 @@ public abstract class BaseResultEntity<T> implements Func1<HttpDataResult<T>, T>
 
     @Override
     public T call(HttpDataResult<T> httpResult) {
+        LogUtil.i("返回数据",httpResult.toString());
         if ("0".equals(httpResult.getSuccess())) {
             LogUtil.e(httpResult.getErrorMessage());
-            throw new BaseException(httpResult.getErrorMessage());
+            if("app-0006".equals(httpResult.getErrorCode())){
+                LogUtil.e("这里针对没有默认地址不向用户提示错误");
+            }else{
+                throw new BaseException(httpResult.getErrorMessage());
+            }
         }
         return httpResult.getResult();
     }

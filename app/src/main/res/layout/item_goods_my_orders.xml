@@ -1,39 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_goods_my_order"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:background="@color/hui_bg">
 
     <ImageView
-        android:id="@+id/iv_goods_my_order"
+        android:id="@+id/iv_product_my_order"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:scaleType="centerCrop"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/tv_product_name"
+        style="@style/my_word_14_black_style"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/iv_goods_my_order"
+        android:layout_toRightOf="@+id/iv_product_my_order"
         android:maxLines="1"
         android:text="哈哈哈哈哈哈哈哈哈"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/tv_skuName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_product_my_order"
+        android:layout_below="@+id/tv_product_name"
+        android:textColor="@color/hui_text"
+        android:layout_marginTop="5dp"
+        android:maxLines="1"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/tv_product_price"
+        style="@style/my_word_14_red_style"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:layout_toRightOf="@+id/iv_goods_my_order"
+        android:layout_toRightOf="@+id/iv_product_my_order"
         android:text="¥ 1234"
-        android:textColor="@color/red"
-        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/tv_product_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -42,6 +51,6 @@
         android:layout_marginRight="20dp"
         android:text="x1"
         android:textColor="@color/hui_text"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
 
 </RelativeLayout>

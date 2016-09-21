@@ -12,6 +12,8 @@ import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.model.bean.MySelfInfo;
 import com.example.sg280.fotile.presents.Interface.ILoginContacts;
 import com.example.sg280.fotile.presents.LoginPresent;
+import com.example.sg280.fotile.utils.MD5Util;
+import com.example.sg280.fotile.utils.SharedPreferencesUtil;
 import com.example.sg280.fotile.utils.ToastUtil;
 import com.example.sg280.fotile.widget.TitleBar;
 
@@ -113,6 +115,7 @@ public class LoginActivity extends Activity implements ILoginContacts.View {
     @Override
     public void loginSucc() {
         ToastUtil.showLong(this, "登录成功");
+        SharedPreferencesUtil.setPwd(this, MD5Util.getStringMD5(et_pwd.getText().toString().trim() + "FOTILE"));
         jumpIntoHomeActivity();
     }
 

@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/base_title"
-        layout="@layout/base_title"></include>
+        layout="@layout/item_base_title"></include>
 
     <include layout="@layout/item_underline_long_hui_line"></include>
 
@@ -27,14 +27,12 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/wait_user"
-                    android:textSize="14sp"
-                    android:textColor="@color/hui_text"/>
+                    android:id="@+id/tv_wait_use"
+                    style="@style/my_word_14_gray_match_style"
+                    android:text="@string/wait_use"/>
 
                 <TextView
+                    android:id="@+id/tv_wait_use_line"
                     android:layout_width="42dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
@@ -48,14 +46,12 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/disabled"
-                    android:textSize="14sp"
-                    android:textColor="@color/hui_text"/>
+                    android:id="@+id/tv_disabled"
+                    style="@style/my_word_14_gray_match_style"
+                    android:text="@string/disabled"/>
 
                 <TextView
+                    android:id="@+id/tv_disabled_line"
                     android:layout_width="42dp"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
@@ -71,5 +67,18 @@
             android:layout_alignParentBottom="true"
             android:background="@color/hui_line" />
     </RelativeLayout>
+
+    <!--<com.jude.easyrecyclerview.EasyRecyclerView-->
+        <!--android:id="@+id/erv_my_coupons"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+    <!--</com.jude.easyrecyclerview.EasyRecyclerView>-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/erv_my_coupons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
