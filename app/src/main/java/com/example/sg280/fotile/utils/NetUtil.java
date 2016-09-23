@@ -9,6 +9,8 @@ import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.sg280.fotile.app.FTApplication;
+
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
@@ -42,7 +44,13 @@ public class NetUtil {
 
         return false;
     }
-
+    /**
+     * 检查是否有可用网络
+     */
+    public static boolean isNetworkConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) FTApplication.getInstance().getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        return connectivityManager.getActiveNetworkInfo() != null;
+    }
     /**
      * 判断是否是WIFI连接
      *

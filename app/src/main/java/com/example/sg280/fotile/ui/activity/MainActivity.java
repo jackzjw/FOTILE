@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
+import android.os.*;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -19,6 +19,8 @@ import com.example.sg280.fotile.ui.fragment.MyAccountFragment;
 import com.example.sg280.fotile.ui.fragment.MyShoppingCartFragment;
 import com.example.sg280.fotile.ui.fragment.ProductsFragment;
 import com.example.sg280.fotile.ui.fragment.VedioFragment;
+import com.example.sg280.fotile.utils.LogUtil;
+import com.example.sg280.fotile.utils.ToastUtil;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -40,23 +42,29 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
     private Fragment cartfrg;
     private Fragment userfrg;
     public static int index=0;
+    private long firstBacktime=0;
+    private static final String TAG = "MainActivity";
     private int[] drawables={R.drawable.navi_home_gray,R.drawable.navi_live_gray,R.drawable.navi_vod_gray,R.drawable.navi_cart_gray,R.drawable.navi_user_gray};
     private SwitchFragementBroadcast broadcast;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LogUtil.e(TAG, "oncreate");
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
        for(RelativeLayout navi:rel_navis){
            navi.setOnClickListener(this);
        }
+        setChoiceItem(index);
         setBroadCast();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        setChoiceItem(index);
+       LogUtil.e(TAG,"onresume");
+
+
     }
 
     //广播，点击首页的右箭头，跳转到点播/直播的Fragment;
@@ -73,25 +81,22 @@ public class MainActivity extends BaseFragmentActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.rel_home:
-                setChoiceItem(0);
+                index=0;
                 break;
             case R.id.rel_live:
-                setChoiceItem(1);
+                index=1;
                 break;
             case R.id.rel_vedio:
-                setChoiceItem(2);
+                index=2;
                 break;
             case R.id.rel_cart:
-                setChoiceItem(3);
+                index=3;
                 break;
             case R.id.rel_user:
-                setChoiceItem(4);
+                index=4;
                 break;
-            default:
-                break;
-
-
         }
+        setChoiceItem(index);
     }
 class SwitchFragementBroadcast extends BroadcastReceiver{
 
@@ -233,6 +238,21 @@ class SwitchFragementBroadcast extends BroadcastReceiver{
             }
         }
     }
+
+    @Override
+    public void onBackPressed() {
+       long secondBackTime=System.currentTimeMillis();
+        if(secondBackTime-firstBacktime>3000){
+            ToastUtil.showLong(this,"再按一次退出应用");
+            firstBacktime=secondBackTime;
+        }else {
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(0);
+        }
+
+
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

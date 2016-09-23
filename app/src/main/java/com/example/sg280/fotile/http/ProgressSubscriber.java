@@ -128,7 +128,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
         if (context == null) return;
 
         if (e instanceof SocketTimeoutException) {
-            Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "服务器连接超时", Toast.LENGTH_SHORT).show();
         } else if (e instanceof ConnectException) {
             Toast.makeText(context, "网络中断，请检查您的网络状态", Toast.LENGTH_SHORT).show();
         } else {

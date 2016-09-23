@@ -18,7 +18,6 @@
         android:name=".app.FTApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity"
-            android:launchMode="singleTask"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,6 +40,7 @@
         <activity android:name=".ui.activity.FindPwdActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".ui.activity.ProductsActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
 
         <activity android:name=".ui.activity.LiveActivity"

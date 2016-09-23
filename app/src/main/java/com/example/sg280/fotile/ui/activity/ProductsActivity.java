@@ -253,7 +253,7 @@ public class ProductsActivity extends BaseFragmentActivity implements IProductCo
     void clickTopCart(){
         MainActivity.index=3;
         startActivity(new Intent(this,MainActivity.class));
-        finish();
+
     }
 
     //收藏

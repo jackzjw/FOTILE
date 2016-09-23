@@ -33,7 +33,6 @@ public class FotileRetrofit {
                httpservice=retrofit.create(HttpService.class);
     }
     public  Retrofit getRetrofit() {
-
         return retrofit;
     }
 

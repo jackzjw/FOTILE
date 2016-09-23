@@ -1,13 +1,18 @@
 package com.example.sg280.fotile.app;
 
+import java.io.File;
+
 /**
  * Created by sg280 on 2016-07-14.
  */
 public class Constants {
     public static final String BASE_URL = "http://fotile.efotile.com/api/";
+    public static final String PATH_DATA = FTApplication.getInstance().getCacheDir().getAbsolutePath() + File.separator + "data";
+    public static final String PATH_CACHE = PATH_DATA + "/NetCache";
     public static final String NET_ERROR="网络连接异常";
     public static final String SWITCH_FRAGMENT_LIVE="live";
     public static final String SWITCH_FRAGMENT_VEDIO="vedio";
+    public static final String SWITCH_FRAGMENT_CART="cart";
     public static final String USER_INFO = "user_info";
 
     public static final String USER_ID = "user_id";
