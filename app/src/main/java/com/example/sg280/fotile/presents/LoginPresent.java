@@ -52,6 +52,7 @@ public class LoginPresent implements ILoginContacts.Present{
             MySelfInfo.getInstance().setIdentifier(subjects.getIdentifier());
             MySelfInfo.getInstance().setUserSig(subjects.getTlsSig());
             MySelfInfo.getInstance().setPhone(subjects.getUserTel());
+            MySelfInfo.getInstance().setNickName(subjects.getUserName());
             MySelfInfo.getInstance().writeToCache(activity);
             imLogin(subjects.getIdentifier(),subjects.getTlsSig());
         }

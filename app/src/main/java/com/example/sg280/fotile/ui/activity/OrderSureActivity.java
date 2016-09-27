@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.adapter.GoodsSureOrderAdapter;
 import com.example.sg280.fotile.app.Constants;
@@ -33,7 +32,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import retrofit2.http.HEAD;
 
 /**
  * 订单确认界面
@@ -312,8 +310,8 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
 
     @Override
     public void commitSuc() {
-        ToastUtil.showShort(this, "提交订单成功");
-        finish();
+//        ToastUtil.showShort(this, "提交订单成功");
+//        finish();
     }
 
     //设置地址信息

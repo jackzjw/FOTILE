@@ -2,6 +2,7 @@ package com.example.sg280.fotile.adapter;
 
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.example.sg280.fotile.R;
@@ -21,6 +22,7 @@ public class AddressViewHolder extends BaseViewHolder<ShippingAddressBean> {
     public RelativeLayout rl_edit;//编辑
     public RelativeLayout rl_delete;//删除
     public TextView tv_default;
+    public LinearLayout ll_compile;
 
     public AddressViewHolder(ViewGroup parent) {
         super(parent, R.layout.item_shipping_address);
@@ -32,6 +34,7 @@ public class AddressViewHolder extends BaseViewHolder<ShippingAddressBean> {
         rl_edit = $(R.id.rl_edit);
         rl_delete = $(R.id.rl_delete);
         tv_default = $(R.id.tv_default);
+        ll_compile = $(R.id.ll_compile);
     }
 
     @Override

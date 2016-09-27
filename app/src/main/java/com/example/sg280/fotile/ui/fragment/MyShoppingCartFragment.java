@@ -56,14 +56,13 @@ public class MyShoppingCartFragment extends BaseFragment implements ShoppingCart
         tv_title.setText(R.string.shopping_cart);//修改标题栏的标题
         iv_back_title.setVisibility(View.GONE);//隐藏返回键
         shoppingCartPresent = new ShoppingCartPresent(getContext(),this,erv_goods_shoppingCart,cb_is_selected,tv_goods_price_info);
-
-
+        shoppingCartPresent.getShoppingCartGoods();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        shoppingCartPresent.getShoppingCartGoods();
+//        shoppingCartPresent.getShoppingCartGoods();
     }
 
     //点击结算，跳转订单确定界面
@@ -92,5 +91,6 @@ public class MyShoppingCartFragment extends BaseFragment implements ShoppingCart
         rl_brand.setVisibility(View.VISIBLE);
         rl_noData.setVisibility(View.GONE);
         erv_goods_shoppingCart.setVisibility(View.VISIBLE);
+        tv_goods_price_info.setText("￥ 0");
     }
 }

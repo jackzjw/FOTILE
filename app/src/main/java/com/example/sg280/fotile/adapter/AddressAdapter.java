@@ -25,6 +25,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressViewHolder> {
     private MyAddressPresent myAddressPresent;
     private final String ACTION = "modifyAddress";
     private boolean isNoIntentBack = false;
+//    private boolean isNotShow;//是否不展示编辑部分
 
     public AddressAdapter(Context context) {
         this.context = context;
@@ -59,6 +60,13 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressViewHolder> {
     @Override
     public void onBindViewHolder(AddressViewHolder holder, int position) {
         holder.setData(list.get(position));
+
+        //判断是否需要展示地址编辑的部分（设置默认，删除，编辑）
+        if(!isNoIntentBack){
+            holder.ll_compile.setVisibility(View.GONE);
+        }else{
+            holder.ll_compile.setVisibility(View.VISIBLE);
+        }
 
         if ("1".equals(list.get(position).getIsDefault())) {
             holder.cb_address.setChecked(true);

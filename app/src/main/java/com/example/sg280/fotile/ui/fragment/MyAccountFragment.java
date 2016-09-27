@@ -1,6 +1,5 @@
 package com.example.sg280.fotile.ui.fragment;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -78,19 +77,19 @@ public class MyAccountFragment extends BaseFragment {
                 IntentUtil.jumpToActivity(getActivity(), ModifyUserInfoActivity.class);
                 break;
             case R.id.rl_my_order://点击查看全部订单跳转到我的订单界面
-                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","0");
                 break;
             case R.id.rl_wait_pay://点击待支付跳转到我的订单待付款界面
-                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","1");
                 break;
             case R.id.rl_wait_shipments://点击待支付跳转到我的订单待发货界面
-                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","2");
                 break;
             case R.id.rl_wait_receipt://点击待支付跳转到我的订单待收货界面
-                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","3");
                 break;
             case R.id.rl_deal_is_done://点击待支付跳转到我的订单已完成界面
-                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","4");
                 break;
             case R.id.rl_my_coupons://点击我的优惠码跳转到我的优惠码界面
                 IntentUtil.jumpToActivity(getActivity(), MyCouponsActivity.class);
@@ -105,9 +104,7 @@ public class MyAccountFragment extends BaseFragment {
                 IntentUtil.jumpToActivity(getActivity(), UserPointActivity.class);
                 break;
             case R.id.rl_my_address://点击我的收货地址跳转到我的收货地址界面
-                Intent intent = new Intent(this.getActivity(),ShippingAddressActivity.class);
-                intent.putExtra("account","1");
-                startActivity(intent);
+                IntentUtil.jumpToActivity(getActivity(), ShippingAddressActivity.class,"account","1");
                 break;
 
         }

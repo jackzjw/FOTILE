@@ -25,23 +25,21 @@ public class OrderInformationActivity extends BaseActivity implements UserOrderI
 
 
     @Bind(R.id.iv_back_title)
-    ImageView ivBackTitle;
+    ImageView ivBackTitle;//返回键
     @Bind(R.id.tv_title)
-    TextView tvTitle;
+    TextView tvTitle;//标题
     @Bind(R.id.tv_order_number_info)
-    TextView tvOrderNumberInfo;
+    TextView tvOrderNumberInfo;//订单号
     @Bind(R.id.tv_order_state)
-    TextView tvOrderState;
+    TextView tvOrderState;//订单状态
     @Bind(R.id.tv_consignee_info)
-    TextView tvConsigneeInfo;
+    TextView tvConsigneeInfo;//收货人
     @Bind(R.id.tv_phone_number)
-    TextView tvPhoneNumber;
+    TextView tvPhoneNumber;//收货人电话
     @Bind(R.id.tv_delivery_address_info)
-    TextView tvDeliveryAddressInfo;
+    TextView tvDeliveryAddressInfo;//收货人地址信息
     @Bind(R.id.tv_postcode_info)
-    TextView tvPostcodeInfo;
-//    @Bind(R.id.tv_leave_a_message_info)
-//    TextView tvLeaveAMessageInfo;
+    TextView tvPostcodeInfo;//收货人邮编
     @Bind(R.id.iv_point_1)
     ImageView ivPoint1;
     @Bind(R.id.tv_line_1)
@@ -63,47 +61,49 @@ public class OrderInformationActivity extends BaseActivity implements UserOrderI
     @Bind(R.id.tv_line_6)
     TextView tvLine6;
     @Bind(R.id.tv_commit_order)
-    TextView tvCommitOrder;
+    TextView tvCommitOrder;//订单跟踪第一个名称
     @Bind(R.id.tv_commit_order_info)
-    TextView tvCommitOrderInfo;
+    TextView tvCommitOrderInfo;//订单跟踪第一个时间
     @Bind(R.id.tv_pay_time)
-    TextView tvPayTime;
+    TextView tvPayTime;//订单跟踪第二个名称
     @Bind(R.id.tv_pay_time_info)
-    TextView tvPayTimeInfo;
+    TextView tvPayTimeInfo;//订单跟踪第二个时间
     @Bind(R.id.tv_shipments_time)
-    TextView tvShipmentsTime;
+    TextView tvShipmentsTime;//订单跟踪第三个名称
     @Bind(R.id.tv_shipments_time_info)
-    TextView tvShipmentsTimeInfo;
+    TextView tvShipmentsTimeInfo;//订单跟踪第三个时间
     @Bind(R.id.tv_receipt_time)
-    TextView tvReceiptTime;
+    TextView tvReceiptTime;//订单跟踪第四个名称
     @Bind(R.id.tv_receipt_time_info)
-    TextView tvReceiptTimeInfo;
+    TextView tvReceiptTimeInfo;//订单跟踪第四个时间
     @Bind(R.id.iv_brand_logo)
-    ImageView ivBrandLogo;
+    ImageView ivBrandLogo;//品牌logo地址
     @Bind(R.id.rv_goods)
-    RecyclerView rvGoods;
+    RecyclerView rvGoods;//订单商品的RecyclerView
     @Bind(R.id.tv_goods_price)
-    TextView tvGoodsPrice;
+    TextView tvGoodsPrice;//商品金额
     @Bind(R.id.tv_freight)
-    TextView tvFreight;
+    TextView tvFreight;//运费
     @Bind(R.id.tv_point_money)
-    TextView tvPointMoney;
+    TextView tvPointMoney;//积分
     @Bind(R.id.tv_coupon_price)
-    TextView tvCouponPrice;
+    TextView tvCouponPrice;//优惠券
     @Bind(R.id.tv_order_money)
-    TextView tvOrderMoney;
+    TextView tvOrderMoney;//订单金额
     @Bind(R.id.tv_pay_way)
-    TextView tvPayWay;
+    TextView tvPayWay;//支付方式
     @Bind(R.id.tv_leave_another_message_info)
-    TextView tvLeaveAnotherMessageInfo;
+    TextView tvLeaveAnotherMessageInfo;//留言
     @Bind(R.id.tv_logistics_company_info)
-    TextView tvLogisticsCompanyInfo;
+    TextView tvLogisticsCompanyInfo;//物流公司名称
     @Bind(R.id.tv_waybill_number_info)
-    TextView tvWaybillNumberInfo;
+    TextView tvWaybillNumberInfo;//物流公司订单号
     @Bind(R.id.rl_logistics_info)
     RelativeLayout rlLogisticsInfo;
 //    @Bind(R.id.tv_leave_a_message)
 //    TextView tvLeaveAMessage;
+//    @Bind(R.id.tv_leave_a_message_info)
+//    TextView tvLeaveAMessageInfo;
 
     private UserOrderInfoPresent userOrderInfoPresent;
     private String orderId;
@@ -131,6 +131,7 @@ public class OrderInformationActivity extends BaseActivity implements UserOrderI
         }
     }
 
+    //将获取到的网络数据显示到界面上
     @Override
     public void setInfo(UserOrderInfoBean userOrderInfoBean) {
         tvOrderNumberInfo.setText(userOrderInfoBean.getID());
@@ -141,6 +142,7 @@ public class OrderInformationActivity extends BaseActivity implements UserOrderI
         tvPostcodeInfo.setText(userOrderInfoBean.getPostcode());
         tvLeaveAnotherMessageInfo.setText(userOrderInfoBean.getOrderRemark());
 
+        //显示订单的一些具体状态信息（生成订单，后台审核等等）
         if (null != userOrderInfoBean.getOrderDealLog()) {
             for (int i = 0; i < userOrderInfoBean.getOrderDealLog().size(); i++) {
                 if (i == 0) {
@@ -160,17 +162,75 @@ public class OrderInformationActivity extends BaseActivity implements UserOrderI
         }
 
         Glides.getInstance().load(this, userOrderInfoBean.getBrandLogo(), ivBrandLogo);
-        tvGoodsPrice.setText("￥ " + StringUtil.format(Double.valueOf(userOrderInfoBean.getProductAmount())));
-        if ( "0.00".equals(userOrderInfoBean.getDiscountAmount()) &&!"0".equals(userOrderInfoBean.getFreight())) {
-            tvFreight.setText("￥ " + StringUtil.format(Double.valueOf(userOrderInfoBean.getFreight())));
-        }
-        if ("0.00".equals(userOrderInfoBean.getDiscountAmount()) && !"0".equals(userOrderInfoBean.getDiscountAmount())) {
-            tvCouponPrice.setText("￥ " + StringUtil.format(Double.valueOf(userOrderInfoBean.getDiscountAmount())));
-        }
-        if ("0.00".equals(userOrderInfoBean.getIntegralAmount()) && !"0".equals(userOrderInfoBean.getIntegralAmount())) {
-            tvPointMoney.setText("￥ " + StringUtil.format(Double.valueOf(userOrderInfoBean.getIntegralAmount())));
-        }
-        tvOrderMoney.setText("￥ " + StringUtil.format(Double.valueOf(userOrderInfoBean.getPayAmount())));
+        tvGoodsPrice.setText(getResources().getString(R.string.rmb) + StringUtil.saveTwoDouble(userOrderInfoBean.getProductAmount()));
+        tvOrderMoney.setText(getResources().getString(R.string.rmb) + StringUtil.saveTwoDouble((userOrderInfoBean.getPayAmount())));
+        tvFreight.setText(getResources().getString(R.string.rmb) + StringUtil.saveTwoDouble(userOrderInfoBean.getFreight()));
+        tvCouponPrice.setText(getResources().getString(R.string.rmb) + StringUtil.saveTwoDouble(userOrderInfoBean.getDiscountAmount()));
+        tvPointMoney.setText(getResources().getString(R.string.rmb) + StringUtil.saveTwoDouble(userOrderInfoBean.getIntegralAmount()));
         tvPayWay.setText(userOrderInfoBean.getPayTypeName());
+
+        initLineAndRedPoint(userOrderInfoBean.getOrderStatus());
+        tvLogisticsCompanyInfo.setText(userOrderInfoBean.getExpressName());
+        tvWaybillNumberInfo.setText(userOrderInfoBean.getExpressNo());
+    }
+
+    //根据订单状态显示红线跟红点
+    private void initLineAndRedPoint(String status) {
+
+        switch (status) {
+            case "1"://待付款
+                ivPoint1.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint2.setImageResource(R.drawable.shape_gray_point_order_info);
+                ivPoint3.setImageResource(R.drawable.shape_gray_point_order_info);
+                ivPoint4.setImageResource(R.drawable.shape_gray_point_order_info);
+                tvLine1.setBackgroundResource(R.color.hui_text);
+                tvLine2.setBackgroundResource(R.color.hui_text);
+                tvLine3.setBackgroundResource(R.color.hui_text);
+                tvLine4.setBackgroundResource(R.color.hui_text);
+                tvLine5.setBackgroundResource(R.color.hui_text);
+                tvLine6.setBackgroundResource(R.color.hui_text);
+                rlLogisticsInfo.setVisibility(View.GONE);
+                break;
+            case "0"://订单取消
+            case "2"://待发货
+                ivPoint1.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint2.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint3.setImageResource(R.drawable.shape_gray_point_order_info);
+                ivPoint4.setImageResource(R.drawable.shape_gray_point_order_info);
+                tvLine1.setBackgroundResource(R.color.red);
+                tvLine2.setBackgroundResource(R.color.red);
+                tvLine3.setBackgroundResource(R.color.hui_text);
+                tvLine4.setBackgroundResource(R.color.hui_text);
+                tvLine5.setBackgroundResource(R.color.hui_text);
+                tvLine6.setBackgroundResource(R.color.hui_text);
+                rlLogisticsInfo.setVisibility(View.GONE);
+                break;
+            case "3"://待收货
+                ivPoint1.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint2.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint3.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint4.setImageResource(R.drawable.shape_gray_point_order_info);
+                tvLine1.setBackgroundResource(R.color.red);
+                tvLine2.setBackgroundResource(R.color.red);
+                tvLine3.setBackgroundResource(R.color.red);
+                tvLine4.setBackgroundResource(R.color.red);
+                tvLine5.setBackgroundResource(R.color.hui_text);
+                tvLine6.setBackgroundResource(R.color.hui_text);
+                rlLogisticsInfo.setVisibility(View.VISIBLE);
+                break;
+            case "4"://交易完成
+                ivPoint1.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint2.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint3.setImageResource(R.drawable.shape_red_point_order_info);
+                ivPoint4.setImageResource(R.drawable.shape_red_point_order_info);
+                tvLine1.setBackgroundResource(R.color.red);
+                tvLine2.setBackgroundResource(R.color.red);
+                tvLine3.setBackgroundResource(R.color.red);
+                tvLine4.setBackgroundResource(R.color.red);
+                tvLine5.setBackgroundResource(R.color.red);
+                tvLine6.setBackgroundResource(R.color.red);
+                rlLogisticsInfo.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 }

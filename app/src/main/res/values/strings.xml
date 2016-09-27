@@ -73,6 +73,7 @@
     <string name="usable_point">可用积分</string>
     <string name="point_info">积分明细</string>
     <string name="my_point">我的积分</string>
+    <string name="rmb">￥ </string>
     <!--登录注册-->
 
     <string name="login_">登录</string>

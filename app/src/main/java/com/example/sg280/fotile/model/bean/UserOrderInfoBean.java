@@ -467,4 +467,44 @@ public class UserOrderInfoBean {
             this.IsShow = IsShow;
         }
     }
+
+    @Override
+    public String toString() {
+        return "UserOrderInfoBean{" +
+                "ID='" + ID + '\'' +
+                ", UserID='" + UserID + '\'' +
+                ", BrandID='" + BrandID + '\'' +
+                ", BrandLogo='" + BrandLogo + '\'' +
+                ", OrderStatus='" + OrderStatus + '\'' +
+                ", PayType='" + PayType + '\'' +
+                ", PayTypeName='" + PayTypeName + '\'' +
+                ", PayStatus='" + PayStatus + '\'' +
+                ", PayTime='" + PayTime + '\'' +
+                ", OrderRemark='" + OrderRemark + '\'' +
+                ", ProductAmount='" + ProductAmount + '\'' +
+                ", Freight='" + Freight + '\'' +
+                ", DiscountAmount='" + DiscountAmount + '\'' +
+                ", integralAmount='" + integralAmount + '\'' +
+                ", UtmSource='" + UtmSource + '\'' +
+                ", PayAmount='" + PayAmount + '\'' +
+                ", CouponID='" + CouponID + '\'' +
+                ", OrderAddress='" + OrderAddress + '\'' +
+                ", ExpressID='" + ExpressID + '\'' +
+                ", ExpressName='" + ExpressName + '\'' +
+                ", ExpressNo='" + ExpressNo + '\'' +
+                ", ProvinceID='" + ProvinceID + '\'' +
+                ", CityID='" + CityID + '\'' +
+                ", RegionID='" + RegionID + '\'' +
+                ", Address='" + Address + '\'' +
+                ", Recipients='" + Recipients + '\'' +
+                ", Tel='" + Tel + '\'' +
+                ", Postcode='" + Postcode + '\'' +
+                ", InvoiceStatus='" + InvoiceStatus + '\'' +
+                ", ScoreLogistics='" + ScoreLogistics + '\'' +
+                ", ScoreService='" + ScoreService + '\'' +
+                ", CommentType='" + CommentType + '\'' +
+                ", OrderDetails=" + OrderDetails +
+                ", OrderDealLog=" + OrderDealLog +
+                '}';
+    }
 }

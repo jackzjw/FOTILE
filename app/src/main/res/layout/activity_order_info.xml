@@ -553,8 +553,7 @@
                     android:id="@+id/tv_logistics_company_info"
                     style="@style/my_word_14_gray_style"
                     android:layout_alignBaseline="@+id/tv_logistics_company"
-                    android:layout_toRightOf="@+id/tv_logistics_company"
-                    android:text="顺丰快递" />
+                    android:layout_toRightOf="@+id/tv_logistics_company" />
 
                 <TextView
                     android:id="@+id/tv_waybill_number"
@@ -567,8 +566,7 @@
                     android:id="@+id/tv_waybill_number_info"
                     style="@style/my_word_14_gray_style"
                     android:layout_alignBaseline="@+id/tv_waybill_number"
-                    android:layout_toRightOf="@+id/tv_waybill_number"
-                    android:text="201607221717" />
+                    android:layout_toRightOf="@+id/tv_waybill_number" />
 
             </RelativeLayout>
 

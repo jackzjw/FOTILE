@@ -143,12 +143,10 @@ class SwitchFragementBroadcast extends BroadcastReceiver{
             case 3:
                 img_navis.get(3).setImageResource(R.drawable.navi_cart_red);
                 tv_navis.get(3).setTextColor(getResources().getColor(R.color.theme_red));
-                if(cartfrg==null){
+
                     cartfrg=new MyShoppingCartFragment();
                     transaction.add(R.id.main_container,cartfrg);
-                }else{
-                    transaction.show(cartfrg);
-                }
+
                 break;
             case 4:
                 img_navis.get(4).setImageResource(R.drawable.navi_user_red);

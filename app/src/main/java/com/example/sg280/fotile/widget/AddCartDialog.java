@@ -1,9 +1,12 @@
 package com.example.sg280.fotile.widget;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
@@ -55,7 +58,8 @@ public class AddCartDialog extends Dialog {
     private String imgurl;
     private String proname;
     private String skuPrice;
-    public AddCartDialog(Context context,ProductsBean Beans, ProductDetailsPresent present,int themeResId) {
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    public AddCartDialog(Context context, ProductsBean Beans, ProductDetailsPresent present, int themeResId) {
         super(context, themeResId);
         setContentView(R.layout.dialog_add_cart);
         ButterKnife.bind(this);
@@ -80,7 +84,7 @@ public class AddCartDialog extends Dialog {
             button.setBackgroundResource(R.drawable.select_comment_setting);
             button.setButtonDrawable(android.R.color.transparent);
             button.setTag(skuListBeans.get(i));
-            button.setBackground(context.getResources().getDrawable(R.drawable.select_comment_setting));
+            button.setBackground(ContextCompat.getDrawable(context,R.drawable.select_comment_setting));
               radioGroup.addView(button);
             if(i==0) radioGroup.check(button.getId());
         }

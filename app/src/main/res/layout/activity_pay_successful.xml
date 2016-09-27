@@ -77,10 +77,10 @@
         android:background="@color/white"
         android:layout_marginTop="20dp"/>
 
-    <com.jude.easyrecyclerview.EasyRecyclerView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_hotGoods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-    </com.jude.easyrecyclerview.EasyRecyclerView>
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
