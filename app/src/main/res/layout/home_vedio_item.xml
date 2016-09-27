@@ -23,15 +23,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/vedio_img_1"
             android:layout_marginLeft="10dp"
-<<<<<<< HEAD
+
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
 
             />
-=======
-            android:text="方太直播"
-            android:layout_marginTop="10dp"/>
->>>>>>> 9154ba3ab91f5fc2130025876902b38a4a7ff600
+
 
     </RelativeLayout>
 </LinearLayout>
