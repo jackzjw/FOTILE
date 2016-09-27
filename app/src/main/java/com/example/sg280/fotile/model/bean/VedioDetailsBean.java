@@ -35,6 +35,7 @@ public class VedioDetailsBean {
     private String CommentCount;//评论次数,
     private String IsHot;//是否热门,
     private String MasterUserID;//直播主号
+
     private String LivePixType;
 
     public String getLivePixType() {
@@ -292,6 +293,7 @@ public class VedioDetailsBean {
     public void setMasterUserID(String masterUserID) {
         MasterUserID = masterUserID;
     }
+
 
     @Override
     public String toString() {

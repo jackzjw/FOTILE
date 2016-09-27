@@ -19,6 +19,7 @@ import com.example.sg280.fotile.model.bean.ProductsBean;
 import com.example.sg280.fotile.model.bean.ShippingAddressBean;
 import com.example.sg280.fotile.model.bean.UserInfo;
 import com.example.sg280.fotile.model.bean.UserInfoBean;
+import com.example.sg280.fotile.model.bean.UserOrderInfoBean;
 import com.example.sg280.fotile.model.bean.VedioCategoryBean;
 import com.example.sg280.fotile.model.bean.VedioDetailsBean;
 
@@ -32,6 +33,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import rx.Observable;
 
+
 /**
  * app接口列表
  * Created by sg280 on 2016-07-18.
@@ -40,6 +42,7 @@ public interface HttpService {
     //获取首页列表
     @GET("getHotLive.ashx")
     Observable<HttpResult<List<HomeLiveList>>> getHotLiveList();
+
     //首页轮播图
     @FormUrlEncoded
     @POST("getAdinfo.ashx")
@@ -61,6 +64,7 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("userDycodeValid.ashx")
     Observable<NoResponseResult> conformDycode(@Field("tel") String tel,@Field("dycode") String dycode,@Field("type") String type);
+
     //注册
     @FormUrlEncoded
     @POST("userRegister.ashx")
@@ -80,6 +84,7 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("getLiveView.ashx")
     Observable<HttpDataResult<VedioDetailsBean>> getLiveView(@Field("Action") String type,@Field("liveid") String liveid);
+
     //获取直播关联产品
     @FormUrlEncoded
     @POST("getLiveView.ashx")
@@ -103,6 +108,7 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("addfav.ashx")
     Observable<NoResponseResult> addCollect(@Field("userid") String userid,@Field("itemid") String itemid,@Field("itemtype") int type);
+
 
     /**
      * 修改用户资料
@@ -136,7 +142,7 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("editAddress.ashx")
     Observable<NoResponseResult> addAddress(@Field("action") String type, @Field("userid") String userid,
-                                            @Field("pcr") String pcr, @Field("address") String address, @Field("tel") String tel,
+                                                @Field("pcr") String pcr, @Field("address") String address, @Field("tel") String tel,
                                             @Field("postcode") String postcode,@Field("recipients") String recipients,@Field("isdefault") String isdefault);
 
 
@@ -167,8 +173,9 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("editAddress.ashx")
     Observable<NoResponseResult> modifyAddress(@Field("action") String action, @Field("userId") String userId,
-                                               @Field("pcr") String pcr, @Field("address") String address, @Field("tel") String tel,
-                                               @Field("postcode") String postcode,@Field("recipients") String recipients,@Field("isDefault") String isDefault,@Field("addressId") String addressId);
+                                            @Field("pcr") String pcr, @Field("address") String address, @Field("tel") String tel,
+                                            @Field("postcode") String postcode,@Field("recipients") String recipients,@Field("isDefault") String isDefault,@Field("addressId") String addressId);
+
 
     /**
      * 获取收货地址列表
@@ -214,7 +221,8 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("getMyOrderList.ashx")
     Observable<HttpResult<List<OrderBean>>> getOrderList
-    (@Field("userid") String userid, @Field("limit") String limit, @Field("start") int start,@Field("orderstatus") String orderstatus);
+            (@Field("userid") String userid, @Field("limit") String limit, @Field("start") int start,@Field("orderstatus") String orderstatus);
+
 
 
     /**
@@ -225,7 +233,8 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("getShopCartListForApp.ashx")
     Observable<HttpResult<List<BrandBean>>> getShoppingCartGoods
-    (@Field("userid") String userid);
+            (@Field("userid") String userid);
+
 
 
     /**
@@ -238,7 +247,8 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("editShopCar.ashx")
     Observable<NoResponseResult> modifyGoodsNum
-    (@Field("action") String action,@Field("shopCarId") String shopCarId,@Field("userId") String userId);
+            (@Field("action") String action,@Field("shopCarId") String shopCarId,@Field("userId") String userId);
+
 
 
     /**
@@ -262,61 +272,14 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("addOrderInfo.ashx")
     Observable<HttpDataResult<CommitOrderBackMsgBean>> commitOrder
-    (@Field("shopCarId") String shopCarId,@Field("userId") String userId,
-     @Field("couponcardid") String couponcardid,
-     @Field("pcr") String pcr,@Field("address") String address,
-     @Field("tel") String tel,@Field("postcode") String postcode,
-     @Field("recipients") String recipients, @Field("paytype") String paytype,
-     @Field("remark") String remark,@Field("invoicestatus") String invoicestatus,
-     @Field("integral") String integral,@Field("isliji") String isliji);
+            (@Field("shopCarId") String shopCarId,@Field("userId") String userId,
+             @Field("couponcardid") String couponcardid,
+             @Field("pcr") String pcr,@Field("address") String address,
+             @Field("tel") String tel,@Field("postcode") String postcode,
+             @Field("recipients") String recipients, @Field("paytype") String paytype,
+             @Field("remark") String remark,@Field("invoicestatus") String invoicestatus,
+             @Field("integral") String integral,@Field("isliji") String isliji);
 
-
-    /**
-     * 获取用户详细信息
-     * @param userId 用户ID
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("getMyInfo.ashx")
-    Observable<HttpDataResult<UserInfoBean>> userInfo
-    (@Field("userId") String userId);
-
-    /**
-     * 获取当前可用的优惠券数量
-     * @param action
-     * @param userId 用户ID
-     * @param shopCarId 购物车ID
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("getMyCoupon.ashx")
-    Observable<HttpDataResult<CouponsNumBean>> getCouponsNum
-    (@Field("action") String action,@Field("userId") String userId,@Field("shopCarId") String shopCarId);
-
-
-    /**
-     * 获取当前可用的优惠券
-     * @param action
-     * @param userId 用户ID
-     * @param shopCarId 购物车ID
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("getMyCoupon.ashx")
-    Observable<HttpResult<List<CouponsBean>>> getNowUsableCoupons
-    (@Field("action") String action,@Field("userId") String userId,@Field("shopCarId") String shopCarId);
-
-
-    /**
-     * 获取所有可用不可用的优惠券
-     * @param action
-     * @param userId
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("getMyCoupon.ashx")
-    Observable<HttpResult<List<CouponsBean>>> getUsableCoupons
-    (@Field("action") String action,@Field("userId") String userId);
     /**
      * 立即购买的提交订单
      * @param productid 产品ID
@@ -340,14 +303,39 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("addOrderInfo.ashx")
     Observable<HttpDataResult<CommitOrderBackMsgBean>> commitOrderAtOnce
-    (@Field("productid") String productid,@Field("skuid") String skuid,
-     @Field("productnum") String productnum,@Field("userId") String userId,
-     @Field("couponcardid") String couponcardid,
-     @Field("pcr") String pcr,@Field("address") String address,
-     @Field("tel") String tel,@Field("postcode") String postcode,
-     @Field("recipients") String recipients, @Field("paytype") String paytype,
-     @Field("remark") String remark,@Field("invoicestatus") String invoicestatus,
-     @Field("integral") String integral,@Field("isliji") String isliji);
+            (@Field("productid") String productid,@Field("skuid") String skuid,
+             @Field("productnum") String productnum,@Field("userId") String userId,
+             @Field("couponcardid") String couponcardid,
+             @Field("pcr") String pcr,@Field("address") String address,
+             @Field("tel") String tel,@Field("postcode") String postcode,
+             @Field("recipients") String recipients, @Field("paytype") String paytype,
+             @Field("remark") String remark,@Field("invoicestatus") String invoicestatus,
+             @Field("integral") String integral,@Field("isliji") String isliji);
+
+
+
+    /**
+     * 获取用户详细信息
+     * @param userId 用户ID
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("getMyInfo.ashx")
+    Observable<HttpDataResult<UserInfoBean>> userInfo
+            (@Field("userId") String userId);
+
+
+    /**
+     * 获取当前可用的优惠券数量
+     * @param action
+     * @param userId 用户ID
+     * @param shopCarId 购物车ID
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("getMyCoupon.ashx")
+    Observable<HttpDataResult<CouponsNumBean>> getCouponsNum
+            (@Field("action") String action,@Field("userId") String userId,@Field("shopCarId") String shopCarId);
 
     /**
      * 获取当前可用的优惠券数量(立即购买)
@@ -361,8 +349,23 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("getMyCoupon.ashx")
     Observable<HttpDataResult<CouponsNumBean>> getCouponsNumAtOnce
-    (@Field("action") String action,@Field("userId") String userId,@Field("productid") String productid,@Field ("skuid") String skuid,
-     @Field("productnum") String productnum);
+            (@Field("action") String action,@Field("userId") String userId,@Field("productid") String productid,@Field("skuid") String skuid,
+             @Field("productnum") String productnum);
+
+
+
+    /**
+     * 获取当前可用的优惠券
+     * @param action
+     * @param userId 用户ID
+     * @param shopCarId 购物车ID
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("getMyCoupon.ashx")
+    Observable<HttpResult<List<CouponsBean>>> getNowUsableCoupons
+            (@Field("action") String action,@Field("userId") String userId,@Field("shopCarId") String shopCarId);
+
 
     /**
      * 获取当前可用的优惠券(立即购买)
@@ -376,7 +379,30 @@ public interface HttpService {
     @FormUrlEncoded
     @POST("getMyCoupon.ashx")
     Observable<HttpResult<List<CouponsBean>>> getNowUsableCouponsAtOnce
-    (@Field("action") String action,@Field("userId") String userId,@Field("productid") String productid,@Field ("skuid") String skuid,
-     @Field("productnum") String productnum);
+            (@Field("action") String action,@Field("userId") String userId,@Field("productid") String productid,@Field("skuid") String skuid,
+             @Field("productnum") String productnum);
+
+    /**
+     * 获取所有可用不可用的优惠券
+     * @param action
+     * @param userId
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("getMyCoupon.ashx")
+    Observable<HttpResult<List<CouponsBean>>> getUsableCoupons
+            (@Field("action") String action,@Field("userId") String userId);
+
+
+    /**
+     * 获取用户订单详情
+     * @param userId 用户Id
+     * @param orderId 订单Id
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("getOrderInfo.ashx")
+    Observable<HttpDataResult<UserOrderInfoBean>> getUserOrderInfo
+            (@Field("userId") String userId,@Field("orderId") String orderId);
 
 }

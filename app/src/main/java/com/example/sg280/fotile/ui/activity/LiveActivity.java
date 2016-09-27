@@ -55,10 +55,13 @@ import java.io.UnsupportedEncodingException;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.http.HEAD;
+
 
 /**
  * Created by sg280 on 2016-08-02.
  */
+
 public class LiveActivity extends BaseFragmentActivity implements ITXLivePlayListener,ILiveContacts.View,IIMContacts.View{
     private  static final String LIVE_ID="liveid";
     private static final String TAG = "LiveActivity";
@@ -509,6 +512,7 @@ public class LiveActivity extends BaseFragmentActivity implements ITXLivePlayLis
     @Override
     protected void onResume() {
         super.onResume();
+
         isOnPause=false;
         if (mVideoPlay && !mVideoPause) {
             //退到后台重新回来继续播放，这里加延迟目的：让上一次的关闭操作执行完成

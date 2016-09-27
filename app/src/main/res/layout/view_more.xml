@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_view_more"
     android:layout_width="match_parent"
     android:layout_height="56dp"
+<<<<<<< HEAD
     android:background="@color/hui_bg"
     android:id="@+id/ll_view_more"
     android:gravity="center">
+=======
+    android:gravity="center"
+    android:orientation="horizontal">
+
+>>>>>>> 9154ba3ab91f5fc2130025876902b38a4a7ff600
     <ProgressBar
         android:id="@+id/footer_pb"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:indeterminate="false"/>
+
     <TextView
         android:id="@+id/footer_tv"
         android:layout_width="wrap_content"

@@ -3,6 +3,8 @@ package com.example.sg280.fotile.model.bean;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.http.HEAD;
+
 /**
  * 加、减、乘计算
  * Created by Tian on 2016/8/15.
@@ -18,7 +20,8 @@ public class ArithmeticUtil {
      * @param a   参数a
      * @param b   参数b
      */
-    public static int getResultWithTwoParam(String ari, int a, int b) {
+    public static double getResultWithTwoParam(String ari, int a, int b) {
+
 
         switch (ari) {
             case "+":
@@ -42,7 +45,8 @@ public class ArithmeticUtil {
      * @param list 所有要加的数的list集合
      * @return list所有数的和
      */
-    public static int getResultWithMoreAdd(List<Double> list) {
+    public static double getResultWithMoreAdd(List<Double> list) {
+
 
         arithmeticClass = new AddMoreArithmetic(list);
 
@@ -55,19 +59,21 @@ public class ArithmeticUtil {
      * @param list GoodsShoppingCartBean购物车商品集合
      * @return 购物车内该品牌下所有已选产品的价钱
      */
-    public static int getResultWithBeansAdd(List<ShoppingCartGoodsBean> list) {
-        List<Double> intList = new ArrayList<>();
+    public static double getResultWithBeansAdd(List<ShoppingCartGoodsBean> list) {
+        List<Double> doubleList = new ArrayList<>();
         if(null == list || list.size() == 0){
-            return 0;
+            return 0.00;
+
         }
 
         for (int i = 0; i < list.size(); i++) {
             if(list.get(i).isChecked()){
-                intList.add(Integer.valueOf(list.get(i).getProductQuantity()) *
+                doubleList.add(Double.valueOf(list.get(i).getProductQuantity()) *
                         Double.valueOf(list.get(i).getPricePromo()));
             }
         }
-        return new AddMoreArithmetic(intList).arithmetic();
+        return new AddMoreArithmetic(doubleList).arithmetic();
+
     }
 
 

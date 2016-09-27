@@ -12,7 +12,8 @@ import java.util.List;
  * Created by sg280 on 2016-07-19.
  */
 public interface IHomeContacts {
-    interface View extends BaseView{
+    interface View extends BaseView {
+
         void loadContent(List<HomeLiveList> list);
         void loadAdInfo(List<HomeAdBean> mlist);
         void loadHotPro(List<HomeHotProBean> proBeans);
@@ -21,6 +22,7 @@ public interface IHomeContacts {
         void showNormal();
     }
     interface Present extends BasePresenter {
+
            void loadHomeData();
     }
 }

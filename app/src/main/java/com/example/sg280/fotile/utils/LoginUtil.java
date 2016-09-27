@@ -25,6 +25,7 @@ public class LoginUtil extends Activity{
         startActivityForResult(intent, REQUEST_CODE_LOGIN);
     }
 
+
     public static void checkLogin(Context context, LoginCallback callback) {
         //此处检查当前的登录状态
         boolean login = MySelfInfo.getInstance().islogin();
@@ -50,11 +51,12 @@ public class LoginUtil extends Activity{
     }
 
     @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        finish();
+
         if (requestCode == REQUEST_CODE_LOGIN && resultCode == RESULT_OK && mCallback != null) {
             mCallback.onLogin();
         }
         mCallback = null;
+        finish();
     }
 
 }

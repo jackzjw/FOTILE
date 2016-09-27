@@ -644,6 +644,7 @@ public class StringUtil {
     public static String checkLength(String string, int maxLength) {
         return checkLength(string, maxLength, "…");
     }
+
     /**
      * 判断一个List集合是否为空
      * @param list
@@ -666,8 +667,18 @@ public class StringUtil {
         if (TextUtils.isEmpty(mobiles)) return false;
         else return mobiles.matches(telRegex);
     }
-   public static String format(Object c){
-        java.text.DecimalFormat   df   =new   java.text.DecimalFormat("#.00");
+
+    public static String format(Object c) {
+        java.text.DecimalFormat df = new java.text.DecimalFormat("#.00");
         return df.format(c);
+    }
+
+    public static String saveTwoDouble(String c){
+        if(null == c || "0".equals(c) || "".equals(c) || "0.0".equals(c) ||"0.00".equals(c)){
+            return "0";
+        }
+        java.text.DecimalFormat   df   =new   java.text.DecimalFormat("#.00");
+        return df.format(Double.valueOf(c));
+
     }
 }

@@ -15,10 +15,12 @@ import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 
+
 /**
  * Created by sg280 on 2016-07-19.
  */
 public class HomeLiveViewHolder extends BaseViewHolder<HomeLiveList> {
+
 
 
 
@@ -36,6 +38,7 @@ public class HomeLiveViewHolder extends BaseViewHolder<HomeLiveList> {
     @Override
     public void setData(HomeLiveList data) {
         super.setData(data);
+
         if(data.getClassType().equals("1")){
             mlive_title.setText(data.getClassName());
         }else{
@@ -51,7 +54,7 @@ public class HomeLiveViewHolder extends BaseViewHolder<HomeLiveList> {
                @Override
                public void onItemClick(int position) {
                 //   if("3".equals(data.getClassType())){
-                       Intent intent=LiveActivity.newIntent(getContext(), 1, data.getLiveList().get(position).getID());
+                       Intent intent= LiveActivity.newIntent(getContext(), 1, data.getLiveList().get(position).getID());
                        getContext().startActivity(intent);
                   /* }else {
                        Intent intent=LiveActivity.newIntent(getContext(), 2, data.getLiveList().get(position).getID());

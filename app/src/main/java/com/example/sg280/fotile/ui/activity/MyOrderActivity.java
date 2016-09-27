@@ -1,5 +1,6 @@
 package com.example.sg280.fotile.ui.activity;
 
+import android.app.Activity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -7,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sg280.fotile.R;
-import com.example.sg280.fotile.adapter.MyOrderAdapter;
 import com.example.sg280.fotile.presents.Interface.MyOrderContacts;
 import com.example.sg280.fotile.presents.MyOrderPresent;
+import com.example.sg280.fotile.utils.LogUtil;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ import butterknife.OnClick;
  * Created by Tian on 2016/8/3.
  * 我的订单界面
  */
-public class MyOrderActivity extends BaseActivity implements MyOrderContacts.View{
+public class MyOrderActivity extends BaseActivity implements MyOrderContacts.View {
 
     @Bind(R.id.iv_back_title)//标题的返回图标
             ImageView iv_back_title;
@@ -39,7 +40,6 @@ public class MyOrderActivity extends BaseActivity implements MyOrderContacts.Vie
     @Bind(R.id.erv_myOrder)
     RecyclerView erv_myOrder;
 
-    private MyOrderAdapter orderAdapter;
     private MyOrderPresent myOrderPresent;
 
     @Override
@@ -52,8 +52,9 @@ public class MyOrderActivity extends BaseActivity implements MyOrderContacts.Vie
 
         tv_title.setText(R.string.my_order);//修改标题栏的标题
 
-        myOrderPresent = new MyOrderPresent(this,this,erv_myOrder);
-        allOrder();
+        myOrderPresent = new MyOrderPresent(this, this, erv_myOrder);
+
+        setOrders(getIntent().getStringExtra("status"));
 
     }
 
@@ -119,6 +120,37 @@ public class MyOrderActivity extends BaseActivity implements MyOrderContacts.Vie
         initLineVisible();
         orderTypeList.get(i).setTextColor(ContextCompat.getColor(this, R.color.red));
         orderLineList.get(i).setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public Activity getActivity() {
+        return this;
+    }
+
+    /**
+     * 根据查询的订单状态显示相应的订单
+     *
+     * @param status 订单状态
+     */
+    private void setOrders(String status) {
+        LogUtil.e("哈哈" + status);
+        switch (status) {
+            case "0":
+                allOrder();
+                break;
+            case "1":
+                waitPay();
+                break;
+            case "2":
+                waitShipments();
+                break;
+            case "3":
+                waitReceipt();
+                break;
+            case "4":
+                orderIsDone();
+                break;
+        }
     }
 
 }

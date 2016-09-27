@@ -11,7 +11,7 @@
 
     <include layout="@layout/item_underline_long_hui_line" />
 
-    <ScrollView
+    <com.example.sg280.fotile.widget.MyScrollview
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:overScrollMode="never"
@@ -39,15 +39,15 @@
                     android:id="@+id/tv_order_number_info"
                     style="@style/my_word_14_gray_style"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/tv_order_number"
-                    android:text="111231432425" />
+                    android:layout_toRightOf="@+id/tv_order_number"/>
+
 
                 <TextView
                     android:id="@+id/tv_order_state"
                     style="@style/my_word_14_red_style"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/had_ok" />
+                    android:layout_centerVertical="true"/>
+
 
             </RelativeLayout>
 
@@ -75,15 +75,15 @@
                     android:id="@+id/tv_consignee_info"
                     style="@style/my_word_16_black_style"
                     android:layout_alignBaseline="@+id/tv_consignee"
-                    android:layout_toRightOf="@+id/tv_consignee"
-                    android:text="鱼鱼风" />
+                    android:layout_toRightOf="@+id/tv_consignee" />
+
 
                 <TextView
                     android:id="@+id/tv_phone_number"
                     style="@style/my_word_16_black_style"
                     android:layout_alignBaseline="@+id/tv_consignee"
-                    android:layout_alignParentRight="true"
-                    android:text="12345678910" />
+                    android:layout_alignParentRight="true" />
+
 
 
                 <TextView
@@ -99,8 +99,8 @@
                     android:id="@+id/tv_delivery_address_info"
                     style="@style/my_word_14_gray_style"
                     android:layout_alignBaseline="@+id/tv_delivery_address"
-                    android:layout_toRightOf="@+id/tv_delivery_address"
-                    android:text="这是一个神奇的地方" />
+                    android:layout_toRightOf="@+id/tv_delivery_address" />
+
 
                 <TextView
                     android:id="@+id/tv_postcode"
@@ -115,24 +115,24 @@
                     android:id="@+id/tv_postcode_info"
                     style="@style/my_word_14_gray_style"
                     android:layout_alignBaseline="@+id/tv_postcode"
-                    android:layout_toRightOf="@+id/tv_postcode"
-                    android:text="646000" />
+                    android:layout_toRightOf="@+id/tv_postcode"/>
 
-                <TextView
-                    android:id="@+id/tv_leave_a_message"
-                    style="@style/my_word_14_gray_style"
-                    android:layout_below="@+id/tv_postcode"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@+id/iv_location"
-                    android:text="@string/leave_a_message" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_leave_a_message"-->
+                    <!--style="@style/my_word_14_gray_style"-->
+                    <!--android:layout_below="@+id/tv_postcode"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_toRightOf="@+id/iv_location"-->
+                    <!--android:text="@string/leave_a_message" />-->
 
-                <TextView
-                    android:id="@+id/tv_leave_a_message_info"
-                    style="@style/my_word_14_gray_style"
-                    android:layout_alignBaseline="@+id/tv_leave_a_message"
-                    android:layout_toRightOf="@+id/tv_leave_a_message"
-                    android:text="双休日照常收货" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_leave_a_message_info"-->
+                    <!--style="@style/my_word_14_gray_style"-->
+                    <!--android:layout_alignBaseline="@+id/tv_leave_a_message"-->
+                    <!--android:layout_toRightOf="@+id/tv_leave_a_message"-->
+                    <!--android:text="双休日照常收货" />-->
+
             </RelativeLayout>
 
             <LinearLayout
@@ -268,14 +268,16 @@
                         android:id="@+id/tv_commit_order"
                         style="@style/my_word_12_gray_style"
                         android:layout_marginLeft="20dp"
-                        android:text="@string/commit_order" />
+                        android:layout_centerHorizontal="true"/>
+
 
                     <TextView
                         android:id="@+id/tv_commit_order_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_commit_order"
                         android:layout_marginLeft="20dp"
-                        android:text="2016-6-18\n18:18:18" />
+                        android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -287,14 +289,16 @@
                         android:id="@+id/tv_pay_time"
                         style="@style/my_word_12_gray_style"
                         android:layout_marginLeft="20dp"
-                        android:text="@string/pay_time" />
+                        android:layout_centerHorizontal="true"/>
+
 
                     <TextView
                         android:id="@+id/tv_pay_time_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_pay_time"
                         android:layout_marginLeft="20dp"
-                        android:text="2016-6-18\n18:18:18" />
+                        android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -306,14 +310,16 @@
                         android:id="@+id/tv_shipments_time"
                         style="@style/my_word_12_gray_style"
                         android:layout_marginLeft="20dp"
-                        android:text="@string/shipments_time" />
+                        android:layout_centerHorizontal="true"/>
+
 
                     <TextView
                         android:id="@+id/tv_shipments_time_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_shipments_time"
                         android:layout_marginLeft="20dp"
-                        android:text="2016-6-18\n18:18:18" />
+                        android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -325,14 +331,16 @@
                         android:id="@+id/tv_receipt_time"
                         style="@style/my_word_12_gray_style"
                         android:layout_marginLeft="20dp"
-                        android:text="@string/receipt_time" />
+                        android:layout_centerHorizontal="true"/>
+
 
                     <TextView
                         android:id="@+id/tv_receipt_time_info"
                         style="@style/my_word_12_gray_style"
                         android:layout_below="@+id/tv_receipt_time"
                         android:layout_marginLeft="20dp"
-                        android:text="2016-6-18\n18:18:18" />
+                        android:layout_centerHorizontal="true"/>
+
                 </RelativeLayout>
             </LinearLayout>
 
@@ -345,11 +353,24 @@
                 android:paddingTop="15dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_brand_logo"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitXY"
+
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/user_logo_fotile" />
             </RelativeLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+            </android.support.v7.widget.RecyclerView>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -363,6 +384,8 @@
                     android:text="@string/goods_amount" />
 
                 <TextView
+                    android:id="@+id/tv_goods_price"
+
                     style="@style/my_word_14_black_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -384,6 +407,8 @@
                     android:text="@string/freight" />
 
                 <TextView
+
+                    android:id="@+id/tv_freight"
                     style="@style/my_word_14_black_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -402,14 +427,38 @@
                     style="@style/my_word_14_gray_style"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
-                    android:text="@string/coupons_amount" />
+                    android:text="@string/point_money" />
 
                 <TextView
+                    android:id="@+id/tv_point_money"
                     style="@style/my_word_14_black_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
-                    android:text="¥ 200" />
+                    android:text="¥ 0" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0.7dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/my_word_14_gray_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/coupons_amount" />
+
+                <TextView
+                    android:id="@+id/tv_coupon_price"
+                    style="@style/my_word_14_black_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="¥ 0" />
+
 
             </RelativeLayout>
 
@@ -426,11 +475,12 @@
                     android:text="@string/order_amount" />
 
                 <TextView
+                    android:id="@+id/tv_order_money"
                     style="@style/my_word_14_red_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:text="¥ 4888" />
+                    android:layout_marginRight="20dp" />
+
 
             </RelativeLayout>
 
@@ -447,6 +497,7 @@
                     android:text="@string/pay_way" />
 
                 <TextView
+                    android:id="@+id/tv_pay_way"
                     style="@style/my_word_14_black_style"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
@@ -481,11 +532,11 @@
                     android:layout_below="@+id/tv_leave_another_message"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@+id/iv_leave_another_message"
-                    android:text="双休日正常收货" />
+                    android:layout_toRightOf="@+id/iv_leave_another_message"/>
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rl_logistics_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
@@ -502,8 +553,7 @@
                     android:id="@+id/tv_logistics_company_info"
                     style="@style/my_word_14_gray_style"
                     android:layout_alignBaseline="@+id/tv_logistics_company"
-                    android:layout_toRightOf="@+id/tv_logistics_company"
-                    android:text="顺丰快递" />
+                    android:layout_toRightOf="@+id/tv_logistics_company" />
 
                 <TextView
                     android:id="@+id/tv_waybill_number"
@@ -516,11 +566,11 @@
                     android:id="@+id/tv_waybill_number_info"
                     style="@style/my_word_14_gray_style"
                     android:layout_alignBaseline="@+id/tv_waybill_number"
-                    android:layout_toRightOf="@+id/tv_waybill_number"
-                    android:text="201607221717" />
+                    android:layout_toRightOf="@+id/tv_waybill_number" />
 
             </RelativeLayout>
 
         </LinearLayout>
-    </ScrollView>
+    </com.example.sg280.fotile.widget.MyScrollview>
+
 </LinearLayout>

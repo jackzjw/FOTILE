@@ -11,7 +11,7 @@
 
         <include
             android:id="@+id/title_register"
-            layout="@layout/base_title" />
+            layout="@layout/item_base_title" />
 
         <TextView
             android:id="@+id/tv_login"

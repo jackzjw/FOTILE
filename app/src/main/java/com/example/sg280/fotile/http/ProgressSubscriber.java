@@ -76,7 +76,6 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      * 显示加载框
      */
     private void showProgressDialog() {
-
         Context context = mActivity.get();
         if (pd == null || context == null) return;
         if (!pd.isShowing()) {
@@ -101,10 +100,10 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      */
     @Override
     public void onStart() {
+
         if (cancel)
 
             showProgressDialog();
-
     }
 
     /**
@@ -112,6 +111,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
      */
     @Override
     public void onCompleted() {
+
         if (cancel)
         dismissProgressDialog();
     }

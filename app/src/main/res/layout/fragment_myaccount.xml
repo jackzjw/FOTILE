@@ -265,7 +265,8 @@
         android:background="@android:color/white"
         android:gravity="center"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingRight="20dp"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/iv_message_center_account"

@@ -7,9 +7,9 @@ import com.example.sg280.fotile.ui.BaseView;
 /**
  * Created by Tian on 2016/8/24.
  */
-public interface OrderSureContacts{
+public interface OrderSureContacts {
 
-    interface View extends BaseView{
+    interface View extends BaseView {
         //设置默认地址
         void setDefault(ShippingAddressBean shippingAddressBean);
 
@@ -34,7 +34,7 @@ public interface OrderSureContacts{
         void commitSuc();
     }
 
-    interface present extends BasePresenter{
+    interface present extends BasePresenter {
 
         void getDefaultAddress();//获取默认地址
 
@@ -56,6 +56,7 @@ public interface OrderSureContacts{
 
         //获取当前可用的优惠券
         void getCouponsNumAtOnce(String action, String productid, String skuid,
+
                                  String productnum);
 
         //获取可用积分

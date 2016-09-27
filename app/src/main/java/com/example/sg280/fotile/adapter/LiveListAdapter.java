@@ -27,6 +27,5 @@ public class LiveListAdapter extends RecyclerArrayAdapter<VedioDetailsBean>{
           //  return new Live2ViewHolder(parent);
 
 
-
     }
 }

@@ -88,5 +88,4 @@ public class FotileRetrofit {
         observable.subscribe(basePar.getSubscirber());
     }
 
-
 }

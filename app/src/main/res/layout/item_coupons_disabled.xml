@@ -106,14 +106,14 @@
             android:layout_marginTop="40dp"
             android:text="100"
             android:textColor="@color/hui_text"
-            android:textSize="40sp" />
+            android:textSize="26sp" />
+
 
         <TextView
             android:id="@+id/tv_money_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/tv_privilege_number"
-            android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/tv_privilege_number"
             android:text="¥"
             android:textColor="@color/hui_text"

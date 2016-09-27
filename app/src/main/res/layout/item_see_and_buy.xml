@@ -1,61 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="150dp"
-   android:layout_width="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
     <ImageView
         android:id="@+id/img_product"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:scaleType="centerInside"
         android:layout_centerVertical="true"
+        android:scaleType="centerInside"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_product_name"
-        android:layout_toRightOf="@+id/img_product"
-        android:layout_marginTop="20dp"
-        android:text="方太油烟机是对方是哥哥"
-        android:textStyle="bold"
-        android:textSize="12sp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/theme_red"
-        android:layout_marginTop="35dp"
-        android:text="2345"
-        android:textSize="15sp"
-        android:layout_below="@+id/tv_product_name"
-        android:layout_toRightOf="@+id/img_product"
 
-        android:id="@+id/tv_product_price"/>
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="2433"
-         android:layout_below="@+id/tv_product_name"
-         android:layout_marginTop="40dp"
-         android:layout_marginLeft="5dp"
-         android:id="@+id/tv_product_price_before"
-         android:layout_toRightOf="@id/tv_product_price"
-         android:textSize="9sp"/>
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/img_product"
+        android:text="方太油烟机是对方是哥哥"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tv_product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_product_name"
+        android:layout_marginTop="35dp"
+        android:layout_toRightOf="@+id/img_product"
+        android:text="2345"
+        android:textColor="@color/theme_red"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_product_price_before"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_product_name"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/tv_product_price"
+        android:text="2433"
+        android:textSize="9sp"/>
+
     <Button
+        android:id="@+id/btn_prodetails"
         android:layout_width="80dp"
         android:layout_height="26dp"
-        android:text="@string/product_detail"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_product_price"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/shape_btn_product_detail"
         android:gravity="center"
-        android:textSize="12sp"
-        android:id="@+id/btn_prodetails"
+        android:text="@string/product_detail"
         android:textColor="@color/white"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_below="@id/tv_product_price"
-        android:layout_marginTop="5dp"
+        android:textSize="12sp"
         />
-
-
 
 
 </RelativeLayout>

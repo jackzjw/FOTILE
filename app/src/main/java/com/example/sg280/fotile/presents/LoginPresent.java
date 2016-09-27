@@ -24,6 +24,7 @@ public class LoginPresent implements ILoginContacts.Present{
 
     private ILoginContacts.View mview;
     private Activity activity;
+
     private ProgressSubscriber progressSuscriber;
     private static final String TAG = "LoginPresent";
     public LoginPresent(ILoginContacts.View view,Activity activity){
@@ -35,6 +36,7 @@ public class LoginPresent implements ILoginContacts.Present{
     public void ftLogin(String id, String pwd) {
        String MD5Pwd= MD5Util.getStringMD5(pwd + "FOTILE");
      //   LogUtil.e("密码" + MD5Pwd);
+
         progressSuscriber=new ProgressSubscriber(loginOnNextListener,activity);
         LoginSubject source=new LoginSubject(progressSuscriber,id,MD5Pwd);
         FotileRetrofit.getInstance().doHttpDeal2(source);
@@ -45,10 +47,12 @@ public class LoginPresent implements ILoginContacts.Present{
         public void onNext(UserInfo subjects) {
             LogUtil.e(subjects.toString());
             MySelfInfo.getInstance().setId(subjects.getUserID());
+
             MySelfInfo.getInstance().setIslogin(true);
             MySelfInfo.getInstance().setIdentifier(subjects.getIdentifier());
             MySelfInfo.getInstance().setUserSig(subjects.getTlsSig());
             MySelfInfo.getInstance().setPhone(subjects.getUserTel());
+            MySelfInfo.getInstance().setNickName(subjects.getUserName());
             MySelfInfo.getInstance().writeToCache(activity);
             imLogin(subjects.getIdentifier(),subjects.getTlsSig());
         }
@@ -89,7 +93,6 @@ public class LoginPresent implements ILoginContacts.Present{
     @Override
     public void ondestory() {
            progressSuscriber.onCancelProgress();
-
 
     }
 }

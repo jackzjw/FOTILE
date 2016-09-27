@@ -17,7 +17,8 @@ public class AddMoreArithmetic extends ArithmeticClass {
     }
 
     @Override
-    int arithmetic() {
+    double arithmetic() {
+
         if(null == list || list.size() == 0){
             return 0;
         }

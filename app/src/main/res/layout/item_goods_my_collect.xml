@@ -8,7 +8,9 @@
         android:id="@+id/iv_goods_my_order"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_margin="20dp" />
+        android:layout_margin="20dp"
+        android:src="@mipmap/freeloop" />
+
 
     <TextView
         android:id="@+id/tv_goods_name"

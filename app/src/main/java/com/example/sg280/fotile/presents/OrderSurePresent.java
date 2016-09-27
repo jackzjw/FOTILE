@@ -1,6 +1,7 @@
 package com.example.sg280.fotile.presents;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.example.sg280.fotile.http.FotileRetrofit;
 import com.example.sg280.fotile.http.ProgressSubscriber;
@@ -14,6 +15,7 @@ import com.example.sg280.fotile.model.source.GetDefaultAddressSubject;
 import com.example.sg280.fotile.model.source.HttpOnNextListener;
 import com.example.sg280.fotile.model.source.UserInfoSubject;
 import com.example.sg280.fotile.presents.Interface.OrderSureContacts;
+import com.example.sg280.fotile.ui.activity.PaySuccessfulActivity;
 import com.example.sg280.fotile.utils.SharedPreferencesUtil;
 
 /**
@@ -55,7 +57,9 @@ public class OrderSurePresent implements OrderSureContacts.present {
             @Override
             public void onNext(CommitOrderBackMsgBean bean) {
                 view.commitSuc();
-
+                Intent intent = new Intent(context, PaySuccessfulActivity.class);
+                intent.putExtra("msg",bean);
+                context.startActivity(intent);
             }
         };
 
@@ -119,8 +123,9 @@ public class OrderSurePresent implements OrderSureContacts.present {
         HttpOnNextListener pointNextListener = new HttpOnNextListener<UserInfoBean>() {
             @Override
             public void onNext(UserInfoBean userInfoBean) {
-                String pointAll = null == userInfoBean.getIntegralTotal()?"0":userInfoBean.getIntegralTotal();
-                String pointUsed = null == userInfoBean.getIntegralTotal()?"0":userInfoBean.getIntegralTotal();
+
+                String pointAll = (null == userInfoBean.getIntegralTotal())?"0":userInfoBean.getIntegralTotal();
+                String pointUsed = (null == userInfoBean.getIntegralUsed())?"0":userInfoBean.getIntegralUsed();
                 view.setPoint(String.valueOf(Integer.valueOf(pointAll)-Integer.valueOf(pointUsed)));
             }
         };

@@ -235,7 +235,8 @@ public class ShoppingCartGoodsBean implements Parcelable {
         this.isChecked = in.readByte() != 0;
     }
 
-    public static final Creator<ShoppingCartGoodsBean> CREATOR = new Creator<ShoppingCartGoodsBean>() {
+    public static final Parcelable.Creator<ShoppingCartGoodsBean> CREATOR = new Parcelable.Creator<ShoppingCartGoodsBean>() {
+
         @Override
         public ShoppingCartGoodsBean createFromParcel(Parcel source) {
             return new ShoppingCartGoodsBean(source);

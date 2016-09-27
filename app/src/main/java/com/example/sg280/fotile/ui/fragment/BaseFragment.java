@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import com.example.sg280.fotile.app.FTApplication;
 import com.example.sg280.fotile.widget.LoadingView;
 import com.squareup.leakcanary.RefWatcher;
@@ -51,6 +52,7 @@ public abstract class BaseFragment extends Fragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
 
     @Override
     public void onDestroy() {

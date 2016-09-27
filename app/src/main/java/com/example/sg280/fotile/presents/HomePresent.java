@@ -1,5 +1,8 @@
 package com.example.sg280.fotile.presents;
 
+import com.example.sg280.fotile.presents.Interface.IHomeContacts;
+
+
 import android.content.Context;
 
 import com.example.sg280.fotile.http.FotileRetrofit;
@@ -22,7 +25,6 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func2;
 import rx.functions.Func3;
 import rx.schedulers.Schedulers;
-
 /**
  * Created by sg280 on 2016-07-19.
  */
@@ -62,6 +64,7 @@ public class HomePresent implements IHomeContacts.Present {
            mview=null;
 
     }
+
 //rxjava并发3个网络请求，
     @Override
     public void loadHomeData() {

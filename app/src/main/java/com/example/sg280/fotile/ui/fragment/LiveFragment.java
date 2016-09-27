@@ -4,6 +4,7 @@ package com.example.sg280.fotile.ui.fragment;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.example.sg280.fotile.adapter.AdInfoAdapter;
 import com.example.sg280.fotile.adapter.LiveListAdapter;
 import com.example.sg280.fotile.app.Constants;
 import com.example.sg280.fotile.model.bean.HomeAdBean;
+import com.example.sg280.fotile.model.bean.MySelfInfo;
 import com.example.sg280.fotile.model.bean.VedioDetailsBean;
 import com.example.sg280.fotile.presents.Interface.ILiveVedioContacts;
 import com.example.sg280.fotile.presents.LvListPresent;
@@ -27,11 +29,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
+import retrofit2.http.HEAD;
+
 
 /**
  * Created by sg280 on 2016-07-19.
  */
 public class LiveFragment extends BaseFragment implements ILiveVedioContacts.View,SwipeRefreshLayout.OnRefreshListener,RecyclerArrayAdapter.OnLoadMoreListener{
+
 
     @Bind(R.id.recyclerView)
     EasyRecyclerView recyclerView;
@@ -39,6 +44,7 @@ public class LiveFragment extends BaseFragment implements ILiveVedioContacts.Vie
     private LvListPresent present;
    private int page=1;
     private List<VedioDetailsBean> data;
+
     private List<HomeAdBean> imgList;
     private AdInfoAdapter imgAdapter;
 
@@ -50,6 +56,7 @@ public class LiveFragment extends BaseFragment implements ILiveVedioContacts.Vie
     @Override
     protected void onInitView() {
         data=new ArrayList<VedioDetailsBean>();
+
         present=new LvListPresent(getActivity(),this, Constants.NEW_LIVE_NAME);
         GridLayoutManager gridlayout = new GridLayoutManager(getActivity(), 2);
         adapter=new LiveListAdapter(getActivity());
@@ -98,6 +105,7 @@ public class LiveFragment extends BaseFragment implements ILiveVedioContacts.Vie
         adapter.clear();
         adapter.addAll(result);
         adapter.notifyDataSetChanged();
+
         if(result.size()%10!=0){
             adapter.pauseMore();
         }
@@ -105,6 +113,7 @@ public class LiveFragment extends BaseFragment implements ILiveVedioContacts.Vie
 
     @Override
     public void fetchSucc(List<VedioDetailsBean> datas) {
+
      //   LogUtil.e(datas.toString());
             data.addAll(datas);
             adapter.addAll(datas);
@@ -114,6 +123,7 @@ public class LiveFragment extends BaseFragment implements ILiveVedioContacts.Vie
         }
 
     }
+
 
 
     public void loadAdInfo(List<HomeAdBean> beans) {
@@ -136,6 +146,7 @@ public class LiveFragment extends BaseFragment implements ILiveVedioContacts.Vie
 
         }
     }
+
 
     @Override
     public void onDestroy() {

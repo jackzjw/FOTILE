@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.example.sg280.fotile.R;
 import com.example.sg280.fotile.adapter.GoodsSureOrderAdapter;
 import com.example.sg280.fotile.app.Constants;
@@ -100,6 +101,8 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
     private int which = -1;//0--立即购买，1--从购物车购买
     private ShoppingCartGoodsBean bean;
     private CouponsBean couponsBean;
+    private double temporaryPrice;//临时储存订单价格，防止连续更改积分数量导致订单价格的错乱
+
 
     @Override
     protected int getLayoutResource() {
@@ -121,6 +124,7 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
             list.add(bean);
             //获取可用优惠券数量
             orderSurePresent.getCouponsNumAtOnce(ACTION, bean.getProductID(), bean.getSkuID(), bean.getProductQuantity());
+
             goodsPrice = "￥ " + StringUtil.format(Double.valueOf(bean.getProductQuantity()) * Double.valueOf(bean.getPricePromo()));
         } else if (1 == which) {
 
@@ -140,8 +144,28 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
         }
 
         orderSurePresent.getPoint();//获取可用积分
+
+        et_usePoint.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                pointIsOk(s.toString());
+            }
+        });
+
         tvGoodsPrice.setText(goodsPrice);
         tvOrderPrice.setText(goodsPrice);
+        temporaryPrice = Double.valueOf(goodsPrice.substring(2));//先将没有优惠前的价格存起来
+
         rvGoods.setLayoutManager(new LinearLayoutManager(this));
         //RecyclerView的间距
         DividerDecoration divider = new DividerDecoration(ContextCompat.getColor(this, R.color.white), DensityUtil.dp2px(this, 1), 0, 0);
@@ -286,8 +310,8 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
 
     @Override
     public void commitSuc() {
-        ToastUtil.showShort(this, "提交订单成功");
-        finish();
+//        ToastUtil.showShort(this, "提交订单成功");
+//        finish();
     }
 
     //设置地址信息
@@ -311,12 +335,16 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
         }
         if (Integer.valueOf(point) > Integer.valueOf(usablePoint)) {
             ToastUtil.showShort(this, "您输入的积分超出了可用积分");
+            et_usePoint.setText("0");
             return false;
         }
-        if (Integer.valueOf(point) > Integer.valueOf(goodsPrice.substring(2))) {
+        if (Double.valueOf(point) > Double.valueOf(goodsPrice.substring(2))) {
             ToastUtil.showShort(this, "您输入的积分超出了商品金额");
+            et_usePoint.setText("0");
             return false;
         }
+        afterPointPrice(point);
+
         return true;
     }
 
@@ -325,15 +353,35 @@ public class OrderSureActivity extends BaseActivity implements OrderSureContacts
      * @param i
      */
     private void setCouponInfo(int i) {
+        String integral = et_usePoint.getText().toString().trim();
         switch (i) {
             case 1:
                 tv_couponUsableNum.setText("(优惠￥"+couponsBean.getValValue()+")");
-                tvOrderPrice.setText("￥ "+ StringUtil.format(Double.valueOf(goodsPrice.substring(2))-Double.valueOf(couponsBean.getValValue())));
+                //储存优惠后的价格
+                temporaryPrice = Double.valueOf(goodsPrice.substring(2))-Double.valueOf(couponsBean.getValValue());
+                tvOrderPrice.setText("￥ "+ StringUtil.format(temporaryPrice));
+                if(!"".equals(integral) && !"0".equals(integral)){
+                    afterPointPrice(integral);
+                }
                 break;
             case 2:
                 tv_couponUsableNum.setText("(打"+(Double.valueOf(couponsBean.getValValue()) / 10.00)+"折)");
-                tvOrderPrice.setText("￥ "+StringUtil.format(Double.valueOf(goodsPrice.substring(2)) * (Double.valueOf(couponsBean.getValValue()) / 100.00)));
+                //储存优惠后的价格
+                temporaryPrice = Double.valueOf(goodsPrice.substring(2)) * (Double.valueOf(couponsBean.getValValue()) / 100.00);
+                tvOrderPrice.setText("￥ "+StringUtil.format(temporaryPrice));
+                if(!"".equals(integral) && !"0".equals(integral)){
+                    afterPointPrice(integral);
+                }
                 break;
         }
     }
+
+    /**
+     *选择积分后的订单金额
+     * @param point
+     */
+    private void afterPointPrice(String point){
+        tvOrderPrice.setText("￥ "+ StringUtil.format(temporaryPrice-Double.valueOf(point)));
+    }
+
 }

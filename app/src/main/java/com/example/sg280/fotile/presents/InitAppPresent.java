@@ -23,13 +23,16 @@ import com.tencent.TIMUserStatusListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.http.HEAD;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import tencent.tls.platform.TLSAccountHelper;
 import tencent.tls.platform.TLSErrInfo;
 import tencent.tls.platform.TLSLoginHelper;
 import tencent.tls.platform.TLSRefreshUserSigListener;
 import tencent.tls.platform.TLSUserInfo;
+
 
 /**
  * Created by sg280 on 2016-07-25.
@@ -37,11 +40,13 @@ import tencent.tls.platform.TLSUserInfo;
 public class InitAppPresent {
     private static String appVer = "1.0";
     private static TLSLoginHelper mLoginHelper;
+
   //  private static TLSAccountHelper mAccountHelper;
     private static String TAG="initAppPresent";
     public static TLSLoginHelper getmLoginHelper() {
         return mLoginHelper;
     }
+
 
     /*public static TLSAccountHelper getmAccountHelper() {
         return mAccountHelper;
@@ -60,6 +65,7 @@ public class InitAppPresent {
             @Override
             public void onForceOffline() {
 
+
                 Toast.makeText(context, context.getString(R.string.tip_force_offline), Toast.LENGTH_SHORT).show();
                 context.sendBroadcast(new Intent(Constants.BD_EXIT_APP));
             }
@@ -73,6 +79,7 @@ public class InitAppPresent {
 
         //QAL初始化
         //初始化TLS
+
         initTls(context);
         if (MySelfInfo.getInstance().islogin()) {
             reLoginIM(MySelfInfo.getInstance().getIdentifier(),MySelfInfo.getInstance().getUserSig());
@@ -81,6 +88,7 @@ public class InitAppPresent {
         //配置程序异常退出处理
      //   Thread.setDefaultUncaughtExceptionHandler(new LocalFileHandler(context));
        //获取点播、直播分类接口
+
       //  getVedioClassCategory(context);
     }
     /**
@@ -91,6 +99,7 @@ public class InitAppPresent {
     public static void initTls(Context context) {
         mLoginHelper = TLSLoginHelper.getInstance().init(context, Constants.SDK_APPID, Constants.ACCOUNT_TYPE, appVer);
         mLoginHelper.setTimeOut(5000);
+
       /*  mAccountHelper = TLSAccountHelper.getInstance().init(context, Constants.SDK_APPID, Constants.ACCOUNT_TYPE, appVer);
         mAccountHelper.setTimeOut(5000);*/
 //      MySelfInfo.getInstance().setId(id);
@@ -174,6 +183,7 @@ public class InitAppPresent {
                              List<String> live=new ArrayList<String>();
                         List<String> vedio=new ArrayList<String>();
                         for(VedioCategoryBean bean:listHttpResult.getRows()){
+
                             if(bean.getClassType().equals("3")){
                                live.add(bean.getID());
                             }else if(bean.getClassType().equals("2")){

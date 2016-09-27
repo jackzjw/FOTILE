@@ -13,6 +13,7 @@ import com.example.sg280.fotile.utils.ToastUtil;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+
 /**
  * Created by sg280 on 2016-07-28.
  */
@@ -46,6 +47,7 @@ public class FindPwdActivity extends BaseActivity implements IFindPwdContacts.Vi
           ToastUtil.showLong(this,"两次输入密码不一致，请重新输入");
             return;
         }
+
         String userid=MySelfInfo.getInstance().getId()==null?"":MySelfInfo.getInstance().getId();
         present.findPwd(userid,et_sure.getText().toString());
     }

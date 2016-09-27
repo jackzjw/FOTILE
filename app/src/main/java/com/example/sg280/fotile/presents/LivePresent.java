@@ -2,6 +2,7 @@ package com.example.sg280.fotile.presents;
 
 import android.content.Context;
 
+
 import com.example.sg280.fotile.http.FotileRetrofit;
 import com.example.sg280.fotile.http.ProgressSubscriber;
 import com.example.sg280.fotile.model.bean.VedioDetailsBean;
@@ -23,6 +24,7 @@ public class LivePresent implements ILiveContacts.Present {
     @Override
     public void getLiveView(String type, String liveid) {
         LiveViewSubject subject=new LiveViewSubject(new ProgressSubscriber(Liveviewlistener,context),type,liveid);
+
         FotileRetrofit.getInstance().doHttpDeal2(subject);
     }
 

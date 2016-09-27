@@ -15,6 +15,7 @@ import butterknife.ButterKnife;
 
 
 
+
 public abstract class  BaseActivity extends Activity {
 
     private LoadingView mLoadingView;
@@ -27,6 +28,7 @@ public abstract class  BaseActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayoutResource());
         ButterKnife.bind(this);
+
         recv = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -74,6 +76,7 @@ public abstract class  BaseActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+
         try {
             unregisterReceiver(recv);
         }catch (Exception e){

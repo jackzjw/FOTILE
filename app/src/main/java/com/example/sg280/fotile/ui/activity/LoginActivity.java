@@ -20,6 +20,7 @@ import com.example.sg280.fotile.widget.TitleBar;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.http.HEAD;
 
 public class LoginActivity extends Activity implements ILoginContacts.View {
     @Bind(R.id.title_bar)
@@ -115,7 +116,8 @@ public class LoginActivity extends Activity implements ILoginContacts.View {
     @Override
     public void loginSucc() {
         ToastUtil.showLong(this, "登录成功");
-       jumpIntoHomeActivity();
+        SharedPreferencesUtil.setPwd(this, MD5Util.getStringMD5(et_pwd.getText().toString().trim() + "FOTILE"));
+        jumpIntoHomeActivity();
 
     }
 

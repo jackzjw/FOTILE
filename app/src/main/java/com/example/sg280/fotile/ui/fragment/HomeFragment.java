@@ -1,5 +1,6 @@
 package com.example.sg280.fotile.ui.fragment;
 
+
 import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -158,6 +159,7 @@ public class HomeFragment extends BaseFragment implements IHomeContacts.View {
 
     @Override
     public void showNormal() {
+
         if (networkErrorView != null) {
             networkErrorView.setVisibility(View.GONE);
         }

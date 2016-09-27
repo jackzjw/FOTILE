@@ -21,11 +21,16 @@ public class IntentUtil {
     }
 
     /**
-     * activity有参跳转
+     * activity带一个String类型的跳转
      * @param context 上下文本
-     * @param intent 带参数的intent
+     * @param c 要跳转的界面Class
+     * @param name 传递String类型的名字
+     * @param para 传递的参数
      */
-    public static void jumpToActivityIntent(Context context,Intent intent){
+    public static void jumpToActivity(Context context,Class c,String name,String para){
+        intent = new Intent(context,c);
+        intent.putExtra(name,para);
         context.startActivity(intent);
     }
+
 }

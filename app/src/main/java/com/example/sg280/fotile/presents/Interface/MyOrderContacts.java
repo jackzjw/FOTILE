@@ -1,5 +1,6 @@
 package com.example.sg280.fotile.presents.Interface;
 
+import android.app.Activity;
 import com.example.sg280.fotile.presents.BasePresenter;
 import com.example.sg280.fotile.ui.BaseView;
 
@@ -8,7 +9,10 @@ import com.example.sg280.fotile.ui.BaseView;
  */
 public interface MyOrderContacts {
 
-    interface View extends BaseView{
+    interface View extends BaseView {
+
+        //获取当前activity
+        Activity getActivity();
 
     }
 

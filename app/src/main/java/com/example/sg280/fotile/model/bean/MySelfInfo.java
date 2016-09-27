@@ -24,6 +24,7 @@ public class MySelfInfo {
     private int id_status;
     private String identifier;
     private List<String> liveCategory;
+
     private boolean islogin;
     private String phone;
 

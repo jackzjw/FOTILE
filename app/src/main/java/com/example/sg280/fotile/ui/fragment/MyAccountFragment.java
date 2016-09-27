@@ -1,6 +1,5 @@
 package com.example.sg280.fotile.ui.fragment;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -12,8 +11,8 @@ import com.example.sg280.fotile.ui.activity.MyCollectActivity;
 import com.example.sg280.fotile.ui.activity.MyCouponsActivity;
 import com.example.sg280.fotile.ui.activity.MyOrderActivity;
 import com.example.sg280.fotile.ui.activity.ShippingAddressActivity;
+import com.example.sg280.fotile.ui.activity.UserPointActivity;
 import com.example.sg280.fotile.utils.IntentUtil;
-import com.example.sg280.fotile.utils.LoginUtil;
 import com.example.sg280.fotile.utils.SharedPreferencesUtil;
 import com.example.sg280.fotile.widget.CircleImageView;
 
@@ -73,103 +72,39 @@ public class MyAccountFragment extends BaseFragment {
             R.id.rl_deal_is_done,R.id.rl_my_coupons,R.id.rl_my_collections,R.id.rl_msg_center,R.id.rl_point_center
     ,R.id.rl_my_address})
     public void OnClick(View view){
-
         switch (view.getId()){
             case R.id.rl_user_info://点击用户布局跳转修改用户信息界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), ModifyUserInfoActivity.class);
-                    }
-                });
-
+                IntentUtil.jumpToActivity(getActivity(), ModifyUserInfoActivity.class);
                 break;
             case R.id.rl_my_order://点击查看全部订单跳转到我的订单界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
-                    }
-                });
-
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","0");
                 break;
             case R.id.rl_wait_pay://点击待支付跳转到我的订单待付款界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
-                    }
-                });
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","1");
                 break;
             case R.id.rl_wait_shipments://点击待支付跳转到我的订单待发货界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
-                    }
-                });
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","2");
                 break;
             case R.id.rl_wait_receipt://点击待支付跳转到我的订单待收货界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
-                    }
-                });
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","3");
                 break;
             case R.id.rl_deal_is_done://点击待支付跳转到我的订单已完成界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class);
-                    }
-                });
+                IntentUtil.jumpToActivity(getActivity(), MyOrderActivity.class,"status","4");
                 break;
             case R.id.rl_my_coupons://点击我的优惠码跳转到我的优惠码界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MyCouponsActivity.class);
-                    }
-                });
-
+                IntentUtil.jumpToActivity(getActivity(), MyCouponsActivity.class);
                 break;
             case R.id.rl_my_collections://点击我的收藏跳转到我的收藏界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MyCollectActivity.class);
-                    }
-                });
-
+                IntentUtil.jumpToActivity(getActivity(), MyCollectActivity.class);
                 break;
             case R.id.rl_msg_center://点击消息中心跳转到消息中心界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MessageCenterActivity.class);
-                    }
-                });
-
+                IntentUtil.jumpToActivity(getActivity(), MessageCenterActivity.class);
                 break;
             case R.id.rl_point_center://点击积分中心跳转到积分中心界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        IntentUtil.jumpToActivity(getActivity(), MessageCenterActivity.class);
-                    }
-                });
+                IntentUtil.jumpToActivity(getActivity(), UserPointActivity.class);
                 break;
             case R.id.rl_my_address://点击我的收货地址跳转到我的收货地址界面
-                LoginUtil.checkLogin(getActivity(), new LoginUtil.LoginCallback() {
-                    @Override
-                    public void onLogin() {
-                        Intent intent = new Intent(getActivity(), ShippingAddressActivity.class);
-                        intent.putExtra("account", "1");
-                        startActivity(intent);
-                    }
-                });
-
+                IntentUtil.jumpToActivity(getActivity(), ShippingAddressActivity.class,"account","1");
                 break;
 
         }

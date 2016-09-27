@@ -26,10 +26,11 @@ public class MyCouponsViewHolder extends BaseViewHolder<CouponsBean> {
     private TextView tv_money_sign;//人民币的符号￥
     private TextView tv_privilege_number;//优惠的金额
     private TextView tv_privilege_describe;//优惠券使用的限制(条件)
-    private TextView tv_use_rule_describe;//使用规则的描述
+    public TextView tv_use_rule_describe;//使用规则的描述
     private ImageView iv_is_used;//已过期等的图片
-    private RelativeLayout rl_use_rule;//使用规则的RelativeLayout
-    private ImageView iv_arrow_down;//使用规则的小箭头
+    public RelativeLayout rl_use_rule;//使用规则的RelativeLayout
+    public ImageView iv_arrow_down;//使用规则的小箭头
+
 
 
     public MyCouponsViewHolder(ViewGroup parent,Context context) {
@@ -69,6 +70,15 @@ public class MyCouponsViewHolder extends BaseViewHolder<CouponsBean> {
             tv_privilege_describe.setText(data.getValValue()+"折");
         }
         tv_use_rule_describe.setText(data.getCouponInfo());
+
+        //根据是否点击显示布局
+        if(data.isRuleIsClicked()){
+            tv_use_rule_describe.setVisibility(View.VISIBLE);
+            iv_arrow_down.setImageResource(R.drawable.user_icon_arrow_upward_gray);
+        }else {
+            tv_use_rule_describe.setVisibility(View.GONE);
+            iv_arrow_down.setImageResource(R.drawable.user_icon_arrow_down_gray);
+        }
 
 
         rl_use_rule.setOnClickListener(new View.OnClickListener() {

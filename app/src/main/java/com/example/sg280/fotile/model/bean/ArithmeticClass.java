@@ -6,6 +6,7 @@ package com.example.sg280.fotile.model.bean;
  */
 public abstract class ArithmeticClass {
 
-    abstract int arithmetic ();
+    abstract double arithmetic ();
+
 
 }

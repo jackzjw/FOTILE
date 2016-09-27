@@ -248,7 +248,8 @@ public class CouponsBean implements Parcelable {
         this.ruleIsClicked = in.readByte() != 0;
     }
 
-    public static final Creator<CouponsBean> CREATOR = new Creator<CouponsBean>() {
+    public static final Parcelable.Creator<CouponsBean> CREATOR = new Parcelable.Creator<CouponsBean>() {
+
         @Override
         public CouponsBean createFromParcel(Parcel source) {
             return new CouponsBean(source);

@@ -1,5 +1,4 @@
 package com.example.sg280.fotile.app;
-
 import android.app.Application;
 import android.content.Context;
 
@@ -21,10 +20,12 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+
+
 /**
  * Created by sg280 on 2016-07-14.
  */
-public class FTApplication extends Application{
+public class FTApplication extends Application {
  private static FTApplication instance;
 
     @Override

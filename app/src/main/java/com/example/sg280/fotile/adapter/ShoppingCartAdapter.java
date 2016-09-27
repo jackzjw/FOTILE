@@ -18,8 +18,12 @@ import com.example.sg280.fotile.ui.activity.ProductsActivity;
 import com.example.sg280.fotile.ui.fragment.MyShoppingCartFragment;
 import com.example.sg280.fotile.utils.LogUtil;
 import com.example.sg280.fotile.utils.StringUtil;
+import com.example.sg280.fotile.utils.ToastUtil;
 
 import java.util.List;
+
+import retrofit2.http.HEAD;
+
 
 /**
  * 购物车的Adapter
@@ -120,7 +124,7 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartGoodsV
                 myDialog = new MyDeleteDialog(context, R.style.myDialog,"确定要删除吗？","确定", new MyDeleteDialog.MyDialogListener() {
                     @Override
                     public void onClick(View view) {
-                        LogUtil.e("2222");
+
                         present.modifyGoodsNum(del,position);
 
                     }
@@ -149,7 +153,8 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartGoodsV
 
     //显示总价
     public void setPrice() {
-        int price = ArithmeticUtil.getResultWithBeansAdd(allList);//获取总价
+        double price = ArithmeticUtil.getResultWithBeansAdd(allList);//获取总价
+
         priceView.setText("￥ " + StringUtil.format(price));
     }
 

@@ -17,6 +17,13 @@ public class SharedPreferencesUtil {
         editor.commit();
     }
 
+    private static void setIntParam(Context context, String param1,int param2){
+        SharedPreferences  sp = context.getSharedPreferences(Constants.USER_INFO, 0);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt(param1,param2);
+        editor.commit();
+    }
+
     /**
      * 获取用户的id
      * @param context
@@ -85,5 +92,24 @@ public class SharedPreferencesUtil {
         return sp.getString(Constants.USER_NICK,"");
     }
 
+
+    /**
+     * 设置购物车的数量
+     * @param context
+     * @param num
+     */
+    public static void setCartNum(Context context,int num){
+        setIntParam(context,Constants.USER_CART_NUM,num);
+    }
+
+    /**
+     * 获取购物车数量
+     * @param context
+     * @return
+     */
+    public static int getCartNum(Context context){
+        SharedPreferences sp = context.getSharedPreferences(Constants.USER_INFO, 0);
+        return sp.getInt(Constants.USER_CART_NUM,0);
+    }
 
 }

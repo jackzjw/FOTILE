@@ -145,7 +145,8 @@ public class ShippingAddressBean implements Parcelable {
         this.IsDefault = in.readString();
     }
 
-    public static final Creator<ShippingAddressBean> CREATOR = new Creator<ShippingAddressBean>() {
+    public static final Parcelable.Creator<ShippingAddressBean> CREATOR = new Parcelable.Creator<ShippingAddressBean>() {
+
         @Override
         public ShippingAddressBean createFromParcel(Parcel source) {
             return new ShippingAddressBean(source);

@@ -40,4 +40,15 @@ public class HttpDataResult<T> {
     public void setResult(T result) {
         Result = result;
     }
+
+
+    @Override
+    public String toString() {
+        return "HttpDataResult{" +
+                "ErrorCode='" + ErrorCode + '\'' +
+                ", ErrorMessage='" + ErrorMessage + '\'' +
+                ", Success='" + Success + '\'' +
+                ", Result=" + Result +
+                '}';
+    }
 }

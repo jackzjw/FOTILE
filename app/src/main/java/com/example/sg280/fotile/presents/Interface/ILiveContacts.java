@@ -12,5 +12,6 @@ public interface ILiveContacts {
     interface Present{
         void getLiveView(String type,String liveid);
 
+
     }
 }

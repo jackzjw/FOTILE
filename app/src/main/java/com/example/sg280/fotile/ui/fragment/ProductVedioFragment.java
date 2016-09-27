@@ -37,6 +37,7 @@ public class ProductVedioFragment extends BaseFragment implements ILiveVedioCont
 
     @Override
     protected void onInitView() {
+
           data=new ArrayList<VedioDetailsBean>();
           present=new LvListPresent(getActivity(),this, Constants.PRODUCT_VEDIO_NAME);
           recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));

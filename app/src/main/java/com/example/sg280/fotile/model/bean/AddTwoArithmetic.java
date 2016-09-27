@@ -23,7 +23,8 @@ public class AddTwoArithmetic extends ArithmeticClass {
     }
 
     @Override
-    int arithmetic() {
+    double arithmetic() {
+
         return a + b;
     }
 }

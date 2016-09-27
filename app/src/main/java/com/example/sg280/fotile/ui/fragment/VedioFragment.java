@@ -1,5 +1,6 @@
 package com.example.sg280.fotile.ui.fragment;
 
+
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.RadioButton;
@@ -7,6 +8,7 @@ import android.widget.RadioButton;
 import com.example.sg280.fotile.R;
 
 import butterknife.Bind;
+
 
 /**
  * Created by sg280 on 2016/9/1.

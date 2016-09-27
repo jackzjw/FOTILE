@@ -8,7 +8,7 @@ import com.example.sg280.fotile.ui.BaseView;
  */
 public interface ShoppingCartContacts {
 
-    interface View extends BaseView{
+    interface View extends BaseView {
 
         void setBrandLogo(String logoUrl);
 
@@ -18,11 +18,12 @@ public interface ShoppingCartContacts {
 
     }
 
-    interface Present extends BasePresenter{
+    interface Present extends BasePresenter {
 
         void getShoppingCartGoods();//获取购物车所有产品
 
         void modifyGoodsNum(String action, int position);
+
 
     }
 
