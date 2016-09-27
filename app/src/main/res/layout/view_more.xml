@@ -3,6 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="56dp"
+    android:background="@color/hui_bg"
     android:id="@+id/ll_view_more"
     android:gravity="center">
     <ProgressBar

@@ -9,6 +9,7 @@
     <com.jude.easyrecyclerview.EasyRecyclerView
         android:layout_below="@+id/layout1"
         android:id="@+id/recyclerView"
+        android:background="@color/hui_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></com.jude.easyrecyclerview.EasyRecyclerView>
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_margin="0.5dp"
+    android:background="@color/white"
     android:layout_height="wrap_content">
 
         <RelativeLayout
@@ -12,7 +14,7 @@
                 android:id="@+id/live_img1"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:src="@mipmap/ic_launcher"
+
                 />
             <RelativeLayout
                 android:layout_width="65dp"
@@ -31,7 +33,7 @@
                     android:src="@drawable/home_icon_playing"/>
                 <TextView
                     android:id="@+id/live_status1"
-                    android:text="正在直播"
+
                      android:layout_toRightOf="@+id/img_status"
                     android:textSize="11sp"
                     android:layout_marginLeft="3dp"
@@ -47,7 +49,7 @@
                 android:layout_below="@+id/live_img1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="8dp"
-                android:text="方太直播"
+
 
                 />
             <TextView
@@ -57,8 +59,8 @@
                 android:textSize="11sp"
                 android:layout_below="@+id/live_name_1"
                 android:id="@+id/live_date_1"
-                android:layout_marginBottom="6dp"
-                android:text="2016年7月18号"/>
+                android:layout_marginBottom="10dp"
+              />
 
         </RelativeLayout>
 
